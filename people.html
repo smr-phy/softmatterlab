@@ -7,11 +7,11 @@
 <link rel="stylesheet" href="shared.css">
 <title>People | Soft Matter Lab</title>
 </head>
-<body style="display: flex; flex-direction: column; min-height: 100vh;">
+<body class="page-wrapper">
 
 <div id="nav-placeholder"></div>
 
-<section id="people" style="padding-top: 140px; flex-grow: 1;">
+<section id="people" class="page-content">
   <div class="people-header">
     <div>
       <div class="section-label">The Team</div>
@@ -19,7 +19,9 @@
     </div>
     <p class="section-intro">A diverse group of physicists, chemists, and biophysicists united by a passion for soft matter.</p>
   </div>
-  <div class="team-grid" id="team-container"></div>
+  <div class="team-grid" id="team-container">
+    <p style="grid-column: 1/-1; color: var(--slate);">Loading team data...</p>
+  </div>
 </section>
 
 <div id="footer-placeholder"></div>
@@ -28,13 +30,12 @@
   fetch('data/people.json')
     .then(res => res.json())
     .then(data => {
-      document.getElementById('team-container').innerHTML = data.map(person => `
-        <div class="team-card" onclick="this.classList.toggle('expanded')">
-          <img src="${person.image}" alt="${person.name}" class="avatar-img" onerror="this.src='images/placeholder.jpg'">
-          
+      const container = document.getElementById('team-container');
+      container.innerHTML = data.map(person => `
+        <div class="team-card">
+          <img src="${person.image}" alt="${person.name}" class="avatar-img" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
           <div class="team-name">${person.name}</div>
           <div class="team-role">${person.role}</div>
-          
           <div class="team-content">
             <p>${person.bio}</p>
             <div class="team-links">
@@ -44,28 +45,40 @@
           </div>
         </div>
       `).join('');
-    }).catch(err => console.log('Error loading people data:', err));
-</script>
-<script>
+
+      const cards = container.querySelectorAll('.team-card');
+      cards.forEach(card => {
+        card.addEventListener('click', function() {
+          this.classList.toggle('expanded');
+        });
+      });
+    }).catch(err => {
+      document.getElementById('team-container').innerHTML = '<p>Unable to load people data.</p>';
+      console.error(err);
+    });
+
   // Load Navigation
   fetch('nav.html')
     .then(response => response.text())
     .then(data => {
-      document.getElementById('nav-placeholder').innerHTML = data;
-      
-      // Attach mobile menu logic AFTER the nav is loaded
-      document.getElementById('hamburger').addEventListener('click', function() {
-        document.getElementById('nav-links').classList.toggle('active');
-        this.classList.toggle('open');
-      });
-    });
+      document.getElementById('nav-placeholder').outerHTML = data;
+      const hamburger = document.getElementById('hamburger');
+      if (hamburger) {
+        hamburger.addEventListener('click', function() {
+          document.getElementById('nav-links').classList.toggle('active');
+          this.classList.toggle('open');
+        });
+      }
+    })
+    .catch(err => console.error('Failed to load nav:', err));
 
   // Load Footer
   fetch('footer.html')
     .then(response => response.text())
     .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    });
+      document.getElementById('footer-placeholder').outerHTML = data;
+    })
+    .catch(err => console.error('Failed to load footer:', err));
 </script>
 </body>
 </html>
