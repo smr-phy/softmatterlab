@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<title>News | Soft Matter Lab</title>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <a href="index.html">
+      <img src="images/lab-logo.png" alt="Lab Logo" style="height: 45px; width: auto; display: block;"> 
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="people.html">People</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="news" style="padding-top: 120px;">
+  <div class="section-label">Latest</div>
+  <h2 class="section-title">News & Events</h2>
+  <div class="news-grid" id="news-container"></div>
+</section>
+
+<footer>
+  <div class="footer-logo">Soft Matter Lab · <span>Ashoka University</span></div>
+  <div class="footer-copy">© 2025 Soft Matter Research Lab</div>
+  <div class="footer-links">
+    <a href="#">Twitter</a>
+    <a href="#">Google Scholar</a>
+    <a href="#">GitHub</a>
+  </div>
+</footer>
+
+<script>
+  fetch('data/news.json')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('news-container').innerHTML = data.map(news => `
+        <div class="news-card">
+          <div class="news-img ${news.img_class}">${news.img_icon}</div>
+          <div class="news-body">
+            <div class="news-date">${news.date}</div>
+            <div class="news-title">${news.title}</div>
+            <p class="news-desc">${news.desc}</p>
+          </div>
+        </div>
+      `).join('');
+    }).catch(err => console.log('Error loading news data:', err));
+</script>
+
+</body>
+</html>
