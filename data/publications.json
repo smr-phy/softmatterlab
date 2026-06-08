@@ -1,6 +1,16 @@
 [
-  { "year": "2024", "title": "Topological defect dynamics in active nematic films under geometric confinement", "authors": "Sharma P., Rao A., Krishnan N., et al.", "journal": "Nature Physics · Vol 20, pp. 1124–1132" },
-  { "year": "2024", "title": "Responsive hydrogel networks with tunable mechanical memory via dynamic covalent crosslinks", "authors": "Mehta S., Sharma P., Verma R.", "journal": "ACS Nano · Vol 18, pp. 8834–8845" },
-  { "year": "2023", "title": "Phase separation kinetics of binary colloidal mixtures under oscillatory shear", "authors": "Rao A., Krishnan N., Sharma P.", "journal": "Physical Review Letters · 131, 178002" },
-  { "year": "2023", "title": "Wetting transitions on biomimetic substrates: a unifying framework for contact angle hysteresis", "authors": "Bose A., Mishra T., Sharma P.", "journal": "Soft Matter · 19, 5501–5514" }
+  { 
+    "year": "2024", 
+    "title": "Topological defect dynamics in active nematic films under geometric confinement", 
+    "authors": "Sharma P., Rao A., Krishnan N., et al.", 
+    "journal": "Nature Physics · Vol 20, pp. 1124–1132",
+    "link": "https://doi.org/10.1038/s41567-024"
+  },
+  { 
+    "year": "2024", 
+    "title": "Responsive hydrogel networks with tunable mechanical memory", 
+    "authors": "Mehta S., Sharma P., Verma R.", 
+    "journal": "ACS Nano · Vol 18, pp. 8834–8845",
+    "link": "https://pubs.acs.org/doi/10.1021/acsnano"
+  }
 ]
