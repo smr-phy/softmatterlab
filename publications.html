@@ -1,28 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
-<title>Publications | Soft Matter Lab</title>
-</head>
-<body style="display: flex; flex-direction: column; min-height: 100vh;">
-
+<body class="page-wrapper">
 <div id="nav-placeholder"></div>
-
-<section id="publications" style="padding-top: 140px; background:#fff; flex-grow: 1;">
-  <div class="pubs-header">
-    <div>
-      <div class="section-label">Selected Works</div>
-      <h2 class="section-title">Publications</h2>
-    </div>
-  </div>
+<section id="publications" class="page-content">
+  <div class="pubs-header"><div><div class="section-label">Selected Works</div><h2 class="section-title">Publications</h2></div></div>
   <div class="pub-list" id="pubs-container"></div>
 </section>
-
 <div id="footer-placeholder"></div>
-
 <script>
   fetch('data/publications.json')
     .then(res => res.json())
@@ -34,36 +16,20 @@
             <a href="${pub.link}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
               <div class="pub-title">${pub.title}</div>
             </a>
-            
             <div class="pub-authors">${pub.authors}</div>
             <div class="pub-journal">${pub.journal}</div>
-            
             ${pub.link ? `<a href="${pub.link}" target="_blank" rel="noopener noreferrer" class="pub-read-more">Read Paper ↗</a>` : ''}
           </div>
         </div>
       `).join('');
-    }).catch(err => console.log('Error loading publication data:', err));
-</script>
-<script>
-  // Load Navigation
-  fetch('nav.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('nav-placeholder').innerHTML = data;
-      
-      // Attach mobile menu logic AFTER the nav is loaded
-      document.getElementById('hamburger').addEventListener('click', function() {
-        document.getElementById('nav-links').classList.toggle('active');
-        this.classList.toggle('open');
-      });
-    });
+    }).catch(err => console.log(err));
 
-  // Load Footer
-  fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
+  fetch('nav.html').then(r => r.text()).then(data => {
+    document.getElementById('nav-placeholder').outerHTML = data;
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('nav-links').classList.toggle('active'); this.classList.toggle('open');
     });
+  });
+  fetch('footer.html').then(r => r.text()).then(data => { document.getElementById('footer-placeholder').outerHTML = data; });
 </script>
 </body>
-</html>
