@@ -123,47 +123,12 @@ nav {
   padding: 4rem;
   position: relative;
 }
-.hero-visual {
-  width: 100%; max-width: 460px; aspect-ratio: 1;
-  position: relative;
+.hero-image {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    border-radius: 12px;
 }
-.orb {
-  position: absolute; border-radius: 50%;
-  animation: float 6s ease-in-out infinite;
-}
-.orb1 {
-  width: 65%; height: 65%; top: 5%; left: 18%;
-  background: radial-gradient(circle at 35% 35%, #2d9e7e, #0f4a3e);
-  animation-delay: 0s;
-}
-.orb2 {
-  width: 42%; height: 42%; bottom: 10%; right: 5%;
-  background: radial-gradient(circle at 40% 35%, #d4956a, #8a4a28);
-  animation-delay: -2s;
-}
-.orb3 {
-  width: 28%; height: 28%; top: 12%; left: 5%;
-  background: radial-gradient(circle at 40% 35%, #7a6ab0, #3a2b6a);
-  animation-delay: -4s;
-}
-.orb4 {
-  width: 18%; height: 18%; bottom: 20%; left: 12%;
-  background: radial-gradient(circle at 40% 35%, #d4b87a, #8a7030);
-  animation-delay: -1s;
-}
-.orb-label {
-  position: absolute; font-size: 10px; font-weight: 500;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--slate); white-space: nowrap;
-}
-.orb-label.top { top: 1%; left: 22%; }
-.orb-label.right { bottom: 14%; right: 1%; font-size: 9px; }
-.orb-label.left { top: 16%; left: 0; font-size: 9px; }
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
-}
-
 /* SECTION BASE */
 section { padding: 8rem 8vw; }
 .section-label {
