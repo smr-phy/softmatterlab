@@ -8,9 +8,9 @@
     "scholar": "https://scholar.google.com/citations?user=8od_QxIAAAAJ&hl=en"
   },
   { 
-    "image": "images/shrigouri.png", 
+    "image": "images/shrigowri.png", 
     "name": "Shri Gowri ", 
-    "role": "Postdoctoral Fellow",
+    "role": "PhD Student",
     "bio": "She completed her Bachelor’s degree at Mount Carmel College (MCC), Bangalore, followed by a Master’s in Physics from the University of Mysore, with a specialization in Solid State Physics.  Shri’s current research is curiosity-driven and focuses on understanding the collective dynamics of Caenorhabditis elegans. She approaches these organisms as a nematic, flexible active system due to their shape anisotropy and bidirectional motion-features that are characteristic of many other biological systems. Her work combines microscopy based experiments with computer vision and data driven modeling, employing deep learning tools such as U-Net for quantitative image analysis. Outside the lab, she enjoys cooking, reading, traveling, and engaging in creative activities such as building with Legos, playing board games, and designing model houses.",
     "linkedin": "https://linkedin.com/in/yourlink",
     "scholar": "" 
