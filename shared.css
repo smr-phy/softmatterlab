@@ -4,10 +4,15 @@
   --ink2: #2a2a2a;
   --mist: #f4f1eb;
   --warm: #ede8df;
-  --gold: #c8a96e;
-  --gold2: #a07840;
-  --teal: #1a6b5a;
-  --teal2: #0f4a3e;
+  
+  /* Red */
+  --gold: #b22222;
+  --gold2: #8b0000;
+
+  /* Blue */
+  --teal: #2563eb;
+  --teal2: #1d4ed8;
+  
   --rose: #b5503a;
   --purple: #4a3b7a;
   --slate: #6b6459;
