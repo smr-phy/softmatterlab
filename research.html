@@ -1,13 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<title>Research | Soft Matter Lab</title>
+</head>
 <body class="page-wrapper">
+
 <div id="nav-placeholder"></div>
+
 <section id="research" class="page-content">
   <div class="research-header">
-    <div><div class="section-label">Our Science</div><h2 class="section-title">Research Areas</h2></div>
-    <p class="section-intro">Our interdisciplinary research spans the boundary between physics, chemistry, and biology — probing materials that defy simple classification.</p>
+    <div>
+      <div class="section-label">Our Science</div>
+      <h2 class="section-title">Research Areas</h2>
+    </div>
+    <p class="section-intro">Our interdisciplinary research spans the boundary between physics, chemistry, and biology — probing materials that defy simple classification. Click any area to learn more about our ongoing projects.</p>
   </div>
-  <div class="research-grid" id="research-container"></div>
+  
+  <div class="research-grid" id="research-container">
+    <p style="grid-column: 1/-1;">Loading research data...</p>
+  </div>
 </section>
+
 <div id="footer-placeholder"></div>
+
 <script>
   fetch('data/research.json')
     .then(res => res.json())
@@ -23,7 +42,7 @@
         </div>
       `).join('');
       container.querySelectorAll('.research-card').forEach(card => card.addEventListener('click', function() { this.classList.toggle('expanded'); }));
-    }).catch(err => console.log(err));
+    }).catch(err => console.log('Error:', err));
 
   fetch('nav.html').then(r => r.text()).then(data => {
     document.getElementById('nav-placeholder').outerHTML = data;
@@ -34,3 +53,4 @@
   fetch('footer.html').then(r => r.text()).then(data => { document.getElementById('footer-placeholder').outerHTML = data; });
 </script>
 </body>
+</html>
