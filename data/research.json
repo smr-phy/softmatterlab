@@ -1,0 +1,50 @@
+[
+  {
+    "number": "01",
+    "color": "c1",
+    "title": "Polymer Physics & Hydrogels",
+    "desc": "Investigating chain dynamics, network topology, and stimuli-responsive behavior in synthetic and biopolymer systems.",
+    "tags": ["Viscoelasticity", "Swelling", "Rheology"],
+    "details": "Our ongoing projects include mapping the swelling kinetics of responsive hydrogels under varying thermal gradients and studying their load-bearing viscoelastic properties over time."
+  },
+  {
+    "number": "02",
+    "color": "c2",
+    "title": "Colloidal Self-Assembly",
+    "desc": "Designing colloidal particles that spontaneously organize into functional structures with emergent optical and mechanical properties.",
+    "tags": ["Patchy Particles", "Crystallization"],
+    "details": "We are currently investigating the phase separation kinetics of binary colloidal mixtures under oscillatory shear, focusing on how external mechanical forces drive crystallization."
+  },
+  {
+    "number": "03",
+    "color": "c3",
+    "title": "Active & Living Matter",
+    "desc": "Understanding the collective motion of motile bacteria, cytoskeletal filaments, and synthetic active particles far from equilibrium.",
+    "tags": ["Motility", "Non-equilibrium"],
+    "details": "Recent efforts involve analyzing the topological defect dynamics in active nematic films when placed under severe geometric confinement."
+  },
+  {
+    "number": "04",
+    "color": "c4",
+    "title": "Liquid Crystals",
+    "desc": "Probing topological defects, phase transitions, and director field dynamics in thermotropic and lyotropic liquid crystalline systems.",
+    "tags": ["Defects", "Birefringence"],
+    "details": "Current experiments focus on high-precision thermal analysis of phase transitions using 1 mm unaligned cells, controlled via the Julabo Presto system, coupled with light scattering observations to map bulk fluid volume properties."
+  },
+  {
+    "number": "05",
+    "color": "c5",
+    "title": "Interfacial Phenomena",
+    "desc": "Exploring wetting, capillarity, and emulsion stability at soft interfaces — from Pickering emulsions to biological membranes.",
+    "tags": ["Wetting", "Emulsions", "Membranes"],
+    "details": "We are probing wetting transitions on biomimetic substrates to build a unifying framework for contact angle hysteresis in complex fluid drops."
+  },
+  {
+    "number": "06",
+    "color": "c6",
+    "title": "Biophysics & Biomaterials",
+    "desc": "Bridging soft matter and biology: from extracellular matrix mechanics to the design of biomimetic scaffolds for regenerative medicine.",
+    "tags": ["ECM", "Cell Mechanics"],
+    "details": "Working closely with biological models to understand how the mechanical stiffness of extracellular matrices influences cell motility and differentiation."
+  }
+]
