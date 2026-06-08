@@ -1,0 +1,16 @@
+{
+  "data_config": {
+    "people": {
+      "path": "data/people.json",
+      "type": "array"
+    },
+    "publications": {
+      "path": "data/publications.json",
+      "type": "array"
+    },
+    "news": {
+      "path": "data/news.json",
+      "type": "array"
+    }
+  }
+}
