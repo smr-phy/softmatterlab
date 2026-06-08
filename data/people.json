@@ -1,5 +1,10 @@
 [
-  { "name": "Prof. Pramoda Kumar", "role": "Principal Investigator", "avatar": "PS", "style": "av-t" },
-  { "name": "Ankit Gupta", "role": "PhD Candidate", "avatar": "AR", "style": "av-r" },
-  { "name": "Shri Gowri", "role": "PhD Candidate", "avatar": "NK", "style": "av-p" }
+  { "avatar": "PS", "style": "av-t", "name": "Prof. Priya Sharma", "role": "Principal Investigator" },
+  { "avatar": "AR", "style": "av-r", "name": "Dr. Arjun Rao", "role": "Postdoctoral Fellow" },
+  { "avatar": "NK", "style": "av-p", "name": "Nandita Krishnan", "role": "PhD Candidate" },
+  { "avatar": "SM", "style": "av-g", "name": "Siddharth Mehta", "role": "PhD Candidate" },
+  { "avatar": "RV", "style": "av-t", "name": "Riya Verma", "role": "Masters Student" },
+  { "avatar": "AB", "style": "av-r", "name": "Aditya Bose", "role": "Masters Student" },
+  { "avatar": "TM", "style": "av-p", "name": "Tanvi Mishra", "role": "Research Associate" },
+  { "avatar": "KP", "style": "av-g", "name": "Karan Patel", "role": "Undergrad Researcher" }
 ]
