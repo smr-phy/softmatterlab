@@ -1,0 +1,20 @@
+[
+  { 
+    "img_icon": "🌡️", 
+    "img_class": "f1", 
+    "title": "Julabo Presto Thermal Controller", 
+    "desc": "Highly precise temperature control system used for studying phase transitions in bulk fluid volumes. Essential for maintaining strict thermal equilibrium during our liquid crystal analysis." 
+  },
+  { 
+    "img_icon": "🔬", 
+    "img_class": "f2", 
+    "title": "Light Scattering Setup", 
+    "desc": "Custom optical bench setup for light scattering observations. Frequently utilized alongside our 1 mm unaligned cells to probe the optical properties and defect dynamics of soft systems." 
+  },
+  { 
+    "img_icon": "🧫", 
+    "img_class": "f3", 
+    "title": "Micro-Rheology Suite", 
+    "desc": "Advanced particle-tracking setup to measure the viscoelastic properties of hydrogels and colloidal suspensions at a microscopic scale." 
+  }
+]
