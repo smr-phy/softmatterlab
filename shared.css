@@ -13,13 +13,27 @@
   --slate: #6b6459;
   --border: #d5cfc4;
 }
-html { scroll-behavior: smooth; }
+
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: var(--mist);
   color: var(--ink);
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+/* TYPOGRAPHY OVERRIDES */
+.nav-logo, 
+.hero-title, 
+.hero-stat-num, 
+.section-title, 
+.rc-number, 
+.rc-title, 
+.team-name, 
+.pub-year, 
+.pub-title, 
+.news-title {
+  font-family: 'Merriweather', serif;
 }
 
 /* NAV */
@@ -33,13 +47,18 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo {
-  font-family: 'Playfair Display', serif;
   font-size: 18px; font-weight: 700;
   letter-spacing: -0.3px;
   color: var(--ink);
   line-height: 1.2;
 }
-.nav-logo a { text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px;}
+.nav-logo a { 
+  text-decoration: none; 
+  color: inherit; 
+  display: flex; 
+  align-items: center; 
+  gap: 8px;
+}
 .nav-logo span { color: var(--teal); }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a {
@@ -69,7 +88,6 @@ nav {
   margin-bottom: 2rem;
 }
 .hero-title {
-  font-family: 'Playfair Display', serif;
   font-size: clamp(42px, 5vw, 72px);
   font-weight: 900; line-height: 1.05;
   color: #f4f1eb;
@@ -95,7 +113,6 @@ nav {
   display: flex; gap: 3rem;
 }
 .hero-stat-num {
-  font-family: 'Playfair Display', serif;
   font-size: 32px; font-weight: 700; color: #f4f1eb;
 }
 .hero-stat-label { font-size: 11px; color: #6b6459; text-transform: uppercase; letter-spacing: 0.1em; }
@@ -159,7 +176,6 @@ section { padding: 8rem 8vw; }
   content: ''; width: 32px; height: 1px; background: var(--gold2);
 }
 .section-title {
-  font-family: 'Playfair Display', serif;
   font-size: clamp(36px, 4vw, 56px);
   font-weight: 900; line-height: 1.1;
   color: var(--ink);
@@ -201,13 +217,11 @@ section { padding: 8rem 8vw; }
 .research-card:hover { background: var(--mist); }
 .research-card:hover::before { height: 100%; }
 .rc-number {
-  font-family: 'Playfair Display', serif;
   font-size: 40px; font-weight: 900;
   color: var(--border); margin-bottom: 1rem;
   line-height: 1;
 }
 .rc-title {
-  font-family: 'Playfair Display', serif;
   font-size: 20px; font-weight: 700;
   color: var(--ink); margin-bottom: 0.75rem;
   line-height: 1.3;
@@ -233,7 +247,6 @@ section { padding: 8rem 8vw; }
 .about-strip .section-label::before { background: var(--gold); }
 .about-text { font-size: 16px; color: #9b9086; line-height: 1.85; }
 .about-text p + p { margin-top: 1rem; }
-.about-right { }
 .about-pillars { display: flex; flex-direction: column; gap: 1.5px; }
 .pillar {
   background: #1a1a1a; padding: 1.5rem 2rem;
@@ -272,7 +285,6 @@ section { padding: 8rem 8vw; }
   width: 72px; height: 72px; border-radius: 50%;
   margin: 0 auto 1rem;
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Playfair Display', serif;
   font-size: 22px; font-weight: 700;
 }
 .av-t { background: rgba(26,107,90,0.12); color: var(--teal); }
@@ -280,7 +292,6 @@ section { padding: 8rem 8vw; }
 .av-p { background: rgba(74,59,122,0.12); color: var(--purple); }
 .av-g { background: rgba(200,169,110,0.15); color: var(--gold2); }
 .team-name {
-  font-family: 'Playfair Display', serif;
   font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 4px;
 }
 .team-role { font-size: 12px; color: var(--slate); text-transform: uppercase; letter-spacing: 0.08em; }
@@ -308,12 +319,10 @@ section { padding: 8rem 8vw; }
 }
 .pub-item:first-child { border-top: 1px solid var(--border); }
 .pub-year {
-  font-family: 'Playfair Display', serif;
   font-size: 20px; font-weight: 700; color: var(--gold);
   min-width: 56px; padding-top: 2px;
 }
 .pub-title {
-  font-family: 'Playfair Display', serif;
   font-size: 18px; font-weight: 700; color: var(--ink);
   line-height: 1.35; margin-bottom: 6px;
 }
@@ -346,23 +355,13 @@ section { padding: 8rem 8vw; }
 .news-body { padding: 1.5rem 1.5rem 0; }
 .news-date { font-size: 11px; color: var(--slate); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
 .news-title {
-  font-family: 'Playfair Display', serif;
   font-size: 18px; font-weight: 700; color: var(--ink);
   line-height: 1.35; margin-bottom: 0.75rem;
 }
 .news-desc { font-size: 13px; color: var(--slate); line-height: 1.7; }
 
 /* CONTACT */
-#contact {
-  background: var(--ink);
-  padding: 8rem 8vw;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
-  align-items: start;
-}
-#contact .section-title { color: #f4f1eb; }
-#contact .section-label { color: var(--gold); }
-#contact .section-label::before { background: var(--gold); }
-.contact-info { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+.contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
 .contact-row { display: flex; gap: 1rem; align-items: flex-start; }
 .contact-icon {
   width: 40px; height: 40px; border: 1px solid #333;
@@ -372,28 +371,6 @@ section { padding: 8rem 8vw; }
 }
 .contact-label { font-size: 11px; color: #6b6459; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3px; }
 .contact-value { font-size: 15px; color: #c8c0b4; }
-.contact-form { margin-top: 3rem; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
-.form-field { display: flex; flex-direction: column; gap: 6px; }
-.form-field label { font-size: 11px; color: #6b6459; text-transform: uppercase; letter-spacing: 0.1em; }
-.form-field input, .form-field textarea, .form-field select {
-  background: #1a1a1a; border: 1px solid #333; color: #c8c0b4;
-  padding: 12px 14px; font-family: 'DM Sans', sans-serif; font-size: 14px;
-  border-radius: 2px; outline: none; transition: border 0.2s;
-  width: 100%;
-}
-.form-field input:focus, .form-field textarea:focus { border-color: var(--teal); }
-.form-field textarea { min-height: 110px; resize: vertical; }
-.form-field.full { grid-column: 1/-1; }
-.submit-btn {
-  margin-top: 1.5rem;
-  background: var(--teal); color: white; border: none;
-  padding: 14px 32px; font-family: 'DM Sans', sans-serif;
-  font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
-  text-transform: uppercase; cursor: pointer; border-radius: 2px;
-  transition: background 0.2s;
-}
-.submit-btn:hover { background: var(--teal2); }
 
 /* FOOTER */
 footer {
@@ -402,7 +379,7 @@ footer {
   border-top: 1px solid #1a1a1a;
 }
 .footer-logo {
-  font-family: 'Playfair Display', serif; font-size: 15px;
+  font-size: 15px;
   color: #555; font-weight: 700;
 }
 .footer-logo span { color: var(--teal); }
