@@ -1,28 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<title>Publications | Soft Matter Lab</title>
+</head>
 <body class="page-wrapper">
+
 <div id="nav-placeholder"></div>
+
 <section id="publications" class="page-content">
-  <div class="pubs-header"><div><div class="section-label">Selected Works</div><h2 class="section-title">Publications</h2></div></div>
-  <div class="pub-list" id="pubs-container"></div>
+  <div class="pubs-header">
+    <div>
+      <div class="section-label">Selected Works</div>
+      <h2 class="section-title">Publications</h2>
+    </div>
+  </div>
+  <div class="pub-list" id="pubs-container"><p>Loading publications...</p></div>
 </section>
+
 <div id="footer-placeholder"></div>
+
 <script>
-  fetch('data/publications.json')
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById('pubs-container').innerHTML = data.map(pub => `
-        <div class="pub-item">
-          <div class="pub-year">${pub.year}</div>
-          <div>
-            <a href="${pub.link}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
-              <div class="pub-title">${pub.title}</div>
-            </a>
-            <div class="pub-authors">${pub.authors}</div>
-            <div class="pub-journal">${pub.journal}</div>
-            ${pub.link ? `<a href="${pub.link}" target="_blank" rel="noopener noreferrer" class="pub-read-more">Read Paper ↗</a>` : ''}
-          </div>
+  fetch('data/publications.json').then(res => res.json()).then(data => {
+    document.getElementById('pubs-container').innerHTML = data.map(pub => `
+      <div class="pub-item">
+        <div class="pub-year">${pub.year}</div>
+        <div>
+          <a href="${pub.link}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+            <div class="pub-title">${pub.title}</div>
+          </a>
+          <div class="pub-authors">${pub.authors}</div>
+          <div class="pub-journal">${pub.journal}</div>
+          ${pub.link ? `<a href="${pub.link}" target="_blank" rel="noopener noreferrer" class="pub-read-more">Read Paper ↗</a>` : ''}
         </div>
-      `).join('');
-    }).catch(err => console.log(err));
+      </div>
+    `).join('');
+  });
 
   fetch('nav.html').then(r => r.text()).then(data => {
     document.getElementById('nav-placeholder').outerHTML = data;
@@ -33,3 +49,4 @@
   fetch('footer.html').then(r => r.text()).then(data => { document.getElementById('footer-placeholder').outerHTML = data; });
 </script>
 </body>
+</html>
