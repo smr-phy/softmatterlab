@@ -301,34 +301,74 @@ section { padding: 8rem 8vw; }
   font-size: 12px; font-style: italic; color: var(--gold2); font-weight: 500;
 }
 
-/* NEWS */
-#news { background: var(--warm); }
-.news-grid {
+/* FACILITIES & EQUIPMENT */
+.facilities-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
   margin-top: 4rem;
 }
-.news-card {
-  background: #fff; border: 1px solid var(--border);
-  padding: 0 0 2rem;
+.facility-card {
+  background: #fff; 
+  border: 1px solid var(--border);
+  padding: 0 0 1.5rem; 
   overflow: hidden;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer; 
+  display: flex; 
+  flex-direction: column;
 }
-.news-card:hover { transform: translateY(-3px); }
-.news-img {
-  height: 160px; width: 100%;
+.facility-card:hover { 
+  transform: translateY(-3px); 
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08); 
+}
+.facility-img {
+  height: 140px; width: 100%;
   display: flex; align-items: center; justify-content: center;
   font-size: 48px;
 }
-.news-img.n1 { background: linear-gradient(135deg, #0f4a3e 0%, #2d9e7e 100%); }
-.news-img.n2 { background: linear-gradient(135deg, #3a2b6a 0%, #7a6ab0 100%); }
-.news-img.n3 { background: linear-gradient(135deg, #6b2a1a 0%, #b5503a 100%); }
-.news-body { padding: 1.5rem 1.5rem 0; }
-.news-date { font-size: 11px; color: var(--slate); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
-.news-title {
-  font-size: 18px; font-weight: 700; color: var(--ink);
-  line-height: 1.35; margin-bottom: 0.75rem;
+
+/* Gradients for the facility images */
+.facility-img.f1 { background: linear-gradient(135deg, #0f4a3e 0%, #2d9e7e 100%); }
+.facility-img.f2 { background: linear-gradient(135deg, #3a2b6a 0%, #7a6ab0 100%); }
+.facility-img.f3 { background: linear-gradient(135deg, #6b2a1a 0%, #b5503a 100%); }
+
+.facility-body { 
+  padding: 1.5rem 1.5rem 0; 
 }
-.news-desc { font-size: 13px; color: var(--slate); line-height: 1.7; }
+.facility-title {
+  font-family: 'Merriweather', serif;
+  font-size: 18px; font-weight: 700; color: var(--ink);
+  line-height: 1.35; 
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
+}
+
+/* The '+' icon for the expandable card */
+.facility-title::after {
+  content: '+';
+  font-size: 24px; font-weight: 300; color: var(--teal);
+  transition: transform 0.3s ease;
+  line-height: 1;
+}
+
+/* When expanded: rotate '+' to 'x' */
+.facility-card.expanded .facility-title::after {
+  transform: rotate(45deg);
+}
+
+/* The hidden description text */
+.facility-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  font-size: 14px; color: var(--slate); line-height: 1.7;
+}
+
+/* When expanded: reveal the text */
+.facility-card.expanded .facility-content {
+  max-height: 600px; 
+  opacity: 1;
+  margin-top: 1rem;
+}
 
 /* CONTACT */
 .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
@@ -363,6 +403,6 @@ footer {
   .hero-right { display: none; }
   .research-grid { grid-template-columns: 1fr 1fr; }
   .team-grid { grid-template-columns: 1fr 1fr; }
-  .news-grid { grid-template-columns: 1fr; }
+  .facilities-grid { grid-template-columns: 1fr; }
   .research-header, .people-header, .about-strip, #contact { grid-template-columns: 1fr; gap: 2rem; }
 }
