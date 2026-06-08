@@ -12,22 +12,7 @@
 </head>
 <body>
 
-<nav>
-  <div class="nav-logo">
-    <a href="index.html">
-      <img src="images/logo.png" alt="Soft Matter Lab Logo" style="height: 160px; width: auto; display: block;">
-    </a>
-  </div>
-
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="research.html">Research</a></li>
-    <li><a href="people.html">People</a></li>
-    <li><a href="publications.html">Publications</a></li>
-    <li><a href="facilities.html">Facilities</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+<div id="nav-placeholder"></div>
 
 <section class="hero" id="home">
   <div class="hero-left">
@@ -124,21 +109,27 @@
   </div>
 </section>
 
-<footer>
-  <div class="footer-logo">
-    Soft Matter Lab · <span>Ashoka University</span>
-  </div>
+<div id="footer-placeholder"></div>
+<script>
+  // Load Navigation
+  fetch('nav.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+      
+      // Attach mobile menu logic AFTER the nav is loaded
+      document.getElementById('hamburger').addEventListener('click', function() {
+        document.getElementById('nav-links').classList.toggle('active');
+        this.classList.toggle('open');
+      });
+    });
 
-  <div class="footer-copy">
-    © 2026 Soft Matter Lab at Ashoka University
-  </div>
-
-  <div class="footer-links">
-    <a href="#" target="_blank" rel="noopener">Twitter</a>
-    <a href="#" target="_blank" rel="noopener">Google Scholar</a>
-    <a href="#" target="_blank" rel="noopener">GitHub</a>
-  </div>
-</footer>
-
+  // Load Footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
 </body>
 </html>
