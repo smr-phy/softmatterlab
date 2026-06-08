@@ -251,16 +251,66 @@ section { padding: 8rem 8vw; }
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .team-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
-.avatar {
-  width: 72px; height: 72px; border-radius: 50%;
-  margin: 0 auto 1rem;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 22px; font-weight: 700;
+/* PEOPLE EXPANDABLE CARDS */
+.team-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
 }
-.av-t { background: rgba(26,107,90,0.12); color: var(--teal); }
-.av-r { background: rgba(181,80,58,0.12); color: var(--rose); }
-.av-p { background: rgba(74,59,122,0.12); color: var(--purple); }
-.av-g { background: rgba(200,169,110,0.15); color: var(--gold2); }
+.team-card {
+  background: #fff; border: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer; /* Makes it look clickable */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.team-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+
+/* New Image Avatar Styling */
+.avatar-img {
+  width: 88px; height: 88px; 
+  border-radius: 50%;
+  object-fit: cover; /* Ensures non-square images don't look stretched */
+  margin: 0 auto 1rem;
+  border: 2px solid var(--mist);
+}
+
+.team-name {
+  font-family: 'Merriweather', serif;
+  font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 4px;
+}
+.team-role { font-size: 12px; color: var(--slate); text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* The hidden bio and links */
+.team-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease, padding 0.3s ease;
+  font-size: 13px; color: var(--slate); line-height: 1.6;
+  text-align: left;
+  width: 100%;
+}
+
+/* When the card is clicked and expanded */
+.team-card.expanded .team-content {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+/* Social/Academic Links */
+.team-links {
+  display: flex; gap: 1rem; margin-top: 1.25rem;
+}
+.team-links a {
+  font-size: 11px; font-weight: 600; color: var(--teal); 
+  text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;
+}
+.team-links a:hover { color: var(--teal2); text-decoration: underline; }
 .team-name {
   font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 4px;
 }
