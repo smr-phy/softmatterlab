@@ -1,4 +1,22 @@
 {
+  "collections_config": {
+    "pages": {
+      "path": "",
+      "icon": "wysiwyg",
+      "disable_url": false,
+      "disable_add": false,
+      "disable_add_folder": false,
+      "disable_file_actions": false
+    },
+    "data": {
+      "path": "data",
+      "icon": "data_usage",
+      "disable_url": false,
+      "disable_add": false,
+      "disable_add_folder": false,
+      "disable_file_actions": false
+    }
+  },
   "data_config": {
     "people": {
       "path": "data/people.json",
@@ -12,5 +30,6 @@
       "path": "data/news.json",
       "type": "array"
     }
-  }
+  },
+  "timezone": "Etc/UTC"
 }
