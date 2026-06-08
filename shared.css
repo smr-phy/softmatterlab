@@ -75,6 +75,22 @@ nav {
 }
 .nav-links a:hover { color: var(--teal); }
 
+/* HAMBURGER BUTTON (Hidden on Desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 101;
+}
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--ink);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
 /* HERO */
 .hero {
   min-height: 100vh;
@@ -448,63 +464,55 @@ footer {
 .footer-links a:hover { color: var(--gold); }
 
 @media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
+  /* Existing Mobile Fixes */
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .research-grid { grid-template-columns: 1fr 1fr; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .facilities-grid { grid-template-columns: 1fr; }
+  .research-header, .people-header, .about-strip, #contact { grid-template-columns: 1fr; gap: 2rem; }
 
-  .hero-right {
-    display: none;
+  /* NEW: Mobile Navbar Layout */
+  .hamburger {
+    display: flex; /* Show hamburger on mobile */
   }
-
-  .research-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .team-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .facilities-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .research-header,
-  .people-header,
-  .about-strip,
-  #contact {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .pubs-header {
+  
+  .nav-links {
+    position: absolute;
+    top: 100%; /* Drop directly below the navbar */
+    left: 0;
+    width: 100%;
+    background: rgba(244, 241, 235, 0.98);
+    border-bottom: 1px solid var(--border);
     flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    
+    /* Smooth slide-down animation using clip-path */
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 0.35s ease-out;
+  }
+  
+  /* Class added by JavaScript to reveal the menu */
+  .nav-links.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 
+  /* Hamburger to 'X' Animation */
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* NEW: Stack Footer on Mobile */
   footer {
     flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
-}
-@media (max-width: 600px) {
-  .research-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-meta {
-    position: static;
-    margin-top: 2rem;
-    flex-wrap: wrap;
     gap: 1.5rem;
+    text-align: center;
+    padding: 3rem 4vw;
   }
-
-  .nav-links {
-    gap: 1rem;
+  .footer-links {
+    justify-content: center;
   }
 }
