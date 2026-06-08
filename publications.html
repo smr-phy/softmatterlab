@@ -7,12 +7,12 @@
 <link rel="stylesheet" href="shared.css">
 <title>Publications | Soft Matter Lab</title>
 </head>
-<body>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
 
 <nav>
   <div class="nav-logo">
     <a href="index.html">
-      <img src="images/lab-logo.png" alt="Lab Logo" style="height: 45px; width: auto; display: block;"> 
+      <img src="images/logo.png" alt="Lab Logo" style="height: 60px; width: auto; display: block;"> 
     </a>
   </div>
   <ul class="nav-links">
@@ -20,12 +20,12 @@
     <li><a href="research.html">Research</a></li>
     <li><a href="people.html">People</a></li>
     <li><a href="publications.html">Publications</a></li>
-    <li><a href="news.html">News</a></li>
+    <li><a href="facilities.html">Facilities</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
-<section id="publications" style="padding-top: 120px; background:#fff;">
+<section id="publications" style="padding-top: 140px; background:#fff; flex-grow: 1;">
   <div class="pubs-header">
     <div>
       <div class="section-label">Selected Works</div>
@@ -35,9 +35,9 @@
   <div class="pub-list" id="pubs-container"></div>
 </section>
 
-<footer>
+<footer style="margin-top: auto;">
   <div class="footer-logo">Soft Matter Lab · <span>Ashoka University</span></div>
-  <div class="footer-copy">© 2025 Soft Matter Research Lab</div>
+  <div class="footer-copy">© 2026 Soft Matter Lab at Ashoka University</div>
   <div class="footer-links">
     <a href="#">Twitter</a>
     <a href="#">Google Scholar</a>
@@ -53,9 +53,14 @@
         <div class="pub-item">
           <div class="pub-year">${pub.year}</div>
           <div>
-            <div class="pub-title">${pub.title}</div>
+            <a href="${pub.link}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+              <div class="pub-title">${pub.title}</div>
+            </a>
+            
             <div class="pub-authors">${pub.authors}</div>
             <div class="pub-journal">${pub.journal}</div>
+            
+            ${pub.link ? `<a href="${pub.link}" target="_blank" rel="noopener noreferrer" class="pub-read-more">Read Paper ↗</a>` : ''}
           </div>
         </div>
       `).join('');
