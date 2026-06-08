@@ -167,10 +167,12 @@ section { padding: 8rem 8vw; }
   background: var(--border);
   border: 1.5px solid var(--border);
 }
+
+/* Updated card for clickability */
 .research-card {
   background: #fff; padding: 2.5rem 2rem;
   transition: background 0.3s;
-  cursor: default;
+  cursor: pointer; 
   position: relative; overflow: hidden;
 }
 .research-card::before {
@@ -186,24 +188,36 @@ section { padding: 8rem 8vw; }
 .research-card.c6::before { background: var(--rose); }
 .research-card:hover { background: var(--mist); }
 .research-card:hover::before { height: 100%; }
+
 .rc-number {
+  font-family: 'Merriweather', serif;
   font-size: 40px; font-weight: 900;
   color: var(--border); margin-bottom: 1rem;
   line-height: 1;
 }
+
+/* Updated title to align the '+' icon */
 .rc-title {
+  font-family: 'Merriweather', serif;
   font-size: 20px; font-weight: 700;
   color: var(--ink); margin-bottom: 0.75rem;
   line-height: 1.3;
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
 }
-.rc-desc { font-size: 14px; color: var(--slate); line-height: 1.7; }
-.rc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1.25rem; }
-.rc-tag {
-  font-size: 10px; font-weight: 500; letter-spacing: 0.08em;
-  text-transform: uppercase; padding: 4px 10px;
-  background: var(--warm); color: var(--slate);
-  border-radius: 2px;
+
+/* The '+' icon */
+.rc-title::after {
+  content: '+';
+  font-size: 24px; font-weight: 300; color: var(--border);
+  transition: transform 0.3s ease; line-height: 1;
 }
+
+/* Rotate '+' to 'x' when expanded */
+.research-card.expanded .rc-title::after {
+  transform: rotate(45deg);
+}
+
+.rc-desc { font-size: 14px; color: var(--slate
 
 /* ABOUT STRIP */
 .about-strip {
