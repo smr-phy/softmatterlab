@@ -1,34 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<title>Research | Soft Matter Lab</title>
+</head>
 <body class="page-wrapper">
+
 <div id="nav-placeholder"></div>
-<section id="facilities" class="page-content">
-  <div class="section-label">Equipment & Hardware</div>
-  <h2 class="section-title">Research Facilities</h2>
-  <p class="section-intro spacing-bottom-lg">Click on any instrument to view its details and applications within our lab.</p>
-  <div class="facilities-grid" id="facilities-container"></div>
+
+<section id="research" class="page-content">
+  <div class="research-header">
+    <div>
+      <div class="section-label">Our Science</div>
+      <h2 class="section-title">Research Areas</h2>
+    </div>
+    <p class="section-intro">Our interdisciplinary research spans the boundary between physics, chemistry, and biology — probing materials that defy simple classification. Click any area to learn more about our ongoing projects.</p>
+  </div>
+
+  <div class="research-grid" id="research-container">
+    <p style="grid-column: 1/-1; color: var(--slate);">Loading research data...</p>
+  </div>
 </section>
+
 <div id="footer-placeholder"></div>
+
 <script>
-  fetch('data/facilities.json')
+  fetch('data/research.json')
     .then(res => res.json())
     .then(data => {
-      document.getElementById('facilities-container').innerHTML = data.map(fac => `
-        <div class="facility-card">
-          <div class="facility-img ${fac.img_class}">${fac.img_icon}</div>
-          <div class="facility-body">
-            <div class="facility-title">${fac.title}</div>
-            <div class="facility-content"><p>${fac.desc}</p></div>
-          </div>
+      const container = document.getElementById('research-container');
+      container.innerHTML = data.map(res => `
+        <div class="research-card ${res.color}">
+          <div class="rc-number">${res.number}</div>
+          <div class="rc-title">${res.title}</div>
+          <p class="rc-desc">${res.desc}</p>
+          <div class="rc-tags">${res.tags.map(t => `<span class="rc-tag">${t}</span>`).join('')}</div>
+          <div class="rc-details"><p>${res.details}</p></div>
         </div>
       `).join('');
-      document.querySelectorAll('.facility-card').forEach(card => card.addEventListener('click', function() { this.classList.toggle('expanded'); }));
-    }).catch(err => console.log(err));
-
-  fetch('nav.html').then(r => r.text()).then(data => {
-    document.getElementById('nav-placeholder').outerHTML = data;
-    document.getElementById('hamburger').addEventListener('click', function() {
-      document.getElementById('nav-links').classList.toggle('active'); this.classList.toggle('open');
+      container.querySelectorAll('.research-card').forEach(card => {
+        card.addEventListener('click', function() { this.classList.toggle('expanded'); });
+      });
+    })
+    .catch(err => {
+      document.getElementById('research-container').innerHTML = '<p style="grid-column: 1/-1; color: var(--slate);">Unable to load research data.</p>';
+      console.error(err);
     });
-  });
-  fetch('footer.html').then(r => r.text()).then(data => { document.getElementById('footer-placeholder').outerHTML = data; });
+
+  fetch('nav.html')
+    .then(r => r.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').outerHTML = data;
+      document.getElementById('hamburger').addEventListener('click', function() {
+        document.getElementById('nav-links').classList.toggle('active');
+        this.classList.toggle('open');
+      });
+    })
+    .catch(err => console.error('Failed to load nav:', err));
+
+  fetch('footer.html')
+    .then(r => r.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').outerHTML = data;
+    })
+    .catch(err => console.error('Failed to load footer:', err));
 </script>
+
 </body>
+</html>
