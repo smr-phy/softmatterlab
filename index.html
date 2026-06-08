@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="description"
-      content="Soft Matter Lab at Ashoka University studying gels, liquid crystals, and active matter.">
+  <meta name="description" content="Soft Matter Lab at Ashoka University studying gels, liquid crystals, and active matter.">
   <link rel="icon" href="images/favicon.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,50 +9,25 @@
   <link rel="stylesheet" href="shared.css">
   <title>Soft Matter Lab | Department of Physics | Ashoka University</title>
 </head>
-<body>
+<body class="page-wrapper">
 
 <div id="nav-placeholder"></div>
 
 <section class="hero" id="home">
   <div class="hero-left">
     <div class="hero-eyebrow">Ashoka University · Sonipat, India</div>
-
-    <h1 class="hero-title">
-      Where matter<br>learns to <em>flow</em>
-    </h1>
-
-    <p class="hero-sub">
-      We explore the physics of soft materials — polymers, colloids, gels,
-      and liquid crystals — at the frontier of equilibrium and living matter.
-    </p>
-
-    <a href="research.html" class="hero-cta">
-      Explore Our Research <span class="hero-cta-arrow">→</span>
-    </a>
-
+    <h1 class="hero-title">Where matter<br>learns to <em>flow</em></h1>
+    <p class="hero-sub">We explore the physics of soft materials — polymers, colloids, gels, and liquid crystals — at the frontier of equilibrium and living matter.</p>
+    <a href="research.html" class="hero-cta">Explore Our Research <span class="hero-cta-arrow">→</span></a>
     <div class="hero-meta">
-      <div>
-        <div class="hero-stat-num">12+</div>
-        <div class="hero-stat-label">Active Projects</div>
-      </div>
-
-      <div>
-        <div class="hero-stat-num">45+</div>
-        <div class="hero-stat-label">Publications</div>
-      </div>
-
-      <div>
-        <div class="hero-stat-num">18</div>
-        <div class="hero-stat-label">Researchers</div>
-      </div>
+      <div><div class="hero-stat-num">12+</div><div class="hero-stat-label">Active Projects</div></div>
+      <div><div class="hero-stat-num">45+</div><div class="hero-stat-label">Publications</div></div>
+      <div><div class="hero-stat-num">18</div><div class="hero-stat-label">Researchers</div></div>
     </div>
   </div>
-
   <div class="hero-right">
     <div class="hero-image-container">
-    <img src="images/homepage.png"
-         alt="Soft Matter Lab Research"
-         class="hero-image">
+      <img src="images/homepage.png" alt="Soft Matter Lab Research" class="hero-image">
     </div>
   </div>
 </section>
@@ -61,75 +35,56 @@
 <section class="about-strip">
   <div>
     <div class="section-label">About the Lab</div>
-
     <h2 class="section-title">Our Research Focus</h2>
-
     <div class="about-text">
-      <p>
-        Our research focuses on understanding physical phenomena in soft and
-        active matter using experimental techniques including electro-optical
-        measurements, microfluidics, advanced imaging, and image processing.
-        Soft matter phases emerge from a delicate balance between internal
-        energy, thermal fluctuations, and entropy. As a result, even small
-        external perturbations can lead to large changes in their
-        spatio-temporal behaviour. We are interested in experimentally
-        deciphering the physical mechanisms underlying such phenomena.
-      </p>
+      <p>Our research focuses on understanding physical phenomena in soft and active matter using experimental techniques including electro-optical measurements, microfluidics, advanced imaging, and image processing. Soft matter phases emerge from a delicate balance between internal energy, thermal fluctuations, and entropy. As a result, even small external perturbations can lead to large changes in their spatio-temporal behaviour. We are interested in experimentally deciphering the physical mechanisms underlying such phenomena.</p>
     </div>
   </div>
-
   <div class="about-right">
     <div class="about-pillars">
-
-      <a href="research.html" class="pillar" style="text-decoration: none; color: inherit;">
+      
+      <a href="research.html" class="pillar">
         <div class="pillar-icon t">🔎</div>
-        <div class="pillar-text">
-          <strong>Ongoing Projects</strong>
-          <span>Projects we're currently working on</span>
-        </div>
+        <div class="pillar-text"><strong>Ongoing Projects</strong><span>Projects we're currently working on</span></div>
       </a>
-
-      <a href="people.html" class="pillar" style="text-decoration: none; color: inherit;">
+      <a href="people.html" class="pillar">
         <div class="pillar-icon r">🧑‍🔬</div>
-        <div class="pillar-text">
-          <strong>People</strong>
-          <span>Meet our team</span>
-        </div>
+        <div class="pillar-text"><strong>People</strong><span>Meet our team</span></div>
       </a>
-
-      <a href="facilities.html" class="pillar" style="text-decoration: none; color: inherit;">
+      <a href="facilities.html" class="pillar">
         <div class="pillar-icon c">🔬</div>
-        <div class="pillar-text">
-          <strong>Research Facilities</strong>
-          <span>Instruments and facilities we use</span>
-        </div>
+        <div class="pillar-text"><strong>Research Facilities</strong><span>Instruments and facilities we use</span></div>
       </a>
-
+      
     </div>
   </div>
 </section>
 
 <div id="footer-placeholder"></div>
+
 <script>
   // Load Navigation
   fetch('nav.html')
     .then(response => response.text())
     .then(data => {
-      document.getElementById('nav-placeholder').innerHTML = data;
-      
-      // Attach mobile menu logic AFTER the nav is loaded
-      document.getElementById('hamburger').addEventListener('click', function() {
-        document.getElementById('nav-links').classList.toggle('active');
-        this.classList.toggle('open');
-      });
-    });
+      document.getElementById('nav-placeholder').outerHTML = data;
+      const hamburger = document.getElementById('hamburger');
+      if (hamburger) {
+        hamburger.addEventListener('click', function() {
+          document.getElementById('nav-links').classList.toggle('active');
+          this.classList.toggle('open');
+        });
+      }
+    })
+    .catch(err => console.error('Failed to load nav:', err));
 
   // Load Footer
   fetch('footer.html')
     .then(response => response.text())
     .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    });
+      document.getElementById('footer-placeholder').outerHTML = data;
+    })
+    .catch(err => console.error('Failed to load footer:', err));
 </script>
 </body>
 </html>
