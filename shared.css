@@ -346,6 +346,24 @@ section { padding: 8rem 8vw; }
 .pub-title {
   font-size: 18px; font-weight: 700; color: var(--ink);
   line-height: 1.35; margin-bottom: 6px;
+  transition: color 0.2s;
+}
+
+/* Changes the title color when hovered */
+a:hover .pub-title {
+  color: var(--teal);
+}
+
+/* The new 'Read Paper' button link */
+.pub-read-more {
+  display: inline-block; 
+  margin-top: 8px;
+  font-size: 11px; font-weight: 600; color: var(--teal);
+  text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;
+}
+.pub-read-more:hover {
+  color: var(--teal2); 
+  text-decoration: underline;
 }
 .pub-authors { font-size: 13px; color: var(--slate); margin-bottom: 4px; }
 .pub-journal {
