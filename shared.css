@@ -34,7 +34,7 @@ body {
   min-height: 100vh;
 }
 .page-content {
-  padding-top: 60px;
+  padding-top: 120px;
   flex-grow: 1;
 }
 .spacing-bottom-lg {
