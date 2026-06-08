@@ -92,7 +92,7 @@ nav {
 }
 .nav-links a:hover { color: var(--teal); }
 
-/* HAMBURGER BUTTON (Hidden on Desktop) */
+/* HAMBURGER BUTTON */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -266,7 +266,7 @@ section {
   border-top: 1px solid var(--border);
 }
 
-/* ABOUT STRIP */
+/* ABOUT STRIP & PILLARS */
 .about-strip {
   background: var(--ink);
   padding: 7rem 8vw;
@@ -279,6 +279,12 @@ section {
 .about-text { font-size: 16px; color: #9b9086; line-height: 1.85; }
 .about-text p + p { margin-top: 1rem; }
 .about-pillars { display: flex; flex-direction: column; gap: 1.5px; }
+
+/* PILLAR LINKS (Removes inline styles) */
+a.pillar {
+  text-decoration: none;
+  color: inherit;
+}
 .pillar {
   background: #1a1a1a; padding: 1.5rem 2rem;
   display: flex; align-items: center; gap: 1.5rem;
@@ -385,13 +391,9 @@ section {
   line-height: 1.35; margin-bottom: 6px;
   transition: color 0.2s;
 }
-
-/* Changes the title color when hovered */
 a:hover .pub-title {
   color: var(--teal);
 }
-
-/* The new 'Read Paper' button link */
 .pub-read-more {
   display: inline-block; 
   margin-top: 8px;
@@ -407,7 +409,7 @@ a:hover .pub-title {
   font-size: 12px; font-style: italic; color: var(--gold2); font-weight: 500;
 }
 
-/* FACILITIES & EQUIPMENT */
+/* FACILITIES */
 .facilities-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
   margin-top: 4rem;
@@ -431,7 +433,6 @@ a:hover .pub-title {
   display: flex; align-items: center; justify-content: center;
   font-size: 48px;
 }
-
 .facility-img.f1 { background: linear-gradient(135deg, #0f4a3e 0%, #2d9e7e 100%); }
 .facility-img.f2 { background: linear-gradient(135deg, #3a2b6a 0%, #7a6ab0 100%); }
 .facility-img.f3 { background: linear-gradient(135deg, #6b2a1a 0%, #b5503a 100%); }
@@ -482,8 +483,8 @@ footer {
 .footer-links a { font-size: 12px; color: #555; text-decoration: none; }
 .footer-links a:hover { color: var(--gold); }
 
+/* MOBILE RESPONSIVE */
 @media (max-width: 900px) {
-  /* Existing Mobile Fixes */
   .hero { grid-template-columns: 1fr; }
   .hero-right { display: none; }
   .research-grid { grid-template-columns: 1fr 1fr; }
@@ -491,14 +492,13 @@ footer {
   .facilities-grid { grid-template-columns: 1fr; }
   .research-header, .people-header, .about-strip, #contact { grid-template-columns: 1fr; gap: 2rem; }
 
-  /* NEW: Mobile Navbar Layout */
   .hamburger {
-    display: flex; /* Show hamburger on mobile */
+    display: flex; 
   }
   
   .nav-links {
     position: absolute;
-    top: 100%; /* Drop directly below the navbar */
+    top: 100%; 
     left: 0;
     width: 100%;
     background: rgba(244, 241, 235, 0.98);
@@ -508,23 +508,18 @@ footer {
     padding: 2rem 0;
     gap: 1.5rem;
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    
-    /* Smooth slide-down animation using clip-path */
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transition: clip-path 0.35s ease-out;
   }
   
-  /* Class added by JavaScript to reveal the menu */
   .nav-links.active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 
-  /* Hamburger to 'X' Animation */
   .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-  /* NEW: Stack Footer on Mobile */
   footer {
     flex-direction: column;
     gap: 1.5rem;
