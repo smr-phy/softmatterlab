@@ -6,12 +6,12 @@
   --warm: #ede8df;
   
   /* Red */
-  --gold: #b22222;
-  --gold2: #8b0000;
+  --gold: #c71b36;
+  --gold2: #a3152c;
 
   /* Blue */
-  --teal: #2563eb;
-  --teal2: #1d4ed8;
+  --teal: #0d3562;
+  --teal2: #1a4a84;
   
   --rose: #b5503a;
   --purple: #4a3b7a;
@@ -34,7 +34,7 @@ body {
   min-height: 100vh;
 }
 .page-content {
-  padding-top: 120px;
+  padding-top: 60px;
   flex-grow: 1;
 }
 .spacing-bottom-lg {
@@ -67,7 +67,7 @@ nav {
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   padding: 0 4vw;
-  height: 64px;
+  height: 72px;
   display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo {
