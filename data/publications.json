@@ -1,16 +1,9 @@
 [
   { 
-    "year": "2024", 
-    "title": "Topological defect dynamics in active nematic films under geometric confinement", 
-    "authors": "Sharma P., Rao A., Krishnan N., et al.", 
-    "journal": "Nature Physics · Vol 20, pp. 1124–1132",
-    "link": "https://doi.org/10.1038/s41567-024"
-  },
-  { 
-    "year": "2024", 
-    "title": "Responsive hydrogel networks with tunable mechanical memory", 
-    "authors": "Mehta S., Sharma P., Verma R.", 
-    "journal": "ACS Nano · Vol 18, pp. 8834–8845",
-    "link": "https://pubs.acs.org/doi/10.1021/acsnano"
+    "year": "2020", 
+    "title": "Mechanisms of hydrodynamic instability in concentration polarization", 
+    "authors": "P Kumar, SM Rubinstein, I Rubinstein, B Zaltzman", 
+    "journal": "Physical Review Research · Vol 2, Issue 3, pp. 033-365",
+    "link": "https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.2.033365"
   }
 ]
