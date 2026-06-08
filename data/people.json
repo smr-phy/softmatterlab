@@ -1,10 +1,18 @@
 [
-  { "avatar": "PS", "style": "av-t", "name": "Prof. Priya Sharma", "role": "Principal Investigator" },
-  { "avatar": "AR", "style": "av-r", "name": "Dr. Arjun Rao", "role": "Postdoctoral Fellow" },
-  { "avatar": "NK", "style": "av-p", "name": "Nandita Krishnan", "role": "PhD Candidate" },
-  { "avatar": "SM", "style": "av-g", "name": "Siddharth Mehta", "role": "PhD Candidate" },
-  { "avatar": "RV", "style": "av-t", "name": "Riya Verma", "role": "Masters Student" },
-  { "avatar": "AB", "style": "av-r", "name": "Aditya Bose", "role": "Masters Student" },
-  { "avatar": "TM", "style": "av-p", "name": "Tanvi Mishra", "role": "Research Associate" },
-  { "avatar": "KP", "style": "av-g", "name": "Karan Patel", "role": "Undergrad Researcher" }
+  { 
+    "image": "images/priya.jpg", 
+    "name": "Prof. Priya Sharma", 
+    "role": "Principal Investigator",
+    "bio": "Prof. Sharma leads the Soft Matter Lab, focusing on topological defects in active nematics and phase transitions in liquid crystals.",
+    "linkedin": "https://linkedin.com/in/yourlink",
+    "scholar": "https://scholar.google.com/yourlink"
+  },
+  { 
+    "image": "images/arjun.jpg", 
+    "name": "Dr. Arjun Rao", 
+    "role": "Postdoctoral Fellow",
+    "bio": "Dr. Rao's research investigates the phase separation kinetics of binary colloidal mixtures under oscillatory shear.",
+    "linkedin": "https://linkedin.com/in/yourlink",
+    "scholar": "" 
+  }
 ]
