@@ -7,12 +7,12 @@
 <link rel="stylesheet" href="shared.css">
 <title>People | Soft Matter Lab</title>
 </head>
-<body>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
 
 <nav>
   <div class="nav-logo">
     <a href="index.html">
-      <img src="images/lab-logo.png" alt="Lab Logo" style="height: 45px; width: auto; display: block;"> 
+      <img src="images/logo.png" alt="Lab Logo" style="height: 60px; width: auto; display: block;"> 
     </a>
   </div>
   <ul class="nav-links">
@@ -20,12 +20,12 @@
     <li><a href="research.html">Research</a></li>
     <li><a href="people.html">People</a></li>
     <li><a href="publications.html">Publications</a></li>
-    <li><a href="news.html">News</a></li>
+    <li><a href="facilities.html">Facilities</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
-<section id="people" style="padding-top: 120px;">
+<section id="people" style="padding-top: 140px; flex-grow: 1;">
   <div class="people-header">
     <div>
       <div class="section-label">The Team</div>
@@ -36,9 +36,9 @@
   <div class="team-grid" id="team-container"></div>
 </section>
 
-<footer>
+<footer style="margin-top: auto;">
   <div class="footer-logo">Soft Matter Lab · <span>Ashoka University</span></div>
-  <div class="footer-copy">© 2025 Soft Matter Research Lab</div>
+  <div class="footer-copy">© 2026 Soft Matter Lab at Ashoka University</div>
   <div class="footer-links">
     <a href="#">Twitter</a>
     <a href="#">Google Scholar</a>
@@ -51,10 +51,19 @@
     .then(res => res.json())
     .then(data => {
       document.getElementById('team-container').innerHTML = data.map(person => `
-        <div class="team-card">
-          <div class="avatar ${person.style}">${person.avatar}</div>
+        <div class="team-card" onclick="this.classList.toggle('expanded')">
+          <img src="${person.image}" alt="${person.name}" class="avatar-img" onerror="this.src='images/placeholder.jpg'">
+          
           <div class="team-name">${person.name}</div>
           <div class="team-role">${person.role}</div>
+          
+          <div class="team-content">
+            <p>${person.bio}</p>
+            <div class="team-links">
+              ${person.scholar ? `<a href="${person.scholar}" target="_blank" rel="noopener noreferrer">Google Scholar</a>` : ''}
+              ${person.linkedin ? `<a href="${person.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn</a>` : ''}
+            </div>
+          </div>
         </div>
       `).join('');
     }).catch(err => console.log('Error loading people data:', err));
