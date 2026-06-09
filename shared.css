@@ -480,28 +480,20 @@ footer {
   color: #d5cfc4; /* Lightened up so it's easy to read */
   font-weight: 700;
 }
-/* The Ashoka University Link */
-.footer-logo .ashoka-link { 
-  color: var(--gold); /* Ashoka Red */
+/* The Ashoka University Link - Base & Visited States */
+.footer-logo .ashoka-link,
+.footer-logo .ashoka-link:visited { 
+  color: var(--gold); /* Forces Ashoka Red even if you've visited the site before */
   text-decoration: none;
   transition: color 0.2s;
 }
-.footer-logo .ashoka-link:hover {
-  color: var(--teal2); /* Changes to Ashoka Blue when hovered/clicked */
+
+/* The Ashoka University Link - Hover & Clicking States */
+.footer-logo .ashoka-link:hover,
+.footer-logo .ashoka-link:active,
+.footer-logo .ashoka-link:focus {
+  color: var(--teal2); /* Forces Ashoka Blue when hovering or actively clicking */
   text-decoration: underline;
-}
-.footer-copy { 
-  font-size: 12px; 
-  color: #9b9086; /* Lightened contrast */
-}
-.footer-links { 
-  display: flex; gap: 1.5rem; 
-}
-.footer-links a { 
-  font-size: 12px; 
-  color: #9b9086; /* Lightened contrast */
-  text-decoration: none; 
-  transition: color 0.2s;
 }
 /* Other footer links (Twitter, GitHub) hover to Blue */
 .footer-links a:hover { 
