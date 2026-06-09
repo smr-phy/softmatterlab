@@ -309,7 +309,7 @@ a.pillar {
   align-items: end; margin-bottom: 4rem;
 }
 .team-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; align-items: start; /* Prevents neighboring cards from stretching */
 }
 .team-card {
   background: #fff; border: 1px solid var(--border);
@@ -412,7 +412,7 @@ a:hover .pub-title {
 /* FACILITIES */
 .facilities-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-  margin-top: 4rem;
+  margin-top: 4rem; align-items: start; /* Prevents neighboring cards from stretching */
 }
 .facility-card {
   background: #fff; 
