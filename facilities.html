@@ -26,7 +26,8 @@
     const container = document.getElementById('facilities-container');
     container.innerHTML = data.map(fac => `
       <div class="facility-card">
-        <div class="facility-img ${fac.img_class}">${fac.img_icon}</div>
+        <img src="${fac.image}" alt="${fac.title}" class="facility-img" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
+        
         <div class="facility-body">
           <div class="facility-title">${fac.title}</div>
           <div class="facility-content"><p>${fac.desc}</p></div>
