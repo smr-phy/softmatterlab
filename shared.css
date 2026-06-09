@@ -470,19 +470,43 @@ a:hover .pub-title {
 
 /* FOOTER */
 footer {
-  background: #080808; padding: 2rem 8vw;
+  background: #080808; 
+  padding: 2rem 8vw;
   display: flex; justify-content: space-between; align-items: center;
   border-top: 1px solid #1a1a1a;
 }
 .footer-logo {
   font-size: 15px;
-  color: #555; font-weight: 700;
+  color: #d5cfc4; /* Lightened up so it's easy to read */
+  font-weight: 700;
 }
-.footer-logo span { color: var(--teal); }
-.footer-copy { font-size: 12px; color: #444; }
-.footer-links { display: flex; gap: 1.5rem; }
-.footer-links a { font-size: 12px; color: #555; text-decoration: none; }
-.footer-links a:hover { color: var(--gold); }
+/* The Ashoka University Link */
+.footer-logo .ashoka-link { 
+  color: var(--gold); /* Ashoka Red */
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-logo .ashoka-link:hover {
+  color: var(--teal2); /* Changes to Ashoka Blue when hovered/clicked */
+  text-decoration: underline;
+}
+.footer-copy { 
+  font-size: 12px; 
+  color: #9b9086; /* Lightened contrast */
+}
+.footer-links { 
+  display: flex; gap: 1.5rem; 
+}
+.footer-links a { 
+  font-size: 12px; 
+  color: #9b9086; /* Lightened contrast */
+  text-decoration: none; 
+  transition: color 0.2s;
+}
+/* Other footer links (Twitter, GitHub) hover to Blue */
+.footer-links a:hover { 
+  color: var(--teal2); /* Ashoka Blue */
+}
 
 /* GALLERY CAROUSEL */
 .gallery-strip {
