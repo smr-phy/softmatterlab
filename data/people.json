@@ -1,18 +1,26 @@
 [
-  { 
-    "image": "images/pramoda.png", 
-    "name": "Prof. Pramoda Kumar", 
-    "role": "Principal Investigator",
-    "bio": "Prof. Kumar leads the Soft Matter Lab, focusing on topological defects in active nematics and phase transitions in liquid crystals.",
-    "linkedin": "",
+  {
+    "image": "images/pramoda.png",
+    "name": "Dr Pramoda Kumar",
+    "role": "Principal Investigator | Assistant Professor of Physics, Ashoka University",
+    "bio": "Dr Kumar leads the Soft Matter Lab at Ashoka University. He completed his PhD from CeNS, Banglore, and has worked as post-doc at several prestigious institutions including Max Plank, Harvard and Weizmann. His research interests include experimental soft-condensed matter physics, pattern formation in dissipative systems, interface instability, charge transport phenomena in ion-selective membranes, bio-physics and non-Newtonian hydrodynamics ",
+    "linkedin": null,
     "scholar": "https://scholar.google.com/citations?user=8od_QxIAAAAJ&hl=en"
   },
-  { 
-    "image": "images/shrigowri.png", 
-    "name": "Shri Gowri ", 
+  {
+    "image": "images/shrigowri.png",
+    "name": "Shri Gowri ",
     "role": "PhD Student",
     "bio": "She completed her Bachelor’s degree at Mount Carmel College (MCC), Bangalore, followed by a Master’s in Physics from the University of Mysore, with a specialization in Solid State Physics.  Shri’s current research is curiosity-driven and focuses on understanding the collective dynamics of Caenorhabditis elegans. She approaches these organisms as a nematic, flexible active system due to their shape anisotropy and bidirectional motion-features that are characteristic of many other biological systems. Her work combines microscopy based experiments with computer vision and data driven modeling, employing deep learning tools such as U-Net for quantitative image analysis. Outside the lab, she enjoys cooking, reading, traveling, and engaging in creative activities such as building with Legos, playing board games, and designing model houses.",
     "linkedin": "https://linkedin.com/in/yourlink",
-    "scholar": "" 
+    "scholar": ""
+  },
+  {
+    "image": "",
+    "name": "",
+    "role": "",
+    "bio": "",
+    "linkedin": "",
+    "scholar": ""
   }
 ]
