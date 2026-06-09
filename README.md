@@ -6,4 +6,4 @@ Website for Soft Matter Lab at Ashoka University. Made by @deepanshu-grg (UG2023
 **Image Files:** Upload all image files in 'Images' folder. Make sure the image name matches name mentioned in respective conent block.
 
 
-**DO NOT CHANGE CONTENT FORMAT OR EDIT ANY HTML OR CSS FILES**
+**DO NOT CHANGE CONTENT FORMAT, OR EDIT ANY HTML OR CSS FILES**
