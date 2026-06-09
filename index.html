@@ -60,9 +60,33 @@
   </div>
 </section>
 
+<section class="gallery-strip">
+  <div class="gallery-header">
+    <div class="section-label">Inside the Lab</div>
+    <h2 class="section-title">Gallery</h2>
+  </div>
+  
+  <div class="gallery-track" id="gallery-container">
+    <p style="padding: 0 8vw; color: var(--slate);">Loading gallery...</p>
+  </div>
+</section>
+
 <div id="footer-placeholder"></div>
 
 <script>
+  // Load Gallery
+  fetch('data/gallery.json')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('gallery-container').innerHTML = data.map(img => `
+        <div class="gallery-item">
+          <img src="${img.src}" alt="${img.alt}" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
+        </div>
+      `).join('');
+    }).catch(err => {
+      document.getElementById('gallery-container').innerHTML = '<p style="padding: 0 8vw;">Gallery unavailable.</p>';
+    });
+  
   // Load Navigation
   fetch('nav.html')
     .then(response => response.text())
