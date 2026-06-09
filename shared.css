@@ -506,11 +506,12 @@ footer {
   display: flex; gap: 1.5rem; 
 }
 
-/* Social Links Base & Visited States (Kills the Purple) */
+/* Social Links Base & Visited States (Kills the Purple/Blue) */
 .footer-links a,
 .footer-links a:visited { 
-  font-size: 12px; 
-  color: #b0a89f; /* Bright grey, forced even if visited */
+  font-size: 15px;       /* Matched to Soft Matter Lab size */
+  color: #d5cfc4;        /* Matched to Soft Matter Lab color */
+  font-weight: 700;      /* Matched to Soft Matter Lab boldness */
   text-decoration: none; 
   transition: color 0.2s;
 }
@@ -519,8 +520,8 @@ footer {
 .footer-links a:hover,
 .footer-links a:active,
 .footer-links a:focus { 
-  color: var(--teal2); /* Ashoka Blue */
-  text-decoration: underline; /* Adds a nice underline on hover */
+  color: var(--teal2); /* Ashoka Blue on hover */
+  text-decoration: underline; 
 }
 
 /* GALLERY CAROUSEL */
