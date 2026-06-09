@@ -33,7 +33,16 @@
         </div>
       </div>
     `).join('');
-    container.querySelectorAll('.facility-card').forEach(card => card.addEventListener('click', function() { this.classList.toggle('expanded'); }));
+    
+    // Accordion Logic
+    container.addEventListener('click', function(e) {
+      const clickedCard = e.target.closest('.facility-card');
+      if (!clickedCard) return;
+      container.querySelectorAll('.facility-card').forEach(card => {
+        if (card !== clickedCard) card.classList.remove('expanded');
+      });
+      clickedCard.classList.toggle('expanded');
+    });
   });
 
   fetch('nav.html').then(r => r.text()).then(data => {
