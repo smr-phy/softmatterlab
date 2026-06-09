@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
-<title>People | Soft Matter Lab</title>
+<title>People | Soft Matter Lab at Ashoka</title>
 </head>
 <body class="page-wrapper">
 
@@ -41,7 +41,16 @@
         </div>
       </div>
     `).join('');
-    container.querySelectorAll('.team-card').forEach(card => card.addEventListener('click', function() { this.classList.toggle('expanded'); }));
+    
+    // Accordion Logic: Closes other cards when one is clicked
+    container.addEventListener('click', function(e) {
+      const clickedCard = e.target.closest('.team-card');
+      if (!clickedCard) return;
+      container.querySelectorAll('.team-card').forEach(card => {
+        if (card !== clickedCard) card.classList.remove('expanded');
+      });
+      clickedCard.classList.toggle('expanded');
+    });
   });
 
   fetch('nav.html').then(r => r.text()).then(data => {
