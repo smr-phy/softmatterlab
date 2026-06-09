@@ -495,9 +495,32 @@ footer {
   color: var(--teal2); /* Forces Ashoka Blue when hovering or actively clicking */
   text-decoration: underline;
 }
-/* Other footer links (Twitter, GitHub) hover to Blue */
-.footer-links a:hover { 
+/* Brighter Copyright Text */
+.footer-copy { 
+  font-size: 12px; 
+  color: #b0a89f; /* Brightened up significantly for visibility */
+}
+
+/* Social Links Layout */
+.footer-links { 
+  display: flex; gap: 1.5rem; 
+}
+
+/* Social Links Base & Visited States (Kills the Purple) */
+.footer-links a,
+.footer-links a:visited { 
+  font-size: 12px; 
+  color: #b0a89f; /* Bright grey, forced even if visited */
+  text-decoration: none; 
+  transition: color 0.2s;
+}
+
+/* Social Links Hover & Clicking States */
+.footer-links a:hover,
+.footer-links a:active,
+.footer-links a:focus { 
   color: var(--teal2); /* Ashoka Blue */
+  text-decoration: underline; /* Adds a nice underline on hover */
 }
 
 /* GALLERY CAROUSEL */
