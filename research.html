@@ -41,7 +41,16 @@
           <div class="rc-details"><p>${res.details}</p></div>
         </div>
       `).join('');
-      container.querySelectorAll('.research-card').forEach(card => card.addEventListener('click', function() { this.classList.toggle('expanded'); }));
+      
+      // Accordion Logic
+      container.addEventListener('click', function(e) {
+        const clickedCard = e.target.closest('.research-card');
+        if (!clickedCard) return;
+        container.querySelectorAll('.research-card').forEach(card => {
+          if (card !== clickedCard) card.classList.remove('expanded');
+        });
+        clickedCard.classList.toggle('expanded');
+      });
     }).catch(err => console.log('Error:', err));
 
   fetch('nav.html').then(r => r.text()).then(data => {
