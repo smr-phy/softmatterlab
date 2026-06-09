@@ -530,3 +530,12 @@ footer {
     justify-content: center;
   }
 }
+/* SMARTPHONE RESPONSIVE FIXES */
+@media (max-width: 600px) {
+  .team-grid { 
+    grid-template-columns: 1fr; /* Forces 1 column on phones */
+  }
+  .research-grid { 
+    grid-template-columns: 1fr; /* Forces 1 column on phones */
+  }
+}
