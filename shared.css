@@ -48,6 +48,21 @@ body {
   overflow-x: hidden;
 }
 
+/* EXPERIMENTAL WATERMARK */
+.page-wrapper::before {
+  content: '';
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  background: url('images/your-ashoka-logo.png') no-repeat center center;
+  background-size: 40vw; /* Keeps it contained */
+  opacity: 0.03; /* Barely visible (3% opacity) */
+  z-index: -1; /* Pushes it behind all your content */
+  pointer-events: none; /* Stops it from blocking clicks */
+}
+
 /* PAGE LAYOUT UTILITIES */
 .page-wrapper {
   display: flex;
