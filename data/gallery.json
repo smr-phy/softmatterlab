@@ -1,18 +1,14 @@
 [
   {
-    "src": "images/gallery-1.jpg",
-    "alt": "1 mm unaligned cells observation"
+    "src": "images/groupphoto_part2.jpg",
+    "alt": "lab group photo (unspecified date)"
   },
   {
-    "src": "images/gallery-2.jpg",
-    "alt": "Nematic phase transition under polarized light"
+    "src": "images/groupphoto_part1.jpg",
+    "alt": "lab group photo (unspecified date)"
   },
   {
-    "src": "images/gallery-3.jpg",
-    "alt": "Julabo Presto thermal controller setup"
-  },
-  {
-    "src": "images/gallery-4.jpg",
-    "alt": "Light scattering data collection"
+    "src": "images/rollers1.jpg",
+    "alt": "worms confined in cell under fluroscent light"
   }
 ]
