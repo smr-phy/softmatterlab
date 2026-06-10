@@ -354,7 +354,7 @@ a.pillar {
 .team-name {
   font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 4px;
 }
-.team-role { font-size: 12px; color: var(--slate); text-transform: uppercase; letter-spacing: 0.08em; }
+.team-role { font-size: 12px; color: var(--slate); letter-spacing: 0.08em; }
 
 .team-content {
   max-height: 0;
