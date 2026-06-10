@@ -57,7 +57,7 @@ body {
   width: 100%; 
   height: 100%;
   background: url('images/your-ashoka-logo.png') no-repeat center center;
-  background-size: 90vh; /* Keeps it contained */
+  /* background-size: 90vh; /* Keeps it contained */ */
   opacity: 0.05; /* Barely visible (3% opacity) */
   z-index: -1; /* Pushes it behind all your content */
   pointer-events: none; /* Stops it from blocking clicks */
