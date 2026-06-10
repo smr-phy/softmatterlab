@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Our Team | Soft Matter Lab | Ashoka University</title>
-<meta name="description" content="Meet the principal investigators, graduate students, and dedicated researchers driving soft matter physics discovery at Ashoka University.">
-<link rel="icon" type="image/png" href="images/favicon.png">
-<meta charset="UTF-8">
-<meta name="view-transition" content="same-origin">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
-<title>People | Soft Matter Lab at Ashoka</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="view-transition" content="same-origin">
+  
+  <meta name="description" content="Meet the principal investigators, graduate students, and dedicated researchers driving soft matter physics discovery at Ashoka University.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  
+  <title>Our Team | Soft Matter Lab | Ashoka University</title>
 </head>
 <body class="page-wrapper">
 
@@ -19,51 +21,92 @@
   <div class="people-header">
     <div>
       <div class="section-label">The Team</div>
-      <h2 class="section-title">People</h2>
+      <h2 class="section-title">Current People</h2>
     </div>
     <p class="section-intro">A diverse group of physicists, chemists, and biophysicists united by a passion for soft matter.</p>
   </div>
   <div class="team-grid" id="team-container"><p>Loading team...</p></div>
+
+  <div class="people-header" style="margin-top: 6rem;">
+    <div>
+      <div class="section-label">Alumni</div>
+      <h2 class="section-title">Past Members</h2>
+    </div>
+    <p class="section-intro">Researchers and students who have previously contributed to the Soft Matter Lab.</p>
+  </div>
+  <div class="team-grid" id="alumni-container"><p>Loading alumni...</p></div>
 </section>
 
 <div id="footer-placeholder"></div>
 
 <script>
-  fetch('data/people.json').then(res => res.json()).then(data => {
-    const container = document.getElementById('team-container');
-    container.innerHTML = data.map(person => `
-      <div class="team-card">
-        <img src="${person.image}" alt="${person.name}" class="avatar-img" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
-        <div class="team-name">${person.name}</div>
-        <div class="team-role">${person.role}</div>
-        <div class="team-content">
-          <p>${person.bio}</p>
-          <div class="team-links">
-            ${person.scholar ? `<a href="${person.scholar}" target="_blank">Google Scholar</a>` : ''}
-            ${person.linkedin ? `<a href="${person.linkedin}" target="_blank">LinkedIn</a>` : ''}
-          </div>
+  // Reusable function to generate HTML cards
+  const generateCards = (data) => data.map(person => `
+    <div class="team-card">
+      <img src="${person.image}" alt="${person.name}" class="avatar-img" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
+      <div class="team-name">${person.name}</div>
+      <div class="team-role">${person.role}</div>
+      <div class="team-content">
+        <p>${person.bio}</p>
+        <div class="team-links">
+          ${person.scholar ? `<a href="${person.scholar}" target="_blank">Google Scholar</a>` : ''}
+          ${person.linkedin ? `<a href="${person.linkedin}" target="_blank">LinkedIn</a>` : ''}
         </div>
       </div>
-    `).join('');
-    
-    // Accordion Logic: Closes other cards when one is clicked
-    container.addEventListener('click', function(e) {
-      const clickedCard = e.target.closest('.team-card');
-      if (!clickedCard) return;
-      container.querySelectorAll('.team-card').forEach(card => {
-        if (card !== clickedCard) card.classList.remove('expanded');
-      });
-      clickedCard.classList.toggle('expanded');
+    </div>
+  `).join('');
+
+  // 1. Fetch Current Members
+  fetch('data/people.json')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('team-container').innerHTML = generateCards(data);
+    })
+    .catch(err => console.error("Error loading team:", err));
+
+  // 2. Fetch Past Members
+  fetch('data/alumni.json')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('alumni-container').innerHTML = generateCards(data);
+    })
+    .catch(err => {
+      document.getElementById('alumni-container').innerHTML = '<p style="color: var(--slate);">No past members listed yet.</p>';
     });
+
+  // 3. Universal Accordion Logic (Works for both current and past cards)
+  document.addEventListener('click', function(e) {
+    const clickedCard = e.target.closest('.team-card');
+    if (!clickedCard) return;
+    
+    // Close all other cards on the page
+    document.querySelectorAll('.team-card').forEach(card => {
+      if (card !== clickedCard) card.classList.remove('expanded');
+    });
+    
+    // Toggle the clicked card
+    clickedCard.classList.toggle('expanded');
   });
 
-  fetch('nav.html').then(r => r.text()).then(data => {
-    document.getElementById('nav-placeholder').outerHTML = data;
-    document.getElementById('hamburger').addEventListener('click', function() {
-      document.getElementById('nav-links').classList.toggle('active'); this.classList.toggle('open');
-    });
+  // 4. Fetch Nav & Footer with Anti-Flicker Promise Lock
+  Promise.all([
+    fetch('nav.html').then(r => r.text()),
+    fetch('footer.html').then(r => r.text())
+  ]).then(([navHtml, footerHtml]) => {
+    document.getElementById('nav-placeholder').outerHTML = navHtml;
+    document.getElementById('footer-placeholder').outerHTML = footerHtml;
+
+    const hamburger = document.getElementById('hamburger');
+    if (hamburger) {
+      hamburger.addEventListener('click', function() {
+        document.getElementById('nav-links').classList.toggle('active'); 
+        this.classList.toggle('open');
+      });
+    }
+    
+    // Reveal the page perfectly
+    document.body.classList.add('fully-loaded');
   });
-  fetch('footer.html').then(r => r.text()).then(data => { document.getElementById('footer-placeholder').outerHTML = data; });
 </script>
 </body>
 </html>
