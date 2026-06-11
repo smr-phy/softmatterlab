@@ -152,7 +152,7 @@ nav {
   font-size: clamp(36px, 4.2vw, 64px);
   font-weight: 900; line-height: 1.05;
   color: #f4f1eb;
-  margin-bottom: 1.8rem;
+  margin-bottom: 2rem;
 }
 .hero-title em { font-style: italic; color: var(--gold); }
 .hero-sub {
