@@ -9,10 +9,17 @@
   },
   {
     "image": "images/shrigowri.png",
-    "name": "Shri Gowri ",
+    "name": "Shri Gowri",
     "role": "PhD Student",
     "bio": "Shri completed her Bachelor’s degree at Mount Carmel College (MCC), Bangalore, followed by a Master’s in Physics from the University of Mysore, with a specialization in Solid State Physics.  Her current research focuses on understanding the collective dynamics of Caenorhabditis elegans. She approaches these organisms as a nematic, flexible active system due to their shape anisotropy and bidirectional motion-features that are characteristic of many other biological systems. Her work combines microscopy based experiments with computer vision and data driven modeling, employing deep learning tools such as U-Net for quantitative image analysis. Outside the lab, she enjoys cooking, reading, traveling, and engaging in creative activities such as building with Legos, playing board games, and designing model houses.",
     "linkedin": null,
+    "scholar": ""
+  },
+  {
+    "image": "images/ankit.png",
+    "name": "Ankit Gupta",
+    "role": "PhD Student",
+    "bio": "Ankit completed his Bachelor’s degree in Physics from Raj Rishi Bhartrihari Matsya University (RRBMU) followed by an M.Sc. in Physics from Dr. B. R. Ambedkar National Institute of Technology, Jalandhar. His work combines dynamic light scattering and dielectric spectroscopy to track how viscoelastic and dielectric properties evolve near the twist-bend nematic phase transition, aiming to uncover the microscopic mechanisms and relaxation dynamics that characterize the approach to criticality. Previously, he has investigated the motility of twist-bend nematic droplets driven by Marangoni stresses, as well as the emergence of splay structures during phase transitions in liquid crystals with negative dielectric anisotropy."
     "scholar": ""
   }
 ]
