@@ -152,7 +152,7 @@ nav {
   font-size: clamp(36px, 4.2vw, 64px);
   font-weight: 900; line-height: 1.05;
   color: #f4f1eb;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
 }
 .hero-title em { font-style: italic; color: var(--gold); }
 .hero-sub {
@@ -160,7 +160,7 @@ nav {
   max-width: 420px; margin-bottom: 3rem;
 }
 .hero-cta {
-  display: inline-flex; align-items: center; gap: 10px;
+  display: inline-flex; align-items: center; gap: 12px;
   background: var(--teal); color: white;
   text-decoration: none; font-size: 13px; font-weight: 500;
   letter-spacing: 0.05em; text-transform: uppercase;
