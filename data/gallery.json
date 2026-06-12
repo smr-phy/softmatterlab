@@ -1,14 +1,27 @@
 [
   {
-    "src": "images/groupphoto_past2.jpg",
-    "alt": "lab group photo (unspecified date)"
+    "src": "images/groupphoto_monsoon25.jpg",
+    "alt": "Lab semester end group photo, Monsoon 25"
+  },
+  {
+    "src": "images/groupphoto2_monsoon25.jpg",
+    "alt": "Lab semester end group photo 2, Monsoon 25"
   },
   {
     "src": "images/groupphoto_past1.jpg",
-    "alt": "lab group photo (unspecified date)"
+    "alt": "Lab semester end group photo, Spring 25"
+  },
+  {
+    "src": "images/groupphoto_spring23.jpg",
+    "alt": "Lab semester end group photo, Spring 23"
+  },
+  {
+    
+    "src": "images/groupphoto_past2.jpg",
+    "alt": "Lab group photo (unspecified date)"
   },
   {
     "src": "images/rollers1.jpg",
-    "alt": "worms confined in cell under fluroscent light"
+    "alt": "Worms confined in cell under fluroscent light"
   }
 ]
