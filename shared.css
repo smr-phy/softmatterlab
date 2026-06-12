@@ -626,7 +626,7 @@ footer {
   text-decoration: underline; 
 }
 
-/* GALLERY CAROUSEL */
+/*GALLERY CAROUSEL */
 .gallery-strip {
   padding: 6rem 0 2rem 0; 
   background: #fff;
@@ -657,15 +657,86 @@ footer {
   background: var(--mist);
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
+
+/* Updated to include cursor: pointer for the modal */
 .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
+  cursor: pointer; 
 }
 .gallery-item:hover img {
-  transform: scale(1.05); /* Slight zoom on hover for interactivity */
+  transform: scale(1.05); /* Your original hover zoom */
+}
+
+@media (max-width: 900px) {
+  .gallery-item {
+    flex: 0 0 260px; /* Slightly smaller squares on mobile */
+    height: 260px;
+  }
+}
+
+/* The Dark Background Overlay */
+.modal-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 2000; /* Stays on top of everything */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85); /* 85% opacity black */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* The Active State (Fades in) */
+.modal-overlay.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+/* The Expanded Image */
+.modal-content {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.5);
+}
+
+/* The Caption Text */
+#modal-caption {
+  margin-top: 15px;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif; /* Matches your header imports */
+  font-size: 1.1rem;
+  font-weight: 300;
+  text-align: center;
+  max-width: 80vw;
+  line-height: 1.5;
+}
+
+/* The Close Button (X) */
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 45px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #aaaaaa;
 }
 
 @media (max-width: 900px) {
