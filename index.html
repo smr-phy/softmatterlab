@@ -140,6 +140,21 @@
       document.getElementById('footer-placeholder').outerHTML = data;
     })
     .catch(err => console.error('Failed to load footer:', err));
+  const galleryTrack = document.getElementById('gallery-container');
+  const leftArrow = document.querySelector('.left-arrow');
+  const rightArrow = document.querySelector('.right-arrow');
+
+  if (leftArrow && rightArrow && galleryTrack) {
+    const scrollAmount = 344; 
+
+    leftArrow.addEventListener('click', () => {
+      galleryTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    rightArrow.addEventListener('click', () => {
+      galleryTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  }
 </script>
 </body>
 </html>
