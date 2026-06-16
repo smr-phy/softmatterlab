@@ -673,10 +673,10 @@ a:hover .pub-title { color: var(--teal); }
 .contact-card-content a:hover { text-decoration: underline; }
 .contact-card-content .sub-text { font-size: 0.85rem; margin-top: 0.5rem; }
 
-/*GALLERY CAROUSEL (REFINED WITH EDGE MASKS)*/
+/*GALLERY CAROUSEL*/
 .gallery-strip {
-  padding: 5.5rem 0 2rem 0; /* Matched to refined general section vertical padding */
-  background: #fff;
+  padding: 5.5rem 0;
+  background: #ffffff;
   border-top: 1px solid var(--border);
 }
 
@@ -690,24 +690,19 @@ a:hover .pub-title { color: var(--teal); }
   display: flex;
   align-items: center;
   width: 100%;
-  
-  /* The Magic Touch: Fades out the images at the 8vw boundary line */
-  mask-image: linear-gradient(to right, transparent 0%, black 8vw, black calc(100% - 8vw), transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8vw, black calc(100% - 8vw), transparent 100%);
 }
 
 .gallery-track {
   display: flex; 
   gap: 1.5rem;
-  padding: 0 8vw 2rem 8vw; /* Restored original padding so your arrows work perfectly! */
+  padding: 0 8vw 2rem 8vw;
   width: 100%;
   overflow-x: auto; 
   scroll-snap-type: x mandatory; 
   -webkit-overflow-scrolling: touch; 
-  scrollbar-width: none; /* Hides scrollbar in Firefox */
+  scrollbar-width: none;
 }
 
-/* Hides scrollbar in Chrome, Safari, and Opera */
 .gallery-track::-webkit-scrollbar { 
   display: none; 
 }
@@ -734,6 +729,36 @@ a:hover .pub-title { color: var(--teal); }
 .gallery-item:hover img { 
   transform: scale(1.05); 
 }
+
+/* Scroll Arrows */
+.gallery-arrow {
+  position: absolute; 
+  z-index: 10;
+  top: calc(50% - 1rem); 
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border); 
+  color: #333;
+  width: 48px; 
+  height: 48px; 
+  border-radius: 50%;
+  font-size: 20px; 
+  cursor: pointer;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+.gallery-arrow:hover {
+  background: #ffffff; 
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.left-arrow { left: 3vw; }
+.right-arrow { right: 3vw; }
 
 /* Scroll Arrows */
 .gallery-arrow {
