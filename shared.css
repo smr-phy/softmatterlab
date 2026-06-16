@@ -134,96 +134,25 @@ nav {
    ========================================= */
 .hero {
   position: relative;
-  max-width: 94vw; /* Leaves a nice margin on the left and right */
-  margin: 2rem auto 5rem auto; /* The 2rem top margin separates it cleanly from the nav bar */
-  border-radius: 24px; /* Makes the edges beautifully round */
-  overflow: hidden; /* Ensures the background photo curves with the corners */
-  box-shadow: 0 15px 40px rgba(0,0,0,0.12); /* Gives it a slight floating 3D effect */
+  width: 96%; /* Expands it almost edge-to-edge sideways */
+  max-width: 1600px; /* Allows it to stretch much wider on large desktop monitors */
+  margin: 7rem auto 5rem auto; /* The 7rem top margin pushes it safely below your navigation bar */
+  
+  border-radius: 24px; 
+  overflow: hidden; 
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12); 
   
   min-height: 75vh; 
   display: flex;
   align-items: center; 
-  justify-content: flex-start; 
-  padding: 0 6vw; 
+  justify-content: center; /* Centers the content inside the newly widened box */
+  text-align: center; /* Ensures the text stays perfectly centered */
+  padding: 0 4vw; 
 
   /* Dark overlay (85% opacity black) fused with the background image */
   background: linear-gradient(rgba(15, 15, 15, 0.85), rgba(15, 15, 15, 0.85)), url('images/homepage.png');
   background-size: cover;
   background-position: center;
-}
-
-.hero-content {
-  max-width: 800px; /* Prevents text from stretching too wide on huge monitors */
-  position: relative;
-  z-index: 2;
-}
-
-.hero-eyebrow {
-  color: #c1272d; /* Ashoka Red */
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-.hero-title {
-  color: #ffffff;
-  font-family: 'Merriweather', serif;
-  font-size: 4.2rem;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-}
-
-.a-red {
-  color: #c1272d; /* Ashoka Red for SAMP */
-  font-style: italic;
-}
-
-.hero-description {
-  color: #d1d5db; /* Light silver/gray for readable contrast */
-  font-family: 'Inter', sans-serif;
-  font-size: 1.25rem;
-  line-height: 1.6;
-  font-weight: 300;
-  margin-bottom: 2.5rem;
-  max-width: 650px;
-}
-
-.hero-cta {
-  display: inline-block;
-  background-color: #0a2540; /* Ashoka Blue */
-  color: #ffffff;
-  padding: 1.1rem 2.5rem;
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 1.1rem;
-  text-decoration: none;
-  border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.2s ease;
-}
-
-.hero-cta:hover {
-  background-color: #113458; /* Slightly lighter blue on hover */
-  transform: translateY(-2px);
-}
-
-/* Mobile Adjustments */
-@media (max-width: 900px) {
-  .hero {
-    max-width: 92vw;
-    min-height: 60vh;
-    padding: 4rem 2rem;
-    border-radius: 16px; /* Slightly smaller corners on mobile */
-  }
-  .hero-title {
-    font-size: 2.8rem;
-  }
-  .hero-description {
-    font-size: 1.1rem;
-  }
 }
 
 /* SECTION BASE */
