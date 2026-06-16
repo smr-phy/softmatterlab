@@ -16,8 +16,8 @@
   --gold2: #a3152c;
 
   /* Ashoka Blue */
-  --teal: #051626; /*#0a2540;*/
-  --teal2: #0c253d; /*#113458;*/
+  --teal: #0a2540;
+  --teal2: #113458;
   
   /* Accents */
   --rose: #b5503a;
@@ -316,7 +316,7 @@ section {
 
 /*ABOUT STRIP & PILLARS*/
 .about-strip {
-  background: var(--teal); 
+  background: #051626; 
   padding: 7rem 8vw;
   display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
   align-items: center;
@@ -333,7 +333,7 @@ a.pillar {
   color: inherit;
 }
 .pillar {
-  background: var(--teal2); 
+  background: #0c253d; 
   padding: 1.5rem 2rem;
   display: flex; align-items: center; gap: 1.5rem;
   border-radius: 16px; /* Refined corners */
