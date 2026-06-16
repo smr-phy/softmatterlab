@@ -327,39 +327,42 @@ section {
 
 /* ABOUT STRIP & PILLARS */
 .about-strip {
-  background: var(--ink);
+  background: #0a2540; /* Ashoka Blue Background */
   padding: 7rem 8vw;
   display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
   align-items: center;
 }
-.about-strip .section-title { color: #f4f1eb; }
-.about-strip .section-label { color: var(--gold); }
-.about-strip .section-label::before { background: var(--gold); }
-.about-text { font-size: 16px; color: #9b9086; line-height: 1.85; }
+.about-strip .section-title { color: #ffffff; }
+.about-strip .section-label { color: #c1272d; } /* Ashoka Red Accent */
+.about-strip .section-label::before { background: #c1272d; }
+.about-text { font-size: 16px; color: #d1d5db; line-height: 1.85; } /* Light silver text */
 .about-text p + p { margin-top: 1rem; }
 .about-pillars { display: flex; flex-direction: column; gap: 1.5px; }
 
-/* PILLAR LINKS (Removes inline styles) */
+/* PILLAR LINKS */
 a.pillar {
   text-decoration: none;
   color: inherit;
 }
 .pillar {
-  background: #1a1a1a; padding: 1.5rem 2rem;
+  background: #113458; /* Lighter blue for the pillar boxes */
+  padding: 1.5rem 2rem;
   display: flex; align-items: center; gap: 1.5rem;
-  transition: background 0.2s;
+  transition: background 0.2s ease;
 }
-.pillar:hover { background: #222; }
+.pillar:hover { 
+  background: #184473; /* Even lighter blue on hover */ 
+}
 .pillar-icon {
   width: 42px; height: 42px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-size: 18px; flex-shrink: 0;
 }
-.pillar-icon.t { background: rgba(26,107,90,0.2); color: #2dce9e; }
-.pillar-icon.r { background: rgba(181,80,58,0.2); color: #e8836b; }
-.pillar-icon.c { background: rgba(74,59,122,0.2); color: #9b8bd4; }
-.pillar-text strong { display: block; font-size: 15px; font-weight: 500; color: #e8e4dc; }
-.pillar-text span { font-size: 13px; color: #6b6459; }
+.pillar-icon.t { background: rgba(45, 206, 158, 0.15); color: #2dce9e; }
+.pillar-icon.r { background: rgba(232, 131, 107, 0.15); color: #e8836b; }
+.pillar-icon.c { background: rgba(155, 139, 212, 0.15); color: #9b8bd4; }
+.pillar-text strong { display: block; font-size: 15px; font-weight: 500; color: #ffffff; }
+.pillar-text span { font-size: 13px; color: #9ca3af; } /* Softer gray-blue for subtitles */
 
 /* PEOPLE */
 #people { background: var(--mist); }
