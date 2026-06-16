@@ -240,7 +240,10 @@ section {
   align-items: end; margin-bottom: 5rem;
 }
 .research-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1.5rem;
+  align-items: start;
 }
 .research-card {
   background: #fff; 
