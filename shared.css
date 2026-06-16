@@ -243,7 +243,9 @@ section {
   display: grid; 
   grid-template-columns: repeat(3, 1fr); 
   gap: 1.5rem;
-  align-items: start;
+}
+.research-card.expanded {
+  align-self: start; /* Prevents neighboring cards from stretching ONLY when this card expands */
 }
 .research-card {
   background: #fff; 
