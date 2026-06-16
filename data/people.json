@@ -1,6 +1,6 @@
 [
   {
-    "image": "images/shrigowri.png",
+    "image": "images/team/shrigowri.png",
     "name": "Shri Gowri",
     "role": "PhD Student",
     "bio": "Shri completed her Bachelor’s degree at Mount Carmel College (MCC), Bangalore, followed by a Master’s in Physics from the University of Mysore, with a specialization in Solid State Physics.  Her current research focuses on understanding the collective dynamics of Caenorhabditis elegans. She approaches these organisms as a nematic, flexible active system due to their shape anisotropy and bidirectional motion-features that are characteristic of many other biological systems. Her work combines microscopy based experiments with computer vision and data driven modeling, employing deep learning tools such as U-Net for quantitative image analysis. Outside the lab, she enjoys cooking, reading, traveling, and engaging in creative activities such as building with Legos, playing board games, and designing model houses.",
@@ -8,7 +8,7 @@
     "scholar": ""
   },
   {
-    "image": "images/ankit.png",
+    "image": "images/team/ankit.png",
     "name": "Ankit Gupta",
     "role": "PhD Student",
     "bio": "Ankit completed his Bachelor’s degree in Physics from Raj Rishi Bhartrihari Matsya University (RRBMU) followed by an M.Sc. in Physics from Dr. B. R. Ambedkar National Institute of Technology, Jalandhar. His work combines dynamic light scattering and dielectric spectroscopy to track how viscoelastic and dielectric properties evolve near the twist-bend nematic phase transition, aiming to uncover the microscopic mechanisms and relaxation dynamics that characterize the approach to criticality. Previously, he has investigated the motility of twist-bend nematic droplets driven by Marangoni stresses, as well as the emergence of splay structures during phase transitions in liquid crystals with negative dielectric anisotropy.",
@@ -16,7 +16,7 @@
     "scholar": ""
   },
   {
-    "image": "images/varsha.png",
+    "image": "images/team/varsha.png",
     "name": "Dr Varsha Jain",
     "role": "Axis Bank Post-Doc Fellow",
     "bio": "Varsha received her PhD (2015-2023) working under the supervision of Prof Santanu Kumar Pal at IISER Mohali. In May 2016, she received the INSPIRE-JRF Award Letter and the PhD research fellowship from MHRD. In February 2025, she joined Ashoka as an AXIS Bank Postdoctoral Research Fellow under the joint supervision of Dr Pramoda Kumar and Dr Deepak Asthana, and is currently working on the project 'Design, synthesis and physico-chemical characterization of polar bent-shaped liquid crystals with a focus on twist-bend, splay bend, and ferronematics'.",
