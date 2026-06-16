@@ -183,12 +183,15 @@ nav {
 }
 
 .hero-description {
-  color: #d1d5db; /* Light silver/gray for readable contrast */
+  color: #d1d5db; 
   font-family: 'Inter', sans-serif;
   font-size: 1.25rem;
   line-height: 1.6;
   font-weight: 300;
-  margin-bottom: 2.5rem;
+  
+  /* THIS IS THE FIX: Centers the box itself while keeping the bottom margin */
+  margin: 0 auto 2.5rem auto; 
+  
   max-width: 650px;
 }
 
