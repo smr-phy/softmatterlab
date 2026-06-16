@@ -9,7 +9,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
-<title>Research | Soft & Active Matter Physics Lab</title>
 </head>
 <body class="page-wrapper">
 
@@ -21,7 +20,6 @@
       <div class="section-label">Our Science</div>
       <h2 class="section-title">Research Projects</h2>
     </div>
-    <!-- <p class="section-intro">Our interdisciplinary research spans the boundary between physics, chemistry, and biology — probing materials that defy simple classification. Click any area to learn more about our ongoing projects.</p> -->
   </div>
   
   <div class="research-grid" id="research-container">
@@ -32,6 +30,7 @@
 <div id="footer-placeholder"></div>
 
 <script>
+  // Load Research Cards
   fetch('data/research.json')
     .then(res => res.json())
     .then(data => {
@@ -46,7 +45,7 @@
         </div>
       `).join('');
       
-      // Accordion Logic
+      // Accordion Logic (This is the one that works perfectly!)
       container.addEventListener('click', function(e) {
         const clickedCard = e.target.closest('.research-card');
         if (!clickedCard) return;
@@ -57,6 +56,7 @@
       });
     }).catch(err => console.log('Error:', err));
 
+  // Load Navigation
   fetch('nav.html').then(r => r.text()).then(data => {
     document.getElementById('nav-placeholder').outerHTML = data;
     document.getElementById('hamburger').addEventListener('click', function() {
@@ -64,26 +64,10 @@
     });
   });
   
-  // Accordion Logic for Research Cards
-const researchCards = document.querySelectorAll('.research-card');
-
-researchCards.forEach(card => {
-  card.addEventListener('click', function() {
-    // Check if the card we just clicked is already expanded
-    const isCurrentlyExpanded = this.classList.contains('expanded');
-
-    // First, close ALL research cards by removing the 'expanded' class
-    researchCards.forEach(c => c.classList.remove('expanded'));
-
-    // If the card we clicked wasn't already open, open it!
-    // (If it was already open, it just stays closed now)
-    if (!isCurrentlyExpanded) {
-      this.classList.add('expanded');
-    }
+  // Load Footer
+  fetch('footer.html').then(r => r.text()).then(data => { 
+    document.getElementById('footer-placeholder').outerHTML = data; 
   });
-});
-  
-  fetch('footer.html').then(r => r.text()).then(data => { document.getElementById('footer-placeholder').outerHTML = data; });
 </script>
 </body>
 </html>
