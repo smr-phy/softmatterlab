@@ -18,12 +18,37 @@
 <div id="nav-placeholder"></div>
 
 <section id="people" class="page-content">
+  
+  <div class="people-header">
+    <div>
+      <div class="section-label">The Lab PI</div>
+      <h2 class="section-title">Principal Investigator</h2>
+    </div>
+  </div>
+
+  <div class="prof-profile-section">
+    <div class="prof-card">
+      <img src="images/team/prof_photo.jpg" alt="Dr. Pramoda Kumar" class="prof-avatar" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
+      <h3 class="prof-name">Dr. Pramoda Kumar</h3>
+      <div class="prof-role">Principal Investigator / Assistant Professor</div>
+      
+      <p class="prof-bio">
+        Leading our scientific exploration into the complex landscape of soft and active matter physics. Our laboratory focuses on unraveling physical dynamics through advanced optical methods, microscopy techniques, and computational analysis.
+      </p>
+      
+      <div class="prof-links">
+        <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="mailto:pramoda.kumar@ashoka.edu.in">Email Profile</a>
+      </div>
+    </div>
+  </div>
+
   <div class="people-header">
     <div>
       <div class="section-label">The Team</div>
       <h2 class="section-title">Current People</h2>
     </div>
-    <!-- <p class="section-intro">A diverse group of curiousity driven individuals.</p> -->
   </div>
   <div class="team-grid" id="team-container"><p>Loading team...</p></div>
 
@@ -32,7 +57,6 @@
       <div class="section-label">Alumni</div>
       <h2 class="section-title">Past Members</h2>
     </div>
-    <!-- <p class="section-intro">Researchers and students who have previously contributed to our work.</p> -->
   </div>
   <div class="team-grid" id="alumni-container"><p>Loading alumni...</p></div>
 </section>
@@ -74,8 +98,14 @@
       document.getElementById('alumni-container').innerHTML = '<p style="color: var(--slate);">No past members listed yet.</p>';
     });
 
-  // 3. Universal Accordion Logic (Works for both current and past cards)
+  // 3. Universal Accordion Logic (With Protection Shields)
   document.addEventListener('click', function(e) {
+    // Shield 1: Ignore clicks inside the permanent Professor profile card
+    if (e.target.closest('.prof-card')) return;
+
+    // Shield 2: Ignore clicks on sub-links (so Google Scholar / LinkedIn can be clicked safely)
+    if (e.target.closest('a')) return;
+
     const clickedCard = e.target.closest('.team-card');
     if (!clickedCard) return;
     
