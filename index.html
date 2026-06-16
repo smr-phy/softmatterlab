@@ -18,9 +18,9 @@
   <div class="hero-content">
     <div class="hero-eyebrow">Department of Physics · Ashoka University</div>
     
-  <h1 class="hero-title">
-  <span class="a-red">S</span>oft & <span class="a-red">A</span>ctive <span class="a-red">M</span>atter <span class="a-red">P</span>hysics Laboratory <span class="a-red">(SAMP Lab)</span>
-  </h1>
+    <h1 class="hero-title">
+      <span class="a-red">S</span>oft & <span class="a-red">A</span>ctive <span class="a-red">M</span>atter <span class="a-red">P</span>hysics Laboratory <span class="a-red">(SAMP Lab)</span>
+    </h1>
     
     <p class="hero-description">Investigating the physics of complex fluids, liquid crystals, phase transitions, and active matter through advanced electro-optical and microfluidic techniques.</p>
     
@@ -66,7 +66,7 @@
     <button class="gallery-arrow left-arrow" aria-label="Scroll left">&#10094;</button>
     
     <div class="gallery-track" id="gallery-container">
-      <p style="padding: 0 8vw; color: var(--warm);">Loading gallery...</p>
+      <p style="padding: 0 8vw; color: var(--slate);">Loading gallery...</p>
     </div>
     
     <button class="gallery-arrow right-arrow" aria-label="Scroll right">&#10095;</button>
@@ -75,14 +75,13 @@
 
 <div id="image-modal" class="modal-overlay">
   <span class="modal-close">&times;</span>
-  <img class="modal-content" id="expanded-img">
+  <img class="modal-content" id="expanded-img" alt="Expanded laboratory view">
   <div id="modal-caption"></div>
 </div>
 
 <div id="footer-placeholder"></div>
 
 <script>
-  // Load Gallery
   fetch('data/gallery.json')
     .then(res => res.json())
     .then(data => {
@@ -92,10 +91,23 @@
         </div>
       `).join('');
     }).catch(err => {
-      document.getElementById('gallery-container').innerHTML = '<p style="padding: 0 8vw;">Gallery unavailable.</p>';
+      document.getElementById('gallery-container').innerHTML = '<p style="padding: 0 8vw; color: var(--slate);">Gallery temporarily unavailable.</p>';
     });
 
-  // Modal Logic (Lightbox)
+  const track = document.getElementById('gallery-container');
+  const leftArrow = document.querySelector('.left-arrow');
+  const rightArrow = document.querySelector('.right-arrow');
+
+  if (track && leftArrow && rightArrow) {
+    rightArrow.addEventListener('click', () => {
+      track.scrollBy({ left: 344, behavior: 'smooth' });
+    });
+
+    leftArrow.addEventListener('click', () => {
+      track.scrollBy({ left: -344, behavior: 'smooth' });
+    });
+  }
+
   const modal = document.getElementById("image-modal");
   const modalImg = document.getElementById("expanded-img");
   const captionText = document.getElementById("modal-caption");
@@ -105,7 +117,7 @@
       modal.style.display = "flex";
       setTimeout(() => modal.classList.add('active'), 10);
       modalImg.src = e.target.src;
-      captionText.innerHTML = e.target.alt;
+      captionText.innerHTML = e.target.alt || "";
     }
   });
 
@@ -119,7 +131,6 @@
     if (e.target === modal) hideModal();
   });
   
-  // Load Navigation
   fetch('nav.html')
     .then(response => response.text())
     .then(data => {
@@ -132,15 +143,14 @@
         });
       }
     })
-    .catch(err => console.error('Failed to load nav:', err));
+    .catch(err => console.error('Failed to mount nav component:', err));
 
-  // Load Footer
   fetch('footer.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('footer-placeholder').outerHTML = data;
     })
-    .catch(err => console.error('Failed to load footer:', err));
+    .catch(err => console.error('Failed to mount footer component:', err));
 </script>
 </body>
 </html>
