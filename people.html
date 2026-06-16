@@ -66,7 +66,6 @@
 <div id="footer-placeholder"></div>
 
 <script>
-  // Reusable function to generate HTML cards
   const generateCards = (data) => data.map(person => `
     <div class="team-card">
       <img src="${person.image}" alt="${person.name}" class="avatar-img" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
@@ -82,7 +81,6 @@
     </div>
   `).join('');
 
-  // 1. Fetch Current Members
   fetch('data/people.json')
     .then(res => res.json())
     .then(data => {
@@ -90,7 +88,6 @@
     })
     .catch(err => console.error("Error loading team:", err));
 
-  // 2. Fetch Past Members
   fetch('data/alumni.json')
     .then(res => res.json())
     .then(data => {
@@ -100,27 +97,21 @@
       document.getElementById('alumni-container').innerHTML = '<p style="color: var(--slate);">No past members listed yet.</p>';
     });
 
-  // 3. Universal Accordion Logic (With Protection Shields)
   document.addEventListener('click', function(e) {
-    // Shield 1: Ignore clicks inside the permanent Professor profile card
     if (e.target.closest('.prof-card')) return;
 
-    // Shield 2: Ignore clicks on sub-links (so Google Scholar / LinkedIn can be clicked safely)
     if (e.target.closest('a')) return;
 
     const clickedCard = e.target.closest('.team-card');
     if (!clickedCard) return;
     
-    // Close all other cards on the page
     document.querySelectorAll('.team-card').forEach(card => {
       if (card !== clickedCard) card.classList.remove('expanded');
     });
     
-    // Toggle the clicked card
     clickedCard.classList.toggle('expanded');
   });
 
-  // 4. Fetch Nav & Footer with Anti-Flicker Promise Lock
   Promise.all([
     fetch('nav.html').then(r => r.text()),
     fetch('footer.html').then(r => r.text())
@@ -136,7 +127,6 @@
       });
     }
     
-    // Reveal the page perfectly
     document.body.classList.add('fully-loaded');
   });
 </script>
