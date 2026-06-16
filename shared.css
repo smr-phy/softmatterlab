@@ -686,10 +686,21 @@ a:hover .pub-title { color: var(--teal); }
   align-items: center;
 }
 .gallery-track {
-  display: flex; gap: 1.5rem;
-  padding: 0 8vw 2rem 8vw; 
-  overflow-x: auto; scroll-snap-type: x mandatory; 
-  -webkit-overflow-scrolling: touch; scrollbar-width: none; 
+  display: flex; 
+  gap: 1.5rem;
+  padding: 0 0 2rem 0; /* Cleared horizontal padding to let layout spacers work */
+  overflow-x: auto; 
+  scroll-snap-type: x mandatory; 
+  -webkit-overflow-scrolling: touch; 
+  scrollbar-width: none; 
+}
+
+/* Create structural margin buffers that match your 8vw page margins */
+.gallery-track::before,
+.gallery-track::after {
+  content: '';
+  flex: 0 0 8vw; /* Forces an exact, uncollapsible 8vw empty spacer block */
+  scroll-snap-align: none; /* Prevents container from jamming or snapping on raw space */
 }
 .gallery-track::-webkit-scrollbar { display: none; }
 
@@ -725,8 +736,8 @@ a:hover .pub-title { color: var(--teal); }
   background: #ffffff; transform: translateY(-50%) scale(1.1);
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
-.left-arrow { left: 3vw; }
-.right-arrow { right: 3vw; }
+.left-arrow {left: 2.5vw;}
+.right-arrow {right: 2.5vw;}
 
 /*LIGHTBOX MODAL*/
 .modal-overlay {
