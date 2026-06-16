@@ -673,52 +673,98 @@ a:hover .pub-title { color: var(--teal); }
 .contact-card-content a:hover { text-decoration: underline; }
 .contact-card-content .sub-text { font-size: 0.85rem; margin-top: 0.5rem; }
 
-/*GALLERY CAROUSEL*/
+/*GALLERY CAROUSEL (REFINED WITH EDGE MASKS)*/
 .gallery-strip {
-  padding: 6rem 0 2rem 0; 
+  padding: 5.5rem 0 2rem 0; /* Matched to refined general section vertical padding */
   background: #fff;
   border-top: 1px solid var(--border);
 }
-.gallery-header { padding: 0 8vw; margin-bottom: 3rem; }
+
+.gallery-header { 
+  padding: 0 8vw; 
+  margin-bottom: 3rem; 
+}
+
 .gallery-wrapper {
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
+  
+  /* The Magic Touch: Fades out the images at the 8vw boundary line */
+  mask-image: linear-gradient(to right, transparent 0%, black 8vw, black calc(100% - 8vw), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8vw, black calc(100% - 8vw), transparent 100%);
 }
+
 .gallery-track {
   display: flex; 
   gap: 1.5rem;
-  padding: 0 0 2rem 0; /* Cleared horizontal padding to let layout spacers work */
+  padding: 0 8vw 2rem 8vw; /* Restored original padding so your arrows work perfectly! */
+  width: 100%;
   overflow-x: auto; 
   scroll-snap-type: x mandatory; 
   -webkit-overflow-scrolling: touch; 
-  scrollbar-width: none; 
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
 }
 
-/* Create structural margin buffers that match your 8vw page margins */
-.gallery-track::before,
-.gallery-track::after {
-  content: '';
-  flex: 0 0 8vw; /* Forces an exact, uncollapsible 8vw empty spacer block */
-  scroll-snap-align: none; /* Prevents container from jamming or snapping on raw space */
+/* Hides scrollbar in Chrome, Safari, and Opera */
+.gallery-track::-webkit-scrollbar { 
+  display: none; 
 }
-.gallery-track::-webkit-scrollbar { display: none; }
 
 .gallery-item {
   flex: 0 0 320px; 
   height: 320px;
   scroll-snap-align: start;
-  border-radius: 16px; /* Refined corners */
-  overflow: hidden; /* Protects borders from image zoom */
+  border-radius: 16px; 
+  overflow: hidden; 
   background: var(--mist);
   box-shadow: 0 8px 25px rgba(0,0,0,0.06);
 }
+
 .gallery-item img {
-  width: 100%; height: 100%;
-  object-fit: cover; display: block;
-  transition: transform 0.4s ease; cursor: pointer; 
+  width: 100%; 
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+  transition: transform 0.4s ease; 
+  cursor: pointer; 
 }
-.gallery-item:hover img { transform: scale(1.05); }
+
+.gallery-item:hover img { 
+  transform: scale(1.05); 
+}
+
+/* Scroll Arrows */
+.gallery-arrow {
+  position: absolute; 
+  z-index: 10;
+  top: calc(50% - 1rem); 
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border); 
+  color: #333;
+  width: 48px; 
+  height: 48px; 
+  border-radius: 50%;
+  font-size: 20px; 
+  cursor: pointer;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+.gallery-arrow:hover {
+  background: #ffffff; 
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Shifted back out slightly so they sit on the fade line */
+.left-arrow { left: 3vw; }
+.right-arrow { right: 3vw; }
 
 /* Scroll Arrows */
 .gallery-arrow {
