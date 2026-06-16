@@ -148,19 +148,19 @@ nav {
   padding: 0 4vw; 
 
   /* Dark overlay (85% opacity black) fused with the background image */
-  background: linear-gradient(rgba(15, 15, 15, 0.85), rgba(15, 15, 15, 0.85)), url('images/homepage.png');
+  background: linear-gradient(rgba(15, 15, 15, 0.75), rgba(15, 15, 15, 0.75)), url('images/homepage.png');
   background-size: cover;
   background-position: center;
 }
 
 .hero-content {
-  max-width: 800px; /* Prevents text from stretching too wide on huge monitors */
+  max-width: 1000px;
   position: relative;
   z-index: 2;
 }
 
 .hero-eyebrow {
-  color: #c1272d; /* Ashoka Red */
+  color: #c1272d;
   font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
   text-transform: uppercase;
@@ -178,8 +178,7 @@ nav {
 }
 
 .a-red {
-  color: #c1272d; /* Ashoka Red for SAMP */
-  font-style: italic;
+  color: #c1272d;
 }
 
 .hero-description {
@@ -189,7 +188,7 @@ nav {
   line-height: 1.6;
   font-weight: 300;
   
-  /* THIS IS THE FIX: Centers the box itself while keeping the bottom margin */
+  /* Centers the box keeping margin */
   margin: 0 auto 2.5rem auto; 
   
   max-width: 650px;
@@ -197,7 +196,7 @@ nav {
 
 .hero-cta {
   display: inline-block;
-  background-color: #0a2540; /* Ashoka Blue */
+  background-color: #0a2540;
   color: #ffffff;
   padding: 1.1rem 2.5rem;
   font-family: 'Inter', sans-serif;
