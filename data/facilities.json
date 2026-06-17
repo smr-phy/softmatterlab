@@ -1,17 +1,27 @@
 [
   { 
-    "image": "images/equipment1.jpg",
-    "title": "Julabo Presto Thermal Controller", 
-    "desc": "Highly precise temperature control system used for studying phase transitions in bulk fluid volumes. Essential for maintaining strict thermal equilibrium during our liquid crystal analysis." 
+    "image": "images/facilities/fluroscent_microscope.png",
+    "title": "Fluroscent Microscopy Setup", 
+    "desc": "The Olympus SZX16 stereo microscope setup is optimized for studying the collective dynamics of C. elegans in two-dimensional environments. Its wide field of view and high numerical aperture enable simultaneous monitoring of spatiotemporal patterns across large nematode populations. To facilitate high-throughput tracking, the high-contrast fluorescence axis (powered by the YODN source and RFP2 filter) isolates the flexible, moving organisms from the background." 
   },
   { 
-    "image": "images/equipment1.jpg", 
-    "title": "Light Scattering Setup", 
-    "desc": "Custom optical bench setup for light scattering observations. Frequently utilized alongside our 1 mm unaligned cells to probe the optical properties and defect dynamics of soft systems." 
+    "image": "images/facilities/magneti_setup.png", 
+    "title": "Magneto-optical Study Setup", 
+    "desc": "This experimental setup is designed for magneto-optical studies of liquid crystals, allowing for the precise control of magnetic fields and temperature. It features a customized Holmarc HO-EM7000S electromagnet that applies controlled magnetic fields to the liquid crystal sample. A Julabo Dyneo DD-800F temperature controller accurately regulates the sample's temperature to trigger specific phase transitions." 
   },
   { 
-    "image": "images/equipment1.jpg",
-    "title": "Micro-Rheology Suite", 
-    "desc": "Advanced particle-tracking setup to measure the viscoelastic properties of hydrogels and colloidal suspensions at a microscopic scale." 
+    "image": "images/facilities/polarization_microscope.png",
+    "title": "Polarization Microscopy Setup", 
+    "desc": "'Leica DM4P Polarization Microscope' with all optical accessories and 'Linkam T96 S Temperature controller' for precise temperature control." 
+  },
+  { 
+    "image": "images/facilities/optical_table.png",
+    "title": "Optical Studies Setup",
+    "desc": "Optical studies setup with 'Ametek TMC Vibration Controlled Optical Table' to make setups for custom optical studies." 
+  },
+  { 
+    "image": "images/facilities/fabrication.png",
+    "title": "Cell Fabrication Facility",
+    "desc": "Setup for cell custom cell fabriation." 
   }
 ]
