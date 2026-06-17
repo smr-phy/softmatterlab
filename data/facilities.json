@@ -5,7 +5,7 @@
     "desc": "The Olympus SZX16 stereo microscope setup is optimized for studying the collective dynamics of C. elegans in two-dimensional environments. Its wide field of view and high numerical aperture enable simultaneous monitoring of spatiotemporal patterns across large nematode populations. To facilitate high-throughput tracking, the high-contrast fluorescence axis (powered by the YODN source and RFP2 filter) isolates the flexible, moving organisms from the background." 
   },
   { 
-    "image": "images/facilities/magneti_setup.png", 
+    "image": "images/facilities/magnet_setup.png", 
     "title": "Magneto-optical Study Setup", 
     "desc": "This experimental setup is designed for magneto-optical studies of liquid crystals, allowing for the precise control of magnetic fields and temperature. It features a customized Holmarc HO-EM7000S electromagnet that applies controlled magnetic fields to the liquid crystal sample. A Julabo Dyneo DD-800F temperature controller accurately regulates the sample's temperature to trigger specific phase transitions." 
   },
