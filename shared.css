@@ -673,35 +673,45 @@ a:hover .pub-title { color: var(--teal); }
 .contact-card-content a:hover { text-decoration: underline; }
 .contact-card-content .sub-text { font-size: 0.85rem; margin-top: 0.5rem; }
 
-/* GALLERY CAROUSEL */
+/*GALLERY CAROUSEL*/
 .gallery-strip {
-  background: #ffffff;
-  border: 1px solid var(--border);
-  border-radius: 24px; /* Matches your premium rounded aesthetic */
-  margin: 4rem 8vw 6rem 8vw; /* Floats the container in the center of the page */
-  padding: 4rem 0;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+  padding: 4rem 0 6rem 0;
+  background: transparent; /* Removes the full-width white block */
+  border-top: none;
 }
 
 .gallery-header { 
-  padding: 0 4rem; /* Aligns text cleanly inside the new rounded card */
-  margin-bottom: 3rem; 
+  padding: 0 8vw; /* Aligns the heading perfectly with the rest of the site */
+  margin-bottom: 2rem; 
 }
 
 .gallery-wrapper {
   position: relative;
   display: flex;
   align-items: center;
-  width: 100%;
+  
+  /* The New Floating White Card */
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 24px; 
+  margin: 0 4vw; /* 4vw margins make it noticeably wider than the 8vw text blocks */
+  padding: 3rem 0; /* Vertical breathing room inside the card */
+  box-shadow: 0 12px 40px rgba(0,0,0,0.04);
 }
 
 .gallery-track {
   display: flex; 
   gap: 1.5rem;
-  padding: 0 4rem 2rem 4rem; /* Creates 4rem of safe empty space on the edges */
+  
+  /* 3rem (48px) padding on the left/right creates the resting buffer */
+  padding: 0 3rem 1.5rem 3rem; 
   width: 100%;
   overflow-x: auto; 
   scroll-snap-type: x mandatory; 
+  
+  /* THE MAGIC LINE: Forces the scroll-snap to stop AT the padding, not the edge */
+  scroll-padding-inline: 3rem; 
+  
   -webkit-overflow-scrolling: touch; 
   scrollbar-width: none; 
 }
@@ -737,7 +747,7 @@ a:hover .pub-title { color: var(--teal); }
 .gallery-arrow {
   position: absolute; 
   z-index: 10;
-  top: calc(50% - 1rem); 
+  top: calc(50% - 0.75rem); /* Accounts for the bottom padding on the track */
   transform: translateY(-50%);
   background: #ffffff;
   border: 1px solid var(--border); 
@@ -759,19 +769,22 @@ a:hover .pub-title { color: var(--teal); }
   box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
 
-/* Positioned exactly inside the 4rem empty padding gap */
-.left-arrow { left: 1rem; }
-.right-arrow { right: 1rem; }
+/* Placed fully inside the 3rem void we created with the padding */
+.left-arrow { left: 1.25rem; }
+.right-arrow { right: 1.25rem; }
 
 /* Responsive adjustments for Mobile & Tablet */
 @media (max-width: 900px) {
-  .gallery-strip {
-    margin: 2rem 4vw 4rem 4vw;
-    padding: 3rem 0;
+  .gallery-wrapper {
+    margin: 0 4vw;
+    padding: 2.5rem 0;
     border-radius: 16px;
   }
-  .gallery-header { padding: 0 2rem; }
-  .gallery-track { padding: 0 2rem 1.5rem 2rem; gap: 1rem; }
+  .gallery-track { 
+    padding: 0 2rem 1rem 2rem; 
+    scroll-padding-inline: 2rem;
+    gap: 1rem; 
+  }
   .gallery-arrow { display: none; }
   .gallery-item { flex: 0 0 260px; height: 260px; }
 }
