@@ -233,13 +233,26 @@ section {
   background: var(--gold);
 }
 
-.section-title {
+/* .section-title {
   font-size: clamp(32px, 3vw, 42px);
   font-weight: 700; 
   line-height: 1.2;
   color: var(--ink);
   margin-bottom: 1.25rem; 
   letter-spacing: -0.01em;
+} */
+
+.section-title {
+  /* Reduced min-size (28px) and max-size (36px) for a more compact look */
+  font-size: clamp(28px, 2.5vw, 36px);
+  
+  /* Reduced weight for a lighter, more elegant feel */
+  font-weight: 600; 
+  
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 1rem; /* Tightened spacing further */
+  letter-spacing: -0.02em; /* Slightly tighter letter spacing complements the smaller size */
 }
 
 .section-intro {
