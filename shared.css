@@ -251,7 +251,7 @@ section {
   
   line-height: 1.2;
   color: var(--ink);
-  margin-bottom: 1rem; /* Tightened spacing further */
+  margin-bottom: 0.6rem; /* Tightened spacing further */
   letter-spacing: -0.02em; /* Slightly tighter letter spacing complements the smaller size */
 }
 
