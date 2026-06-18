@@ -222,6 +222,31 @@ nav {
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
+/*GENERAL SECTIONS*/
+section { 
+  padding: 5.5rem 8vw; 
+  scroll-margin-top: 80px; 
+}
+
+.section-label {
+  font-size: 11px; 
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase; 
+  color: var(--gold);
+  display: flex; 
+  align-items: center; 
+  gap: 10px;
+  margin-bottom: 0.75rem;
+}
+
+.section-label::before {
+  content: ''; 
+  width: 24px; 
+  height: 1px; 
+  background: var(--gold);
+}
+
 /* .section-title {
   font-size: clamp(32px, 3vw, 42px);
   font-weight: 700; 
@@ -240,7 +265,7 @@ nav {
   
   line-height: 1.2;
   color: var(--ink);
-  margin-bottom: 0.8rem; /* Tightened spacing further */
+  margin-bottom: 0.6rem; /* Tightened spacing further */
   letter-spacing: -0.02em; /* Slightly tighter letter spacing complements the smaller size */
 }
 
