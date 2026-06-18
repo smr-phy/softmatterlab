@@ -197,7 +197,7 @@ nav {
 }
 
 .hero-title {
-  color: var(--ink); /* Swapped from white to ink so it pops off the light blur */
+  color: var(--teal); /* Swapped from white to ink so it pops off the light blur */
   font-size: 4.2rem;
   line-height: 1.1;
   margin-bottom: 1.5rem;
@@ -208,7 +208,7 @@ nav {
 }
 
 .hero-description {
-  color: var(--slate); /* Swapped from gray to your --slate variable for legible text tracking */
+  color: var(--ink); /* Swapped from gray to your --slate variable for legible text tracking */
   font-size: 1.25rem;
   line-height: 1.6;
   font-weight: 400; /* Shifted from 300 to 400 to optimize thin type contrast on blur layers */
