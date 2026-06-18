@@ -144,7 +144,7 @@ nav {
 .hero {
   position: relative;
   width: 96%; 
-  max-width: 1600px; 
+  max-width: 1800px; 
   margin: 7rem auto 5rem auto; 
   border-radius: 24px; 
   overflow: hidden; 
@@ -185,7 +185,7 @@ nav {
 
 .hero-title {
   color: #ffffff; /* Restored back to crisp white */
-  font-size: 3.5rem;
+  font-size: 3.4rem;
   line-height: 1.1;
   margin-bottom: 1.5rem;
 }
