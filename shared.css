@@ -171,7 +171,7 @@ nav {
   height: 100%;
   
   /* Dropped opacity to 45% so your data image completely shows through */
-  background: rgba(244, 241, 235, 0.45);
+  background: rgba(244, 241, 235, 0.65);
   
   /* Dropped blur to a razor-thin 2px just to gently soften sharp image details behind text */
   backdrop-filter: blur(2px);
@@ -371,7 +371,7 @@ section {
 
 /*ABOUT STRIP & PILLARS*/
 .about-strip {
-  background: #051626; 
+  background: var(--teal);/*#051626;*/
   padding: 7rem 8vw;
   display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
   align-items: center;
@@ -388,7 +388,7 @@ a.pillar {
   color: inherit;
 }
 .pillar {
-  background: #0c253d; 
+  background: var(--teal2);/*#0c253d;*/
   padding: 1.5rem 2rem;
   display: flex; align-items: center; gap: 1.5rem;
   border-radius: 16px; /* Refined corners */
