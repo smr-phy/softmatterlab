@@ -95,8 +95,8 @@ body {
 /*NAVIGATION BAR*/
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(244,241,235,0.70);
-  backdrop-filter: blur(12px);
+  background: rgba(244,241,235,0.60);
+  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   padding: 0 4vw;
@@ -157,7 +157,7 @@ nav {
   padding: 0 4vw; 
   
   /* A dark 40% opacity tint that keeps your data image perfectly sharp and visible underneath */
-  background: linear-gradient(rgba(20, 20, 20, 0.40), rgba(20, 20, 20, 0.40)), url('images/homepage.png');
+  background: linear-gradient(rgba(20, 20, 20, 0.60), rgba(20, 20, 20, 0.40)), url('images/homepage.png');
   background-size: cover;
   background-position: center;
 }
