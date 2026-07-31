@@ -1,9 +1,113 @@
 [
   {
+    "name": "Simar Randhawa",
+    "role": "UG 2022-26",
+    "image": "images/team/simar.png",
+    "bio": "Simar completed her Undergraduate Thesis under Dr Pramoda Kumar in SAMP Lab. Her thesis title was 'The Effect of Increased Body-Rigidity on the 2D-collective Behaviour of C. elegans'.",
+    "scholar": "",
+    "linkedin": "https://www.linkedin.com/in/simar-randhawa-109026289/"
+  },
+  {
+    "name": "Drishana Kundu",
+    "role": "UG 2022-26",
+    "image": "images/team/drishana.png",
+    "bio": "Drishana completed her Undergraduate Thesis in SAMP Lab. Her Thesis focused on 'Investigating the coupled flow dynamics of twolubricated non-Newtonian Gravity Currents.'",
+    "scholar": "",
+    "linkedin": "https://www.linkedin.com/in/drishanakundu/"
+  },
+  {
+    "name": "Abeer Karandikar",
+    "role": "ASP 2025",
+    "image": "images/team/abeer.png",
+    "bio": "Abeer completed his ASP Thesis in SAMP Lab. His Thesis focused on 'Applications of Differential Dynamic Microscopy in Soft Matter Systems'.",
+    "scholar": "",
+    "linkedin": ""
+  },
+  {
     "name": "Satwik Wats",
-    "role": "UG Student (2024-2025)",
+    "role": "ASP 2025",
     "image": "images/team/satwik.png",
     "bio": "Satwik is currently a Master student at Universität zu Köln with a specialization in Condensed Matter and Quantum Technologies. His work at SM Lab focused on characterizing phase transitions with high precision in thick liquid crystal samples in the vicinity of Isotropic-Nematic transition point.",
+    "scholar": "",
+    "linkedin": "https://www.linkedin.com/in/satwik-wats-47745320a/"
+  },
+  {
+    "name": "Chandrashekar Mishra",
+    "role": "ASP 2023",
+    "image": "images/team/chandrashekar.png",
+    "bio": "Thesis Title: Applications of Differential Dynamic Microscopy in Soft Matter Systems",
+    "scholar": "",
+    "linkedin": "https://www.linkedin.com/in/chandra-shekhar-mishra-0260aa22b/"
+  },
+  {
+    "name": "Risham Kaur Parmar",
+    "role": "ASP 2022",
+    "image": "images/team/placeholder.png",
+    "bio": "Thesis Title: Bioconvection in Chlamydomonas reinhardtii",
+    "scholar": "",
+    "linkedin": ""
+  },
+  {
+    "name": "Yogesh Pratap",
+    "role": "ASP 2022",
+    "image": "images/team/placeholder.png",
+    "bio": "Thesis Title: Understanding the Physical Dynamics and Collective Behaviour of C. elegans",
+    "scholar": "",
+    "linkedin": ""
+  },
+  {
+    "name": "Kartik Tiwari",
+    "role": "UG 2019-22",
+    "image": "images/team/placeholder.png",
+    "bio": "ISM Porject (Spring 2022), White/Black Hole Analogs in Circular Hydraulic Jumps: An Experimental Study",
+    "scholar": "",
+    "linkedin": "https://www.linkedin.com/in/krtktwri/"
+  },
+  {
+    "name": "Divasjyothi Parashar",
+    "role": "ASP 2022",
+    "image": "images/team/placeholder.png",
+    "bio": "Thesis Title: Glaciers on a Table Top: The Fluid Dynamics of Gravity Currents",
+    "scholar": "",
+    "linkedin": ""
+  },
+  {
+    "name": "Riya Banerjee",
+    "role": "ASP 2021",
+    "image": "images/team/placeholder.png",
+    "bio": "Thesis Title: Studying Noise Associated with Electroconvective Behaviour of Nematic Liquid Crystals",
+    "scholar": "",
+    "linkedin": ""
+  },
+  {
+    "name": "Heer Shah",
+    "role": "ASP 2021",
+    "image": "images/team/placeholder.png",
+    "bio": "Thesis Title: Vortical Flow in Ion Exchange Membranes at the Overlimting Regime",
+    "scholar": "",
+    "linkedin": ""
+  },
+  {
+    "name": "Risham Kaur Parmar",
+    "role": "",
+    "image": "images/team/placeholder.png",
+    "bio": "ISM Project (May 2021): Motion of Dinoflagellates in the Presence of Light",
+    "scholar": "",
+    "linkedin": ""
+  },
+  {
+    "name": "Anand Waghmareand Vidhur Singh",
+    "role": "",
+    "image": "images/team/placeholder.png",
+    "bio": "ISM Project (May 2020): Experimental Study on M- Cycle Based cooling",
+    "scholar": "",
+    "linkedin": ""
+  },
+  {
+    "name": "Shwetabh Singh",
+    "role": "",
+    "image": "images/team/placeholder.png",
+    "bio": "ISM Project (May 2020): Brownian Motion: An Experimental Study",
     "scholar": "",
     "linkedin": ""
   }
