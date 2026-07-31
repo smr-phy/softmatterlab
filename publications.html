@@ -22,14 +22,16 @@
       <h2 class="section-title">Publications</h2>
     </div>
   </div>
+  
   <div class="pub-list" id="pubs-container"><p>Loading publications...</p></div>
 </section>
 
 <div id="footer-placeholder"></div>
 
 <script>
-  fetch('data/publications.json').then(res => res.json()).then(data => {
-    document.getElementById('pubs-container').innerHTML = data.map(pub => `
+  // Helper function to render a single publication item
+  function renderPubItem(pub) {
+    return `
       <div class="pub-item">
         <div class="pub-year">${pub.year}</div>
         <div>
@@ -41,16 +43,44 @@
           ${pub.link ? `<a href="${pub.link}" target="_blank" rel="noopener noreferrer" class="pub-read-more">Read Paper ↗</a>` : ''}
         </div>
       </div>
-    `).join('');
-  });
+    `;
+  }
+
+  fetch('data/publications.json')
+    .then(res => res.json())
+    .then(data => {
+      // Filter publications by year
+      const recentPubs = data.filter(pub => parseInt(pub.year, 10) >= 2020);
+      const olderPubs = data.filter(pub => parseInt(pub.year, 10) < 2020);
+
+      let htmlContent = '';
+
+      // Section: 2020 and Later
+      if (recentPubs.length > 0) {
+        htmlContent += `<h3 class="pub-category-heading" style="margin-top: 2rem; margin-bottom: 1rem;">2020 &amp; Later</h3>`;
+        htmlContent += recentPubs.map(renderPubItem).join('');
+      }
+
+      // Section: Before 2020
+      if (olderPubs.length > 0) {
+        htmlContent += `<h3 class="pub-category-heading" style="margin-top: 3rem; margin-bottom: 1rem;">Before 2020</h3>`;
+        htmlContent += olderPubs.map(renderPubItem).join('');
+      }
+
+      document.getElementById('pubs-container').innerHTML = htmlContent || '<p>No publications found.</p>';
+    });
 
   fetch('nav.html').then(r => r.text()).then(data => {
     document.getElementById('nav-placeholder').outerHTML = data;
     document.getElementById('hamburger').addEventListener('click', function() {
-      document.getElementById('nav-links').classList.toggle('active'); this.classList.toggle('open');
+      document.getElementById('nav-links').classList.toggle('active'); 
+      this.classList.toggle('open');
     });
   });
-  fetch('footer.html').then(r => r.text()).then(data => { document.getElementById('footer-placeholder').outerHTML = data; });
+
+  fetch('footer.html').then(r => r.text()).then(data => { 
+    document.getElementById('footer-placeholder').outerHTML = data; 
+  });
 </script>
 </body>
 </html>
