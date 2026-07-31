@@ -174,24 +174,24 @@ nav {
 }
 
 .hero-eyebrow {
-  color: var(--accent-red);
+  color: #c1272d;
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-size: 0.9rem;
   text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .hero-title {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 600;            /* Clean, modern bold weight */
-  letter-spacing: -0.03em;     /* Slightly tight spacing for a sleek modern look */
-  line-height: 1.15;
-  color: #ffffff;             /* Main white text color */
+  color: #ffffff; /* Restored back to crisp white */
+  font-size: 3.4rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
 }
 
 .a-red {
-  color: #e8836b !important;
-  font-weight: 700;
+  color: #e63946; /* Slightly brighter red variant so it stays vibrant against the dark tint */
 }
 
 .hero-description {
