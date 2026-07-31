@@ -395,7 +395,7 @@ a.pillar {
 .pillar-icon.t,
 .pillar-icon.r,
 .pillar-icon.c { 
-  background: rgba(220, 38, 38, 0.15); /* Soft transparent red background */
+  background: rgba(220, 38, 38, 0); /* Soft transparent red background */
   color: #dc2626; /* Solid red for the SVG stroke */
 }
 .pillar-text strong { display: block; font-size: 16px; font-weight: 500; color: #ffffff; }
