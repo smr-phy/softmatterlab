@@ -7,7 +7,7 @@
   { 
     "image": "images/facilities/magnet_setup.png", 
     "title": "Magneto-optical Study Setup", 
-    "desc": "This experimental setup is designed for magneto-optical studies of liquid crystals, allowing for the precise control of magnetic fields and temperature. It features a customized Holmarc HO-EM7000S electromagnet that applies controlled magnetic fields to the liquid crystal sample. A Julabo Dyneo DD-800F temperature controller accurately regulates the sample's temperature to trigger specific phase transitions." 
+    "desc": "This experimental setup is designed for magneto-optical studies of liquid crystals, allowing for the precise control of magnetic fields and temperature. It features a customized Holmarc HO-EM7000S electromagnet and a Julabo Dyneo DD-800F temperature controller to accurately regulates the sample's temperature to trigger specific phase transitions." 
   },
   { 
     "image": "images/facilities/polarization_microscope.png",
@@ -22,6 +22,6 @@
   { 
     "image": "images/facilities/fabrication.png",
     "title": "Cell Fabrication Facility",
-    "desc": "Setup for cell custom cell fabriation." 
+    "desc": "This facility is designed to fabricate custom planar and homeotropic liquid crystal cells for precision electro and magneto-optical studies. The setup includes ultrasonic bath for cleaning, Apex EZ Spin A1 for spin-coating alignment films on ITO glass, and Rotek hot air oven for thermal curing. For planar alignment, the Holmarc rubbing machine creates uniform micro-grooves. The MBR Ultrasonic soldering system helps attach clean, flux-free electrical contacts to the ITO layers." 
   }
 ]
