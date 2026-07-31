@@ -21,6 +21,11 @@
   { 
     "image": "images/facilities/fabrication.png",
     "title": "Cell Fabrication Facility",
-    "desc": "This facility is designed to fabricate custom planar and homeotropic liquid crystal cells for precision electro and magneto-optical studies. The setup includes ultrasonic bath for cleaning, Apex EZ Spin A1 for spin-coating alignment films on ITO glass, and Rotek hot air oven for thermal curing. For planar alignment, the Holmarc rubbing machine creates uniform micro-grooves. The MBR Ultrasonic soldering system helps attach clean, flux-free electrical contacts to the ITO layers." 
+    "desc": "Cell Fabrication facility is designed to fabricate custom planar and homeotropic liquid crystal cells for precision electro and magneto-optical studies. The setup includes ultrasonic bath for cleaning, Apex EZ Spin A1 for spin-coating alignment films on ITO glass, and Rotek hot air oven for thermal curing. For planar alignment, the Holmarc rubbing machine creates uniform micro-grooves. The MBR Ultrasonic soldering system helps attach clean, flux-free electrical contacts to the ITO layers." 
+  },
+  { 
+    "image": "images/facilities/highspeed.png",
+    "title": "High-Speed Imaging Facility",
+    "desc": "The facility is equipped with Phantom High Speed KT1640 camera featuring a 4.2-megapixel Back Side Illuminated (BSI) sensor. It captures 3,760 fps at full resolution and up to 421,050 fps at reduced sizes." 
   }
 ]
