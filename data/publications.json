@@ -1,9 +1,163 @@
 [
-  { 
-    "year": "2020", 
-    "title": "Mechanisms of hydrodynamic instability in concentration polarization", 
-    "authors": "P Kumar, SM Rubinstein, I Rubinstein, B Zaltzman", 
-    "journal": "Physical Review Research · Vol 2, Issue 3, pp. 033-365",
-    "link": "https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.2.033365"
+  {
+    "year": "2026",
+    "title": "Rigidity-induced nematic order in 2D-confined semiflexible active matter",
+    "authors": "Simar Randhawa, Shri Gowri R. Tikoti, Anup Padmanabhan, and Pramoda Kumar",
+    "journal": "Soft Matter (submitted)",
+    "link": ""
+  },
+  {
+    "year": "2026",
+    "title": "Imine linkage flipping effect on the mesogenic properties of polar trifluoromethyl substituted three-ring three-linker based liquid crystals",
+    "authors": "Varsha Jaina, Deepak Asthanab, Pramoda Kumar",
+    "journal": "Liq. Cryst. (submitted)",
+    "link": ""
+  },
+  {
+    "year": "2026",
+    "title": "Experimental investigation of the coupled flow dynamics of gravity currents of two non-Newtonian fluids",
+    "authors": "R. K. Vishwakarma, D. Kundu and P. Kumar",
+    "journal": "J. Fluid Mech. (submitted)",
+    "link": ""
+  },
+  {
+    "year": "2026",
+    "title": "Refinement of an experimental technique for measuring birefringence by the polarization-dependent transmission method",
+    "authors": "A. Karandikar, S. Wats, and P. Kumar",
+    "journal": "Rev. Sci. Instrum. (submitted)",
+    "link": ""
+  },
+  {
+    "year": "2021",
+    "title": "Lubricated gravity currents of power-law fluids",
+    "authors": "P. Kumar, S. Zuri, D. Kogan, M. Gottlieb and R. Sayag",
+    "journal": "J. Fluid Mech., 916, A33",
+    "link": "https://doi.org/10.1017/jfm.2021.240"
+  },
+  {
+    "year": "2020",
+    "title": "Mechanisms of hydrodynamic instability in concentration polarization",
+    "authors": "P. Kumar, S.M. Rubinstein, I. Rubinstein and B. Zaltzman",
+    "journal": "Phys. Rev. Research 2, 033365",
+    "link": "https://doi.org/10.1103/PhysRevResearch.2.033365"
+  },
+  {
+    "year": "2016",
+    "title": "Interfacial and morphological features of a twist-bend nematic drop",
+    "authors": "K. S. Krishnamurthy, P. Kumar, N. B. Palakurthy, C.V. Yelamaggad, and E. G. Virga",
+    "journal": "Soft Matter 12, 4967",
+    "link": "https://doi.org/10.1039/C6SM00482B"
+  },
+  {
+    "year": "2016",
+    "title": "Effect of waveform of the driving field on electroconvection near the dielectric inversion frequency",
+    "authors": "K.S Krishnamurthy and P. Kumar",
+    "journal": "Phys. Rev. E. 93, 022706",
+    "link": "https://doi.org/10.1103/PhysRevE.93.022706"
+  },
+  {
+    "year": "2013",
+    "title": "Myelin structures formed by thermotropic smectic liquid crystals",
+    "authors": "Karthik Peddireddy, P.Kumar, S. Thutupalli, Stephan Herminghaus and Christian Bahr",
+    "journal": "Langmuir 29, 15682",
+    "link": "https://doi.org/10.1021/la4038588"
+  },
+  {
+    "year": "2013",
+    "title": "Inhomogeneous Freedericksz effect in a quarter turn twisted achiral smectic C liquid crystal",
+    "authors": "K.S Krishnamurthy, P. Kumar",
+    "journal": "EPL (Euro Physics Letters) 102, 66001",
+    "link": "https://doi.org/10.1209/0295-5075/102/66001"
+  },
+  {
+    "year": "2013",
+    "title": "Polarity-sensitive transient patterned state in a twisted nematic liquid crystal driven by very low frequency field",
+    "authors": "K. S. Krishnamurthy, P. Kumar and Vijay Kumar",
+    "journal": "Phys. Rev. E. 87, 022504",
+    "link": "https://doi.org/10.1103/PhysRevE.87.022504"
+  },
+  {
+    "year": "2012",
+    "title": "Solubilization of thermotropic liquid crystal compounds in aqueous surfactant solutions",
+    "authors": "Karthik Peddireddy, P. Kumar, Shashi Thutupalli, Stephan Herminghaus and Christian Bahr",
+    "journal": "Langmuir 28, 12426",
+    "link": "https://doi.org/10.1021/la3015817"
+  },
+  {
+    "year": "2010",
+    "title": "Convection-roll instability in spite of large stabilizing torque",
+    "authors": "P. Kumar, Jana Heuer, T. Toth-Katona, N. Eber, and A. Buka",
+    "journal": "Phys. Rev. E. 81, 020702(R)",
+    "link": "https://doi.org/10.1103/PhysRevE.81.020702"
+  },
+  {
+    "year": "2009",
+    "title": "Flexoelectrically driven instabilities in liquid crystals",
+    "authors": "K. S. Krishnamurthy, Pramoda Kumar and Pramod Tadapatri",
+    "journal": "Journal of the Indian Institute of Science 89:2 Apr–Jun 2009",
+    "link": ""
+  },
+  {
+    "year": "2009",
+    "title": "Converse Flexoelectric Effect in Bent-Core Nematic Liquid Crystals",
+    "authors": "P. Kumar, Y. Marinov, H. P. Hinov, Uma S. Hiremath, C. V. Yelamaggad, K. S. Krishnamurthy, and A. G. Petrov",
+    "journal": "J. Phys. Chem. B 113, 9168",
+    "link": "https://doi.org/10.1021/jp903241z"
+  },
+  {
+    "year": "2008",
+    "title": "Electroconvection in a homeotropic bent-rod nematic liquid crystal beyond the dielectric inversion frequency",
+    "authors": "P. Kumar, Uma S .Hiremath, C. V. Yelamaggad, Alex G. Rossberg and K. S. Krishnamurthy",
+    "journal": "J. Phys. Chem. B 112, 9753",
+    "link": "https://doi.org/10.1021/jp803798g"
+  },
+  {
+    "year": "2008",
+    "title": "Drifting periodic structures in a degenerate-planar bent-rod nematic liquid crystal beyond the dielectric inversion frequency",
+    "authors": "P. Kumar, Uma S .Hiremath, C. V. Yelamaggad, Alex G. Rossberg and K. S. Krishnamurthy",
+    "journal": "J. Phys. Chem. B (Lett) 112, 9270",
+    "link": "https://doi.org/10.1021/jp804264m"
+  },
+  {
+    "year": "2007",
+    "title": "Emergence of periodic order in electric field driven planar nematics: an exclusive ac effect absent in static fields",
+    "authors": "K. S. Krishnamurthy and P. Kumar",
+    "journal": "Phys. Rev. E. 76, 051705",
+    "link": "https://doi.org/10.1103/PhysRevE.76.051705"
+  },
+  {
+    "year": "2007",
+    "title": "Instabilities across the isotropic conductivity point in a nematic phenyl benzoate under ac driving",
+    "authors": "P. Kumar, S. N. Patil, U. S. Hiremath, and K. S. Krishnamurthy",
+    "journal": "J. Phys. Chem. B, 111, 8792",
+    "link": "https://doi.org/10.1021/jp072686o"
+  },
+  {
+    "year": "2007",
+    "title": "Drifting undulations in an achiral Smectic C liquid crystal driven by a static electric field",
+    "authors": "K. S. Krishnamurthy and P. Kumar",
+    "journal": "J. Phys. Chem. B (Lett) 111, 2423",
+    "link": "https://doi.org/10.1021/jp0704719"
+  },
+  {
+    "year": "2007",
+    "title": "Gradient flexoelectric switching response in a nematic phenyl benzoate",
+    "authors": "P. Kumar and K. S. Krishnamurthy",
+    "journal": "Liq. Cryst. 34, 257",
+    "link": "https://doi.org/10.1080/02678290601111192"
+  },
+  {
+    "year": "2006",
+    "title": "Competing modes of instability in an electrically driven nematic with a small positive dielectric anisotropy",
+    "authors": "P. Kumar and K. S. Krishnamurthy",
+    "journal": "Phys. Rev. E. 74, 031705",
+    "link": "https://doi.org/10.1103/PhysRevE.74.031705"
+  },
+  {
+    "year": "2006",
+    "title": "Flexoelectric response at defect sites in nematic inversion walls",
+    "authors": "P. Kumar and K. S. Krishnamurthy",
+    "journal": "Liq. Cryst., 33, 131",
+    "link": "https://doi.org/10.1080/02678290500473669"
   }
 ]
