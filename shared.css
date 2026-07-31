@@ -392,9 +392,12 @@ a.pillar {
   display: flex; align-items: center; justify-content: center;
   font-size: 20px; flex-shrink: 0;
 }
-.pillar-icon.t { background: rgba(45, 206, 158, 0.15); color: #2dce9e; }
-.pillar-icon.r { background: rgba(232, 131, 107, 0.15); color: #e8836b; }
-.pillar-icon.c { background: rgba(155, 139, 212, 0.15); color: #9b8bd4; }
+.pillar-icon.t,
+.pillar-icon.r,
+.pillar-icon.c { 
+  background: rgba(220, 38, 38, 0.15); /* Soft transparent red background */
+  color: #dc2626; /* Solid red for the SVG stroke */
+}
 .pillar-text strong { display: block; font-size: 16px; font-weight: 500; color: #ffffff; }
 .pillar-text span { font-size: 13px; color: #9ca3af; } 
 
