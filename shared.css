@@ -157,7 +157,7 @@ nav {
   padding: 0 4vw; 
   
   /* A dark 40% opacity tint that keeps your data image perfectly sharp and visible underneath */
-  background: linear-gradient(rgba(20, 20, 20, 0.60), rgba(20, 20, 20, 0.40)), url('images/homepage.png');
+  background: linear-gradient(rgba(20, 20, 20, 0.60), rgba(20, 20, 20, 0.40)), url('images/homepage.webp');
   background-size: cover;
   background-position: center;
 }
