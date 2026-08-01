@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow indexing of the People page
+Disallow: /people
+
+# Provide the location of your sitemap
+Sitemap: https://samp-lab.com/sitemap.xml
