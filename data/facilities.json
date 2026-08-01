@@ -1,30 +1,30 @@
 [
   { 
-    "image": "images/facilities/fluroscent_microscope.png",
+    "image": "images/facilities/fluroscent_microscope.webp",
     "title": "Fluroscent Microscopy Setup", 
     "desc": "The Olympus SZX16 stereo microscope setup is designed to study collective dynamics of C. elegans in two-dimensional environments. Its wide field of view and high numerical aperture enable simultaneous monitoring of spatiotemporal patterns across large nematode populations. To facilitate high-throughput tracking, the high-contrast fluorescence axis helps isolate flexible, moving organisms from the background." 
   },
   { 
-    "image": "images/facilities/magnet_setup.png", 
+    "image": "images/facilities/magnet_setup.webp", 
     "title": "Magneto-optical Study Setup", 
     "desc": "This experimental setup is designed for magneto-optical studies of liquid crystals, allowing for the precise control of magnetic fields and temperature. It features a customized Holmarc HO-EM7000S electromagnet which can produce magnetic field of upto 3 Tesla, and a Julabo Dyneo DD-800F temperature controller which can regulates the sample's temperature with upto 0.1 degree celcius precision." 
   },
-  { "image": "images/facilities/polarization_microscope.png",
+  { "image": "images/facilities/polarization_microscope.webp",
     "title": "Polarization Microscopy Setup", 
     "desc": "This setup is designed for electro-optical studies in liquid crystal. It features a Leica DM4P Polarization Microscope and Linkam T96 S Temperature controllers for precise temperature control and optical measurements." 
   },
   { 
-    "image": "images/facilities/optical_table.png",
+    "image": "images/facilities/optical_table.webp",
     "title": "Optical Studies Setup",
     "desc": "The setup with Ametek TMC Vibration Controlled Optical Table is designed for custom optical studies setups. The facilities has all optical accessories including Keithley digital multimeters, Stanford Lockin amplifier, Julabo Presto Temperature controller, custom and pre-made optical stages, various lasers and precision photo-detectors, and high-quality coated lenses." 
   },
   { 
-    "image": "images/facilities/fabrication.png",
+    "image": "images/facilities/fabrication.webp",
     "title": "Cell Fabrication Facility",
     "desc": "Cell Fabrication facility is designed to fabricate custom planar and homeotropic liquid crystal cells for precision electro and magneto-optical studies. The setup includes ultrasonic bath for cleaning, Apex EZ Spin A1 for spin-coating alignment films on ITO glass, and Rotek hot air oven for thermal curing. For planar alignment, the Holmarc rubbing machine creates uniform micro-grooves. The MBR Ultrasonic soldering system helps attach clean, flux-free electrical contacts to the ITO layers." 
   },
   { 
-    "image": "images/facilities/highspeed.png",
+    "image": "images/facilities/highspeed.webp",
     "title": "High-Speed Imaging Facility",
     "desc": "The facility is equipped with Phantom High Speed KT1640 camera featuring a 4.2-megapixel Back Side Illuminated (BSI) sensor. It captures 3,760 fps at full resolution and up to 421,050 fps at reduced sizes." 
   }
