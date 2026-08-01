@@ -7,16 +7,16 @@
   { 
     "image": "images/facilities/magnet_setup.webp", 
     "title": "Magneto-optical Study Setup", 
-    "desc": "This experimental setup is designed for magneto-optical studies of liquid crystals, allowing for the precise control of magnetic fields and temperature. It features a customized Holmarc HO-EM7000S electromagnet which can produce magnetic field of upto 3 Tesla, and a Julabo Dyneo DD-800F temperature controller which can regulates the sample's temperature with upto 0.1 degree celcius precision." 
+    "desc": "This experimental setup is designed for magneto-optical studies of liquid crystals, allowing for the precis control of magnetic fields and temperature. It features a customized Holmarc HO-EM7000S electromagnet which can produce upto 3 Tesla magnetic field, and a Julabo Dyneo DD-800F temperature controller with precision of upto 0.1 degrees." 
   },
   { "image": "images/facilities/polarization_microscope.webp",
     "title": "Polarization Microscopy Setup", 
-    "desc": "This setup is designed for electro-optical studies in liquid crystal. It features a Leica DM4P Polarization Microscope and Linkam T96 S Temperature controllers for precise temperature control and optical measurements." 
+    "desc": "The setup is designed for electro-optical studies in liquid crystal. It features a Leica DM4P Polarization Microscope and Linkam T96 S Temperature controllers for precise temperature control and optical measurements." 
   },
   { 
     "image": "images/facilities/optical_table.webp",
     "title": "Optical Studies Setup",
-    "desc": "The setup with Ametek TMC Vibration Controlled Optical Table is designed for custom optical studies setups. The facilities has all optical accessories including Keithley digital multimeters, Stanford Lockin amplifier, Julabo Presto Temperature controller, custom and pre-made optical stages, various lasers and precision photo-detectors, and high-quality coated lenses." 
+    "desc": "The setup featuring Ametek TMC Vibration Controlled Optical Table is designed for custom optics experiments. The facilities has various optical-analysis accessories including Keithley digital multimeters, Stanford Lockin amplifier, Julabo Presto and Instec Temperature controllers, custom and pre-made optical stages, various lasers and precision photo-detectors, and high-quality coated lenses." 
   },
   { 
     "image": "images/facilities/fabrication.webp",
