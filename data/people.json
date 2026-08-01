@@ -1,6 +1,6 @@
 [
   {
-    "image": "images/team/shrigowri.png",
+    "image": "images/team/shrigowri.webp",
     "name": "Shri Gowri",
     "role": "PhD Student",
     "bio": "Shri completed her Bachelor’s degree at Mount Carmel College (MCC), Bangalore, followed by a Master’s in Physics from the University of Mysore, with a specialization in Solid State Physics.  Her current research focuses on understanding the collective dynamics of Caenorhabditis elegans. She approaches these organisms as a nematic, flexible active system due to their shape anisotropy and bidirectional motion-features that are characteristic of many other biological systems. Her work combines microscopy based experiments with computer vision and data driven modeling, employing deep learning tools such as U-Net for quantitative image analysis. Outside the lab, she enjoys cooking, reading, traveling, and engaging in creative activities such as building with Legos, playing board games, and designing model houses.",
@@ -8,7 +8,7 @@
     "scholar": ""
   },
   {
-    "image": "images/team/ankit.png",
+    "image": "images/team/ankit.webp",
     "name": "Ankit Gupta",
     "role": "PhD Student",
     "bio": "Ankit completed his Bachelor's degree in Physics from RRBMU, Alwar, and his M.Sc. in Physics from the National Institute of Technology, Jalandhar. His research focuses on spontaneous symmetry breaking and phase transitions in liquid crystals. His current work uses dynamic light scattering to investigate director fluctuation dynamics across the twist-bend nematic phase transition, with the objective of understanding the evolution of viscoelastic properties, critical fluctuations, and the development of heliconical order. His previous research includes the study of Marangoni stress-driven motility of twist-bend nematic droplets and the formation and evolution of splay structures during phase transitions in liquid crystals with negative dielectric anisotropy.",
@@ -16,7 +16,7 @@
     "scholar": ""
   },
   {
-    "image": "images/team/varsha.png",
+    "image": "images/team/varsha.webp",
     "name": "Varsha Jain",
     "role": "Post-Doc Fellow",
     "bio": "Varsha received her PhD in 2023 working under supervision of Prof Santanu Kumar Pal at IISER Mohali. During her PhD, she received the INSPIRE-JRF Award Letter and the PhD research fellowship from MHRD. She is 'AXIS Bank Postdoctoral Research Fellow' at Ashoka under the joint supervision of Dr Pramoda Kumar and Dr Deepak Asthanaa, and currently works on the project 'Design, synthesis and physico-chemical characterization of polar bent-shaped liquid crystals with a focus on twist-bend, splay bend, and ferronematics'.",
@@ -24,7 +24,7 @@
     "scholar": ""
   },
   {
-    "image": "images/team/deepanshu.png",
+    "image": "images/team/deepanshu.webp",
     "name": "Deepanshu Garg",
     "role": "UG 2023-27",
     "bio": "Deepanshu is Undergraduate Physics Student at Ashoka and a Project Student in Samp Lab. His research focuses on defects dynamics in nematics under external fields.",
@@ -32,7 +32,7 @@
     "scholar": ""
   },
   {
-    "image": "images/team/tushar.png",
+    "image": "images/team/tushar.webp",
     "name": "Tushar Agarwal",
     "role": "UG 2023-27",
     "bio": "Tushar is a senior year physics major at Ashoka University. As part of his 'Undergraduate Thesis' under Dr. Pramoda in the SAMP Lab, he is studying the collective dynamics of C. elegans and exploring their vortex motion when suspended in liquid, phase separation and symmetry breaking in multi-strain samples of the worms, and their thigmotactic behavior. His work in the lab includes conducting experiments using fluorescence and brightfield microscopy, as well as computer vision-driven image analysis. Alongside his research, he loves playing piano, swimming, traveling, and playing with dogs.",
