@@ -551,7 +551,7 @@ a.pillar {
   text-align: left; width: 100%;
 }
 .team-card.expanded .team-content {
-  max-height: 500px; opacity: 1;
+  max-height: 1000px; opacity: 1;
   margin-top: 1.5rem; padding-top: 1.5rem;
   border-top: 1px solid var(--border);
 }
