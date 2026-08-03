@@ -7,7 +7,7 @@
   { 
     "image": "images/facilities/magnet_setup.webp", 
     "title": "Magneto-optical Study Setup", 
-    "desc": "This experimental setup is designed for magneto-optical studies of liquid crystals, allowing for the precis control of magnetic fields and temperature. It features a customized Holmarc HO-EM7000S electromagnet which can produce upto 3 Tesla magnetic field, and a Julabo Dyneo DD-800F temperature controller with precision of upto 0.1 degrees." 
+    "desc": "This experimental setup is designed for magneto-optical studies of liquid crystals, allowing for the precise control of magnetic fields and temperature. It features a customized Holmarc HO-EM7000S electromagnet which can produce upto 3 Tesla magnetic field, and a Julabo Dyneo DD-800F temperature controller with precision of upto 0.1 degrees." 
   },
   { "image": "images/facilities/polarization_microscope.webp",
     "title": "Polarization Microscopy Setup", 
