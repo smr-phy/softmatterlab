@@ -15,6 +15,14 @@
 </head>
 <body class="page-wrapper">
 
+<!-- Preloader Overlay -->
+<div id="preloader">
+  <div class="preloader-content">
+    <img src="images/favicon.png" alt="Lab Logo" class="preloader-logo">
+    <div class="preloader-spinner"></div>
+  </div>
+</div>
+
 <div id="nav-placeholder"></div>
 
 <section id="people" class="page-content">
@@ -28,23 +36,23 @@
 
   <div class="prof-profile-section">
     <div class="prof-card">
-  <img src="images/team/pramoda.webp" alt="Dr. Pramoda Kumar" class="prof-avatar" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
-  
-  <div class="prof-info">
-    <h3 class="prof-name">Dr Pramoda Kumar</h3>
-    <div class="prof-role">Principal Investigator</div>
-    
-    <p class="prof-bio">
-      Dr. Kumar is an Assistant Professor of Physics at Ashoka University, where he leads the Soft and Active Matter Physics Lab. He earned his PhD from the Centre for Nano and Soft Matter Sciences (CeNS), formerly the Centre for Liquid Crystal Research, Bangalore. He subsequently worked as a postdoctoral researcher at several prestigious institutions, including the Max Planck Institute for Dynamics and Self-Organization (MPI-DS, Göttingen), the Weizmann Institute of Science, Harvard University, and Ben-Gurion University of the Negev. His research focuses on experimental soft condensed matter physics, pattern formation in dissipative and active systems, interfacial instabilities, charge transport phenomena in ion- selective membranes, and non-Newtonian hydrodynamics, with a particular emphasis on lubricated gravity currents.
-    </p>
-    
-    <div class="prof-links">
-      <a href="https://scholar.google.com/citations?user=8od_QxIAAAAJ&hl=en">Google Scholar</a>
-      <a href="mailto:pramoda.kumar@ashoka.edu.in">Email</a>
+      <img src="images/team/pramoda.webp" alt="Dr. Pramoda Kumar" class="prof-avatar" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
+      
+      <div class="prof-info">
+        <h3 class="prof-name">Dr Pramoda Kumar</h3>
+        <div class="prof-role">Principal Investigator</div>
+        
+        <p class="prof-bio">
+          Dr. Kumar is an Assistant Professor of Physics at Ashoka University, where he leads the Soft and Active Matter Physics Lab. He earned his PhD from the Centre for Nano and Soft Matter Sciences (CeNS), formerly the Centre for Liquid Crystal Research, Bangalore. He subsequently worked as a postdoctoral researcher at several prestigious institutions, including the Max Planck Institute for Dynamics and Self-Organization (MPI-DS, Göttingen), the Weizmann Institute of Science, Harvard University, and Ben-Gurion University of the Negev. His research focuses on experimental soft condensed matter physics, pattern formation in dissipative and active systems, interfacial instabilities, charge transport phenomena in ion- selective membranes, and non-Newtonian hydrodynamics, with a particular emphasis on lubricated gravity currents.
+        </p>
+        
+        <div class="prof-links">
+          <a href="https://scholar.google.com/citations?user=8od_QxIAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="mailto:pramoda.kumar@ashoka.edu.in">Email</a>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-</div>
 
   <div class="people-header">
     <div>
@@ -66,6 +74,15 @@
 <div id="footer-placeholder"></div>
 
 <script>
+  // Hide preloader helper
+  function hidePreloader() {
+    const preloader = document.getElementById('preloader');
+    if (preloader && !preloader.classList.contains('hidden')) {
+      preloader.classList.add('hidden');
+      setTimeout(() => preloader.style.display = 'none', 400);
+    }
+  }
+
   const generateCards = (data) => data.map(person => `
     <div class="team-card">
       <img src="${person.image}" alt="${person.name}" class="avatar-img" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
@@ -74,21 +91,22 @@
       <div class="team-content">
         <p>${person.bio}</p>
         <div class="team-links">
-          ${person.scholar ? `<a href="${person.scholar}" target="_blank">Google Scholar</a>` : ''}
-          ${person.linkedin ? `<a href="${person.linkedin}" target="_blank">LinkedIn</a>` : ''}
+          ${person.scholar ? `<a href="${person.scholar}" target="_blank" rel="noopener">Google Scholar</a>` : ''}
+          ${person.linkedin ? `<a href="${person.linkedin}" target="_blank" rel="noopener">LinkedIn</a>` : ''}
         </div>
       </div>
     </div>
   `).join('');
 
-  fetch('data/people.json')
+  // Data Fetch Promises
+  const teamPromise = fetch('data/people.json')
     .then(res => res.json())
     .then(data => {
       document.getElementById('team-container').innerHTML = generateCards(data);
     })
     .catch(err => console.error("Error loading team:", err));
 
-  fetch('data/alumni.json')
+  const alumniPromise = fetch('data/alumni.json')
     .then(res => res.json())
     .then(data => {
       document.getElementById('alumni-container').innerHTML = generateCards(data);
@@ -97,9 +115,9 @@
       document.getElementById('alumni-container').innerHTML = '<p style="color: var(--slate);">No past members listed yet.</p>';
     });
 
+  // Card Accordion Logic
   document.addEventListener('click', function(e) {
     if (e.target.closest('.prof-card')) return;
-
     if (e.target.closest('a')) return;
 
     const clickedCard = e.target.closest('.team-card');
@@ -112,7 +130,8 @@
     clickedCard.classList.toggle('expanded');
   });
 
-  Promise.all([
+  // Component Fetch Promises
+  const componentsPromise = Promise.all([
     fetch('nav.html').then(r => r.text()),
     fetch('footer.html').then(r => r.text())
   ]).then(([navHtml, footerHtml]) => {
@@ -129,6 +148,14 @@
     
     document.body.classList.add('fully-loaded');
   });
+
+  // Preloader Resolution
+  const windowLoadPromise = new Promise(resolve => window.addEventListener('load', resolve));
+
+  Promise.all([windowLoadPromise, teamPromise, alumniPromise, componentsPromise])
+    .finally(() => {
+      hidePreloader();
+    });
 </script>
 </body>
 </html>
