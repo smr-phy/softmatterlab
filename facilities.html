@@ -41,7 +41,7 @@
     }
   }
 
-  // Fetch Facilities Data
+  // Fetch Facilities Data & Wait for Images
   const facilitiesPromise = fetch('data/facilities.json')
     .then(res => res.json())
     .then(data => {
@@ -66,6 +66,18 @@
         });
         clickedCard.classList.toggle('expanded');
       });
+
+      // Track all dynamically inserted images
+      const images = Array.from(container.querySelectorAll('img'));
+      const imagePromises = images.map(img => {
+        if (img.complete) return Promise.resolve();
+        return new Promise(resolve => {
+          img.onload = resolve;
+          img.onerror = resolve;
+        });
+      });
+
+      return Promise.all(imagePromises);
     })
     .catch(err => {
       console.error('Error loading facilities data:', err);
