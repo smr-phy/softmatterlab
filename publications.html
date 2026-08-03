@@ -9,9 +9,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
-<title>Publications | Soft Matter Lab</title>
 </head>
 <body class="page-wrapper">
+
+<!-- Preloader Overlay -->
+<div id="preloader">
+  <div class="preloader-content">
+    <img src="images/favicon.png" alt="Lab Logo" class="preloader-logo">
+    <div class="preloader-spinner"></div>
+  </div>
+</div>
 
 <div id="nav-placeholder"></div>
 
@@ -29,6 +36,15 @@
 <div id="footer-placeholder"></div>
 
 <script>
+  // Hide preloader helper
+  function hidePreloader() {
+    const preloader = document.getElementById('preloader');
+    if (preloader && !preloader.classList.contains('hidden')) {
+      preloader.classList.add('hidden');
+      setTimeout(() => preloader.style.display = 'none', 400);
+    }
+  }
+
   // Helper function to render a single publication item
   function renderPubItem(pub) {
     return `
@@ -46,7 +62,8 @@
     `;
   }
 
-  fetch('data/publications.json')
+  // Fetch Publications Data
+  const pubsPromise = fetch('data/publications.json')
     .then(res => res.json())
     .then(data => {
       // Filter publications by year
@@ -68,19 +85,42 @@
       }
 
       document.getElementById('pubs-container').innerHTML = htmlContent || '<p>No publications found.</p>';
+    })
+    .catch(err => {
+      console.error('Error loading publications:', err);
+      document.getElementById('pubs-container').innerHTML = '<p>Error loading publications.</p>';
     });
 
-  fetch('nav.html').then(r => r.text()).then(data => {
-    document.getElementById('nav-placeholder').outerHTML = data;
-    document.getElementById('hamburger').addEventListener('click', function() {
-      document.getElementById('nav-links').classList.toggle('active'); 
-      this.classList.toggle('open');
-    });
-  });
+  // Fetch Navigation Component
+  const navPromise = fetch('nav.html')
+    .then(r => r.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').outerHTML = data;
+      const hamburger = document.getElementById('hamburger');
+      if (hamburger) {
+        hamburger.addEventListener('click', function() {
+          document.getElementById('nav-links').classList.toggle('active'); 
+          this.classList.toggle('open');
+        });
+      }
+    })
+    .catch(err => console.error('Error loading navigation:', err));
 
-  fetch('footer.html').then(r => r.text()).then(data => { 
-    document.getElementById('footer-placeholder').outerHTML = data; 
-  });
+  // Fetch Footer Component
+  const footerPromise = fetch('footer.html')
+    .then(r => r.text())
+    .then(data => { 
+      document.getElementById('footer-placeholder').outerHTML = data; 
+    })
+    .catch(err => console.error('Error loading footer:', err));
+
+  // Preloader Resolution
+  const windowLoadPromise = new Promise(resolve => window.addEventListener('load', resolve));
+
+  Promise.all([windowLoadPromise, pubsPromise, navPromise, footerPromise])
+    .finally(() => {
+      hidePreloader();
+    });
 </script>
 </body>
 </html>
