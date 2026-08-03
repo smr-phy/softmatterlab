@@ -12,7 +12,7 @@
     "color": "c2",
     "title": "Collective dynamics of C. elegans",
     "desc": "Investigating the collective dynamics of *C. elegans* through experiments, computer vision, and machine learning to uncover how simple interactions generate complex coordinated motion and emergent spatio-temporal patterns.",
-    "tags": ["Shri Gowri Tikoti", "Dr Pramoda Kumar"],
+    "tags": ["Shri Gowri Tikoti", "Tushar Agarwal", "Dr Pramoda Kumar"],
     "details": "Collective behaviour of self-propelled organisms – from bacteria to ants to birds – exhibit some commonality, and have been model systems to verify some of the interesting ideas of non-equilibrium statistical physics. In our study, we use C. elegans as a model organism to examine collective dynamics in two-dimensional environments. These nematodes are particularly interesting due to their elongated flexible bodies and ability to move in both directions. Experiments with varying number density show interesting spatio-temporal patterns and complex coordinated motions. Our approach relies heavily on image analysis, computer vision, and machine learning techniques to extract and interpret complex dynamical patterns from experimental data. "
   },
   {
