@@ -942,37 +942,15 @@ footer {
 }
 
 /*RESPONSIVE BREAKPOINTS (MOBILE/TABLET) */
-/* COMPACT MOBILE HERO SECTION */
 @media (max-width: 900px) {
-  .hero {
-    min-height: auto;           /* Removes rigid height constraints */
-    margin: 5.5rem auto 2.5rem auto; /* Tighter top/bottom outer margins */
-    padding: 2.5rem 1.5rem;     /* Reduces inner padding inside the card */
+  .hero { 
+    grid-template-columns: 1fr; 
+    max-width: 92vw; min-height: 60vh;
+    padding: 4rem 2rem; border-radius: 16px;
   }
-
-  .hero-eyebrow {
-    font-size: 0.75rem;
-    margin-bottom: 0.5rem;
-    letter-spacing: 1px;
-  }
-
-  .hero-title {
-    font-size: 2.1rem;          /* Scale down from 2.8rem/3.4rem so words wrap nicely */
-    line-height: 1.15;
-    margin-bottom: 1rem;
-  }
-
-  .hero-description {
-    font-size: 1.05rem;         /* Scale down from 1.7rem */
-    line-height: 1.45;
-    margin: 1rem auto 1.75rem auto; /* Overrides the massive 8.5rem bottom margin */
-    max-width: 100%;
-  }
-
-  .hero-cta {
-    font-size: 0.95rem;
-    padding: 0.85rem 1.75rem;   /* Makes button slightly more compact */
-  }
+  .hero-right { display: none; }
+  .hero-title { font-size: 2.8rem; }
+  .hero-description { font-size: 1.1rem; margin-top: 1rem; margin-bottom: 2rem;}
   
   .research-grid, .team-grid { grid-template-columns: 1fr 1fr; }
   .facilities-grid { grid-template-columns: 1fr; }
