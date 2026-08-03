@@ -13,6 +13,14 @@
 </head>
 <body class="page-wrapper">
 
+<!-- Preloader Overlay -->
+<div id="preloader">
+  <div class="preloader-content">
+    <img src="images/favicon.png" alt="Lab Logo" class="preloader-logo">
+    <div class="preloader-spinner"></div>
+  </div>
+</div>
+
 <div id="nav-placeholder"></div>
 
 <section class="hero" id="home">
@@ -100,7 +108,17 @@
 <div id="footer-placeholder"></div>
 
 <script>
-  fetch('data/gallery.json')
+  // Hide preloader helper
+  function hidePreloader() {
+    const preloader = document.getElementById('preloader');
+    if (preloader && !preloader.classList.contains('hidden')) {
+      preloader.classList.add('hidden');
+      setTimeout(() => preloader.style.display = 'none', 400);
+    }
+  }
+
+  // Fetch Gallery Data
+  const galleryPromise = fetch('data/gallery.json')
     .then(res => res.json())
     .then(data => {
       document.getElementById('gallery-container').innerHTML = data.map(img => `
@@ -112,6 +130,7 @@
       document.getElementById('gallery-container').innerHTML = '<p style="padding: 0 8vw; color: var(--slate);">Gallery temporarily unavailable.</p>';
     });
 
+  // Gallery Navigation Controls
   const track = document.getElementById('gallery-container');
   const leftArrow = document.querySelector('.left-arrow');
   const rightArrow = document.querySelector('.right-arrow');
@@ -126,6 +145,7 @@
     });
   }
 
+  // Image Modal Handler
   const modal = document.getElementById("image-modal");
   const modalImg = document.getElementById("expanded-img");
   const captionText = document.getElementById("modal-caption");
@@ -149,7 +169,8 @@
     if (e.target === modal) hideModal();
   });
   
-  fetch('nav.html')
+  // Fetch Navigation
+  const navPromise = fetch('nav.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('nav-placeholder').outerHTML = data;
@@ -163,12 +184,20 @@
     })
     .catch(err => console.error('Failed to mount nav component:', err));
 
-  fetch('footer.html')
+  // Fetch Footer
+  const footerPromise = fetch('footer.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('footer-placeholder').outerHTML = data;
     })
     .catch(err => console.error('Failed to mount footer component:', err));
+
+  // Wait for Window Load AND all fetches before dismissing preloader
+  const windowLoadPromise = new Promise(resolve => window.addEventListener('load', resolve));
+  Promise.all([windowLoadPromise, galleryPromise, navPromise, footerPromise])
+    .finally(() => {
+      hidePreloader();
+    });
 </script>
 </body>
 </html>
