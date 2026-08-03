@@ -20,7 +20,7 @@
     "color": "c3",
     "title": "Experiments with shear thinning fluids motivated by creep instability in glaciers",
     "desc": "Exploring glacier flow instabilities using tabletop experiments with shear-thinning fluids. By studying the interaction between model glaciers and different lubricating fluids, we investigate the mechanisms that drive rapid glacier motion and the emergence of flow instabilities.",
-    "tags": ["Drishana Kundu (UG)", "Dr Pramoda Kumar"],
+    "tags": ["Rohit Vishwakarma", "Dr Pramoda Kumar"],
     "details": "It is an observational fact that once a glacier starts sliding, it slides easily and quickly (glacier surge), in some sense behaving like a shear thinning non-Newtonian fluid. It is also theorized that the underneath ice melts because of its own weight, and this water (ice slurry) acts as lubricant. The goal of this project is to design a table-top experimental setup and use a shear-thinning non-Newtonian fluid (Xanthan gum solution) as a model fluid to mimic the glacier and lubricate it with salt water. Further, we perform the same experiment with a non-Newtonian fluid as lubricant to find out which of the two systems resembles the glacier flow instability better. We form a large drop of the Non-Newtonian fluid at a constant flow rate on a glass substrate kept parallel to the ground; this ensures the circular spread of the drop on the substrate. At some point, we inject the second fluid from below. We hope to capture some of the salient features of glacier flow (instability) in our experiments by systematically scanning the control parameter phase-space. "
   },
   {
