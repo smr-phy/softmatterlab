@@ -40,6 +40,59 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* PRELOADER OVERLAY */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--mist);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Floats above fixed navbar */
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.preloader-logo {
+  width: 80px;
+  height: auto;
+  animation: preloader-pulse 1.8s infinite ease-in-out;
+}
+
+.preloader-spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid rgba(10, 37, 64, 0.15);
+  border-top-color: var(--teal);
+  border-radius: 50%;
+  animation: preloader-spin 0.8s linear infinite;
+}
+
+@keyframes preloader-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes preloader-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
 /*SMOOTH PAGE TRANSITIONS*/
 @view-transition {
   navigation: auto;
@@ -247,26 +300,13 @@ section {
   background: var(--gold);
 }
 
-/* .section-title {
-  font-size: clamp(32px, 3vw, 42px);
-  font-weight: 700; 
-  line-height: 1.2;
-  color: var(--ink);
-  margin-bottom: 1.25rem; 
-  letter-spacing: -0.01em;
-} */
-
 .section-title {
-  /* Reduced min-size (28px) and max-size (36px) for a more compact look */
   font-size: clamp(28px, 2.5vw, 36px);
-  
-  /* Reduced weight for a lighter, more elegant feel */
   font-weight: 600; 
-  
   line-height: 1.2;
   color: var(--ink);
-  margin-bottom: 0.6rem; /* Tightened spacing further */
-  letter-spacing: -0.02em; /* Slightly tighter letter spacing complements the smaller size */
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
 }
 
 .section-intro {
@@ -288,22 +328,22 @@ section {
   gap: 1.5rem;
 }
 .research-card.expanded {
-  align-self: start; /* Prevents neighboring cards from stretching ONLY when this card expands */
+  align-self: start;
 }
 .research-card {
   background: #fff; 
   padding: 2.5rem 2rem;
-  border-radius: 16px; /* Refined corners */
+  border-radius: 16px;
   border: 1px solid var(--border);
   box-shadow: 0 4px 15px rgba(0,0,0,0.03);
   transition: all 0.3s ease;
   cursor: pointer; 
   position: relative; 
-  overflow: hidden; /* Prevents color bar from breaking borders */
+  overflow: hidden;
 }
 .research-card::before {
   content: ''; position: absolute; top: 0; left: 0;
-  width: 4px; height: 0; /* Slightly thicker bar for better visibility */
+  width: 4px; height: 0;
   transition: height 0.3s ease;
 }
 .research-card.c1::before { background: var(--teal); }
@@ -340,9 +380,9 @@ section {
 .rc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1.25rem; }
 .rc-tag {
   font-size: 10px; font-weight: 600; letter-spacing: 0.08em;
-  ; padding: 4px 10px;
+  padding: 4px 10px;
   background: var(--warm); color: var(--slate);
-  border-radius: 6px; /* Pill shape for tags */
+  border-radius: 6px;
 }
 .rc-details {
   max-height: 0; opacity: 0; overflow: hidden;
@@ -359,7 +399,7 @@ section {
 
 /*ABOUT STRIP & PILLARS*/
 .about-strip {
-  background: var(--teal);/*#051626;*/
+  background: var(--teal);
   padding: 7rem 8vw;
   display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
   align-items: center;
@@ -376,16 +416,16 @@ a.pillar {
   color: inherit;
 }
 .pillar {
-  background: var(--teal2);/*#0c253d;*/
+  background: var(--teal2);
   padding: 1.5rem 2rem;
   display: flex; align-items: center; gap: 1.5rem;
-  border-radius: 16px; /* Refined corners */
-  border: 1px solid rgba(255, 255, 255, 0.05); /* Soft inner border */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.2s ease;
 }
 .pillar:hover { 
   background: #184473; 
-  transform: translateX(8px); /* Sliding effect instead of jumping up */
+  transform: translateX(8px);
 }
 .pillar-icon {
   width: 46px; height: 46px; border-radius: 50%;
@@ -395,8 +435,8 @@ a.pillar {
 .pillar-icon.t,
 .pillar-icon.r,
 .pillar-icon.c { 
-  background: rgba(220, 38, 38, 0); /* Soft transparent red background */
-  color: #dc2626; /* Solid red for the SVG stroke */
+  background: rgba(220, 38, 38, 0);
+  color: #dc2626;
 }
 .pillar-text strong { display: block; font-size: 16px; font-weight: 500; color: #ffffff; }
 .pillar-text span { font-size: 13px; color: #9ca3af; } 
@@ -413,24 +453,22 @@ a.pillar {
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 24px;
-  max-width: 1200px; /* Widened slightly to give the text more breathing room */
+  max-width: 1200px;
   width: 100%;
   padding: 3.5rem 4rem;
-  
-  /* Layout Shift: Creates the two-column format */
   display: flex;
   align-items: center;
-  text-align: left; /* Left-aligns text content for better side-by-side reading */
-  gap: 4rem; /* Generates breathing space between image and text */
+  text-align: left;
+  gap: 4rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
 .prof-avatar {
-  width: 200px; /* Made slightly larger since it has its own column now */
+  width: 200px;
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  flex-shrink: 0; /* Prevents the image from getting squished by long text */
+  flex-shrink: 0;
   border: 4px solid var(--mist);
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
@@ -470,7 +508,7 @@ a.pillar {
 .prof-links {
   display: flex;
   gap: 1rem;
-  justify-content: flex-start; /* Aligns buttons under the text stream */
+  justify-content: flex-start;
 }
 
 .prof-links a {
@@ -492,10 +530,9 @@ a.pillar {
   transform: translateY(-1px);
 }
 
-/* Responsive adjust for mobile/tablet screens */
 @media (max-width: 850px) {
   .prof-card {
-    flex-direction: column; /* Snaps back to vertical stacking on small screens */
+    flex-direction: column;
     text-align: center;
     padding: 2.5rem 2rem;
     gap: 2rem;
@@ -524,7 +561,7 @@ a.pillar {
   background: #fff; border: 1px solid var(--border);
   padding: 2.5rem 1.5rem;
   text-align: center;
-  border-radius: 16px; /* Refined corners */
+  border-radius: 16px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer; 
@@ -574,7 +611,7 @@ a.pillar {
   text-transform: uppercase;
   display: flex; align-items: center; gap: 6px;
   padding: 0.5rem 1rem;
-  border-radius: 8px; /* Refined button shape */
+  border-radius: 8px;
   transition: background 0.2s;
 }
 .pubs-link:hover { background: var(--mist); color: var(--teal2); }
@@ -584,7 +621,7 @@ a.pillar {
   border-bottom: 1px solid var(--border);
   display: grid; grid-template-columns: auto 1fr;
   gap: 2.5rem; align-items: start;
-  border-radius: 12px; /* Smooth corners for hover */
+  border-radius: 12px;
   transition: all 0.2s ease;
   cursor: default;
 }
@@ -614,9 +651,9 @@ a:hover .pub-title { color: var(--teal); }
 .facility-card {
   background: #fff; 
   border: 1px solid var(--border);
-  border-radius: 16px; /* Refined corners */
+  border-radius: 16px;
   padding: 0 0 1.5rem; 
-  overflow: hidden; /* Protects border-radius from image corners */
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer; 
   display: flex; flex-direction: column;
@@ -679,13 +716,11 @@ a:hover .pub-title { color: var(--teal); }
   border: 1px solid var(--border);
   padding: 3rem 2rem;
   text-align: center;
-  border-radius: 16px; /* Refined corners */
+  border-radius: 16px;
   display: flex; 
   flex-direction: column; 
   align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-  /* Full-card link styles */
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -694,7 +729,7 @@ a:hover .pub-title { color: var(--teal); }
 .contact-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0,0,0,0.06);
-  text-decoration: none; /* Prevents card-level underlines */
+  text-decoration: none;
 }
 
 .contact-icon {
@@ -729,7 +764,6 @@ a:hover .pub-title { color: var(--teal); }
   margin: 0; 
 }
 
-/* Email/link text styling */
 .contact-card-content a,
 .contact-card-content .email-address {
   color: var(--teal2); 
@@ -741,7 +775,6 @@ a:hover .pub-title { color: var(--teal); }
   transition: color 0.2s ease;
 }
 
-/* Hover state: color transition only, strictly NO underlines */
 .contact-card:hover .contact-card-content a,
 .contact-card:hover .contact-card-content .email-address,
 .contact-card-content a:hover { 
@@ -758,12 +791,12 @@ a:hover .pub-title { color: var(--teal); }
 /*GALLERY CAROUSEL*/
 .gallery-strip {
   padding: 4rem 0 6rem 0;
-  background: transparent; /* Removes the full-width white block */
+  background: transparent;
   border-top: none;
 }
 
 .gallery-header { 
-  padding: 0 8vw; /* Aligns the heading perfectly with the rest of the site */
+  padding: 0 8vw;
   margin-bottom: 2rem; 
 }
 
@@ -771,29 +804,22 @@ a:hover .pub-title { color: var(--teal); }
   position: relative;
   display: flex;
   align-items: center;
-  
-  /* The New Floating White Card */
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 24px; 
-  margin: 0 4vw; /* 4vw margins make it noticeably wider than the 8vw text blocks */
-  padding: 3rem 0; /* Vertical breathing room inside the card */
+  margin: 0 4vw;
+  padding: 3rem 0;
   box-shadow: 0 12px 40px rgba(0,0,0,0.04);
 }
 
 .gallery-track {
   display: flex; 
   gap: 1.5rem;
-  
-  /* 3rem (48px) padding on the left/right creates the resting buffer */
   padding: 0 3rem 1.5rem 3rem; 
   width: 100%;
   overflow-x: auto; 
   scroll-snap-type: x mandatory; 
-  
-  /* THE MAGIC LINE: Forces the scroll-snap to stop AT the padding, not the edge */
   scroll-padding-inline: 3rem; 
-  
   -webkit-overflow-scrolling: touch; 
   scrollbar-width: none; 
 }
@@ -825,11 +851,10 @@ a:hover .pub-title { color: var(--teal); }
   transform: scale(1.05); 
 }
 
-/* Scroll Arrows */
 .gallery-arrow {
   position: absolute; 
   z-index: 10;
-  top: calc(50% - 0.75rem); /* Accounts for the bottom padding on the track */
+  top: calc(50% - 0.75rem);
   transform: translateY(-50%);
   background: #ffffff;
   border: 1px solid var(--border); 
@@ -851,11 +876,9 @@ a:hover .pub-title { color: var(--teal); }
   box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
 
-/* Placed fully inside the 3rem void we created with the padding */
 .left-arrow { left: 1.25rem; }
 .right-arrow { right: 1.25rem; }
 
-/* Responsive adjustments for Mobile & Tablet */
 @media (max-width: 900px) {
   .gallery-wrapper {
     margin: 0 4vw;
@@ -885,7 +908,7 @@ a:hover .pub-title { color: var(--teal); }
 .modal-content {
   max-width: 90vw; max-height: 80vh;
   object-fit: contain;
-  border-radius: 16px; /* Refined corners */
+  border-radius: 16px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 }
 #modal-caption {
@@ -927,7 +950,6 @@ footer {
 
 /*RESPONSIVE BREAKPOINTS (MOBILE/TABLET) */
 @media (max-width: 900px) {
-  /* Hero & General */
   .hero { 
     grid-template-columns: 1fr; 
     max-width: 92vw; min-height: 60vh;
@@ -937,16 +959,13 @@ footer {
   .hero-title { font-size: 2.8rem; }
   .hero-description { font-size: 1.1rem; }
   
-  /* Grids */
   .research-grid, .team-grid { grid-template-columns: 1fr 1fr; }
   .facilities-grid { grid-template-columns: 1fr; }
   .research-header, .people-header, .about-strip, #contact { grid-template-columns: 1fr; gap: 2rem; }
   
-  /* Gallery */
   .gallery-arrow { display: none; }
   .gallery-item { flex: 0 0 260px; height: 260px; }
 
-  /* Mobile Nav Menu */
   .hamburger { display: flex; }
   .nav-links {
     position: absolute; top: 100%; left: 0; width: 100%;
@@ -957,7 +976,7 @@ footer {
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transition: clip-path 0.35s ease-out;
-    border-bottom-left-radius: 24px; /* Refined menu corners */
+    border-bottom-left-radius: 24px;
     border-bottom-right-radius: 24px;
   }
   .nav-links.active {
@@ -967,7 +986,6 @@ footer {
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-  /* Mobile Footer */
   footer {
     flex-direction: column; gap: 1.5rem; text-align: center; padding: 3rem 4vw;
   }
@@ -975,7 +993,6 @@ footer {
 }
 
 @media (max-width: 600px) {
-  /* Forces 1 column on smaller phones */
   .team-grid { grid-template-columns: 1fr; }
   .research-grid { grid-template-columns: 1fr; }
 }
