@@ -340,7 +340,7 @@ section {
 .rc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1.25rem; }
 .rc-tag {
   font-size: 10px; font-weight: 600; letter-spacing: 0.08em;
-  text-transform: uppercase; padding: 4px 10px;
+  ; padding: 4px 10px;
   background: var(--warm); color: var(--slate);
   border-radius: 6px; /* Pill shape for tags */
 }
