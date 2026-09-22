@@ -542,7 +542,9 @@ a.pillar {
 }
 
 /* PEOPLE SECTION */
-#people { background: var(--mist); }
+#people { 
+  background: var(--mist); 
+}
 
 .people-header {
   display: grid; 
@@ -552,6 +554,78 @@ a.pillar {
   margin-bottom: 2.5rem;
 }
 
+/* Principal Investigator Card (Static Layout) */
+.prof-profile-section {
+  margin-bottom: 4rem;
+}
+
+.prof-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  cursor: default;
+}
+
+.prof-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid var(--mist);
+}
+
+.prof-info {
+  flex: 1;
+}
+
+.prof-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+
+.prof-role {
+  font-size: 0.85rem;
+  color: var(--teal);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.prof-bio {
+  font-size: 0.95rem;
+  color: var(--slate);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.prof-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.prof-links a {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--teal);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.prof-links a:hover {
+  color: var(--teal2);
+  text-decoration: underline;
+}
+
+/* Team Grid Layout */
 .team-grid {
   display: grid; 
   grid-template-columns: repeat(4, 1fr); 
@@ -559,7 +633,7 @@ a.pillar {
   align-items: stretch; 
 }
 
-/* Clickable Team Cards */
+/* Clickable Team Member Cards */
 .team-card {
   background: #fff; 
   border: 1px solid var(--border);
@@ -578,11 +652,6 @@ a.pillar {
 .team-card:hover { 
   transform: translateY(-6px); 
   box-shadow: 0 15px 35px rgba(0,0,0,0.08); 
-}
-
-/* Static PI Card */
-.prof-card {
-  cursor: default;
 }
 
 .avatar-img {
@@ -607,12 +676,13 @@ a.pillar {
   letter-spacing: 0.08em; 
 }
 
+/* Social links on team cards */
 .team-links { 
   display: flex; 
   gap: 1rem; 
   margin-top: 1.25rem; 
   position: relative;
-  z-index: 2; /* Ensures Google Scholar / LinkedIn links take click priority */
+  z-index: 2; /* Ensures Google Scholar and LinkedIn links remain directly clickable */
 }
 
 .team-links a {
@@ -627,6 +697,28 @@ a.pillar {
 .team-links a:hover { 
   color: var(--teal2); 
   text-decoration: underline; 
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .team-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  .prof-card { 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+  }
+}
+
+@media (max-width: 576px) {
+  .team-grid { 
+    grid-template-columns: 1fr; 
+  }
+  .people-header { 
+    grid-template-columns: 1fr; 
+    gap: 1rem; 
+  }
 }
 
 /*PUBLICATIONS SECTION*/
