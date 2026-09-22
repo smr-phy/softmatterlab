@@ -80,28 +80,30 @@
     }
   }
 
-  // Helper to slugify member names
-    const slugify = (str) => encodeURIComponent(str.toLowerCase().trim().replace(/\s+/g, '-'));
-    
-    const generateCards = (data) => data.map(person => {
-      const slug = slugify(person.name);
-      
-      // Creates URL like: profile/ankit-gupta (or use first name if you prefer)
-      const profileUrl = `profile/${slug}`;
-    
-      return `
-        <div class="team-card" data-href="${profileUrl}">
-          <img src="${person.image}" alt="${person.name}" class="avatar-img" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
-          <div class="team-name">${person.name}</div>
-          <div class="team-role">${person.role}</div>
-          
-          <div class="team-links">
-            ${person.scholar ? `<a href="${person.scholar}" target="_blank" rel="noopener">Scholar</a>` : ''}
-            ${person.linkedin ? `<a href="${person.linkedin}" target="_blank" rel="noopener">LinkedIn</a>` : ''}
-          </div>
+  // Converts names like "Dr. Ankit Gupta" -> "ankit-gupta"
+  const slugify = (str) => str.toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-');
+
+  // Generates team card HTML with data-href="profile-ankit-gupta"
+  const generateCards = (data) => data.map(person => {
+    const slug = slugify(person.name);
+    const profileUrl = `profile-${slug}`;
+
+    return `
+      <div class="team-card" data-href="${profileUrl}">
+        <img src="${person.image}" alt="${person.name}" class="avatar-img" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
+        <div class="team-name">${person.name}</div>
+        <div class="team-role">${person.role}</div>
+        
+        <div class="team-links">
+          ${person.scholar ? `<a href="${person.scholar}" target="_blank" rel="noopener">Scholar</a>` : ''}
+          ${person.linkedin ? `<a href="${person.linkedin}" target="_blank" rel="noopener">LinkedIn</a>` : ''}
         </div>
-      `;
-    }).join('');
+      </div>
+    `;
+  }).join('');
 
   // Fetch Team Data
   const teamPromise = fetch('data/people.json')
@@ -124,7 +126,7 @@
       document.getElementById('alumni-container').innerHTML = '<p style="color: var(--slate);">No past members listed yet.</p>';
     });
 
-  // Handle card click redirects
+  // Navigate when clicking a team card
   document.addEventListener('click', function(e) {
     if (e.target.closest('a')) return;
 
@@ -137,7 +139,7 @@
     }
   });
 
-  // Component loading
+  // Load Nav and Footer components
   const componentsPromise = Promise.all([
     fetch('nav.html').then(r => r.text()),
     fetch('footer.html').then(r => r.text())
@@ -152,8 +154,6 @@
         this.classList.toggle('open');
       });
     }
-    
-    document.body.classList.add('fully-loaded');
   });
 
   const windowLoadPromise = new Promise(resolve => window.addEventListener('load', resolve));
