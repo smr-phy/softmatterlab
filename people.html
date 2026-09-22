@@ -81,26 +81,27 @@
   }
 
   // Helper to slugify member names
-  const slugify = (str) => encodeURIComponent(str.toLowerCase().trim().replace(/\s+/g, '-'));
-
-  // Clean card generation function
-  const generateCards = (data) => data.map(person => {
-    const slug = slugify(person.name);
-    const profileUrl = `profile-${slug}`;
-
-    return `
-      <div class="team-card" data-href="${profileUrl}">
-        <img src="${person.image}" alt="${person.name}" class="avatar-img" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
-        <div class="team-name">${person.name}</div>
-        <div class="team-role">${person.role}</div>
-        
-        <div class="team-links">
-          ${person.scholar ? `<a href="${person.scholar}" target="_blank" rel="noopener">Scholar</a>` : ''}
-          ${person.linkedin ? `<a href="${person.linkedin}" target="_blank" rel="noopener">LinkedIn</a>` : ''}
+    const slugify = (str) => encodeURIComponent(str.toLowerCase().trim().replace(/\s+/g, '-'));
+    
+    const generateCards = (data) => data.map(person => {
+      const slug = slugify(person.name);
+      
+      // Creates URL like: profile/ankit-gupta (or use first name if you prefer)
+      const profileUrl = `profile/${slug}`;
+    
+      return `
+        <div class="team-card" data-href="${profileUrl}">
+          <img src="${person.image}" alt="${person.name}" class="avatar-img" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
+          <div class="team-name">${person.name}</div>
+          <div class="team-role">${person.role}</div>
+          
+          <div class="team-links">
+            ${person.scholar ? `<a href="${person.scholar}" target="_blank" rel="noopener">Scholar</a>` : ''}
+            ${person.linkedin ? `<a href="${person.linkedin}" target="_blank" rel="noopener">LinkedIn</a>` : ''}
+          </div>
         </div>
-      </div>
-    `;
-  }).join('');
+      `;
+    }).join('');
 
   // Fetch Team Data
   const teamPromise = fetch('data/people.json')
