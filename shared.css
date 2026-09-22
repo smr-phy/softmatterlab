@@ -541,56 +541,93 @@ a.pillar {
   }
 }
 
-/*PEOPLE SECTION*/
+/* PEOPLE SECTION */
 #people { background: var(--mist); }
+
 .people-header {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-  align-items: end; margin-bottom: 2.5rem;
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 4rem;
+  align-items: end; 
+  margin-bottom: 2.5rem;
 }
+
 .team-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; align-items: start; 
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 1.5rem; 
+  align-items: stretch; 
 }
+
+/* Clickable Team Cards */
 .team-card {
-  background: #fff; border: 1px solid var(--border);
-  padding: 2.5rem 1.5rem;
+  background: #fff; 
+  border: 1px solid var(--border);
+  padding: 2rem 1.5rem;
   text-align: center;
   border-radius: 16px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer; 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.team-card:hover { transform: translateY(-6px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+
+.team-card:hover { 
+  transform: translateY(-6px); 
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08); 
+}
+
+/* Static PI Card */
+.prof-card {
+  cursor: default;
+}
 
 .avatar-img {
-  width: 96px; height: 96px; 
+  width: 96px; 
+  height: 96px; 
   border-radius: 50%;
   object-fit: cover; 
   margin: 0 auto 1.2rem;
   border: 3px solid var(--mist);
 }
-.team-name { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
-.team-role { font-size: 12px; color: var(--slate); letter-spacing: 0.08em; }
 
-.team-content {
-  max-height: 0; opacity: 0; overflow: hidden;
-  transition: all 0.4s ease;
-  font-size: 13px; color: var(--slate); line-height: 1.6;
-  text-align: left; width: 100%;
+.team-name { 
+  font-size: 16px; 
+  font-weight: 700; 
+  color: var(--ink); 
+  margin-bottom: 4px; 
 }
-.team-card.expanded .team-content {
-  max-height: 1000px; opacity: 1;
-  margin-top: 1.5rem; padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
+
+.team-role { 
+  font-size: 12px; 
+  color: var(--slate); 
+  letter-spacing: 0.08em; 
 }
-.team-links { display: flex; gap: 1rem; margin-top: 1.25rem; }
+
+.team-links { 
+  display: flex; 
+  gap: 1rem; 
+  margin-top: 1.25rem; 
+  position: relative;
+  z-index: 2; /* Ensures Google Scholar / LinkedIn links take click priority */
+}
+
 .team-links a {
-  font-size: 11px; font-weight: 700; color: var(--teal); 
-  text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;
+  font-size: 11px; 
+  font-weight: 700; 
+  color: var(--teal); 
+  text-decoration: none; 
+  text-transform: uppercase; 
+  letter-spacing: 0.08em;
 }
-.team-links a:hover { color: var(--teal2); text-decoration: underline; }
+
+.team-links a:hover { 
+  color: var(--teal2); 
+  text-decoration: underline; 
+}
 
 /*PUBLICATIONS SECTION*/
 #publications { background: #fff; }
