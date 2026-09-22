@@ -16,7 +16,7 @@
 <div id="nav-placeholder"></div>
 
 <section class="page-content" style="max-width: 800px; margin: 3rem auto; padding: 0 1.5rem;">
-  <a href="people.html" style="display: inline-block; margin-bottom: 2rem; color: var(--teal); font-weight: 700; text-decoration: none; text-transform: uppercase; font-size: 12px; letter-spacing: 0.08em;">← Back to Team</a>
+  <a id="back-link" href="people.html" style="display: inline-block; margin-bottom: 2rem; color: var(--teal); font-weight: 700; text-decoration: none; text-transform: uppercase; font-size: 12px; letter-spacing: 0.08em;">← Back to Team</a>
   
   <div id="profile-container">
     <p>Loading profile...</p>
@@ -25,17 +25,21 @@
 
 <div id="footer-placeholder"></div>
 
-
-</body>
-</html>
 <script>
   const slugify = (str) => encodeURIComponent(str.toLowerCase().trim().replace(/\s+/g, '-'));
 
-  // Split path segments (handles custom domains or GitHub project pages automatically)
+  // Get path segments (handles both custom domains and GitHub project repos)
   const pathSegments = window.location.pathname.split('/').filter(Boolean);
-  
-  // Find "profile" in the path and get whatever comes right after it
   const profileIndex = pathSegments.indexOf('profile');
+
+  // Calculate base site path to fix relative fetches in subfolders
+  const basePath = profileIndex > 0 
+    ? '/' + pathSegments.slice(0, profileIndex).join('/') + '/' 
+    : '/';
+
+  // Fix "Back to Team" button link
+  document.getElementById('back-link').href = `${basePath}people.html`;
+
   const targetSlug = profileIndex !== -1 && pathSegments[profileIndex + 1] 
     ? decodeURIComponent(pathSegments[profileIndex + 1]).toLowerCase() 
     : '';
@@ -46,8 +50,8 @@
     container.innerHTML = '<h2 style="color: var(--ink);">Page not found.</h2>';
   } else {
     Promise.all([
-      fetch('data/people.json').then(res => res.json()).catch(() => []),
-      fetch('data/alumni.json').then(res => res.json()).catch(() => [])
+      fetch(`${basePath}data/people.json`).then(res => res.json()).catch(() => []),
+      fetch(`${basePath}data/alumni.json`).then(res => res.json()).catch(() => [])
     ])
     .then(([people, alumni]) => {
       const allMembers = [...people, ...alumni];
@@ -61,10 +65,15 @@
       if (person) {
         document.title = `${person.name} | Soft Matter Lab`;
         
+        // Handle images stored with relative paths
+        const imageSrc = person.image.startsWith('http') || person.image.startsWith('/') 
+          ? person.image 
+          : `${basePath}${person.image}`;
+
         container.innerHTML = `
           <div style="background: #fff; padding: 3rem 2.5rem; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
             <div style="display: flex; gap: 2rem; align-items: center; margin-bottom: 2rem; flex-wrap: wrap;">
-              <img src="${person.image}" alt="${person.name}" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 3px solid var(--mist);" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
+              <img src="${imageSrc}" alt="${person.name}" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 3px solid var(--mist);" onerror="this.onerror=null; this.src='${basePath}images/placeholder.jpg'">
               <div>
                 <h1 style="font-size: 2rem; color: var(--ink); margin: 0 0 0.25rem 0;">${person.name}</h1>
                 <div style="font-size: 0.9rem; color: var(--teal); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">${person.role}</div>
@@ -91,11 +100,14 @@
     });
   }
 
+  // Load Nav and Footer using basePath
   Promise.all([
-    fetch('nav.html').then(r => r.text()),
-    fetch('footer.html').then(r => r.text())
+    fetch(`${basePath}nav.html`).then(r => r.text()),
+    fetch(`${basePath}footer.html`).then(r => r.text())
   ]).then(([navHtml, footerHtml]) => {
     document.getElementById('nav-placeholder').outerHTML = navHtml;
     document.getElementById('footer-placeholder').outerHTML = footerHtml;
   });
 </script>
+</body>
+</html>
