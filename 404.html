@@ -28,16 +28,18 @@
 <script>
   const slugify = (str) => encodeURIComponent(str.toLowerCase().trim().replace(/\s+/g, '-'));
 
-  // Extract slug from URL path (works for both domain.com/profile-ankit and repo-name/profile-ankit)
-  const pathname = window.location.pathname;
-  const filename = pathname.substring(pathname.lastIndexOf('/') + 1);
-  const rawSlug = filename.replace(/^profile-/, '').replace(/\.html$/, '');
-  const targetSlug = decodeURIComponent(rawSlug).toLowerCase();
+  // Split path segments (handles custom domains or GitHub project pages automatically)
+  const pathSegments = window.location.pathname.split('/').filter(Boolean);
+  
+  // Find "profile" in the path and get whatever comes right after it
+  const profileIndex = pathSegments.indexOf('profile');
+  const targetSlug = profileIndex !== -1 && pathSegments[profileIndex + 1] 
+    ? decodeURIComponent(pathSegments[profileIndex + 1]).toLowerCase() 
+    : '';
 
   const container = document.getElementById('profile-container');
 
-  // If the 404 page was triggered by a real missing route (not a profile- page)
-  if (!filename.startsWith('profile-') || !targetSlug) {
+  if (!targetSlug) {
     container.innerHTML = '<h2 style="color: var(--ink);">Page not found.</h2>';
   } else {
     Promise.all([
@@ -86,7 +88,6 @@
     });
   }
 
-  // Fetch header and footer
   Promise.all([
     fetch('nav.html').then(r => r.text()),
     fetch('footer.html').then(r => r.text())
