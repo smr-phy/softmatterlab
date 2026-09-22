@@ -26,12 +26,9 @@
 <div id="footer-placeholder"></div>
 
 <script>
-  // Helper to convert "Shri Gowri" -> "shri-gowri"
-  const slugify = (str) => str.toLowerCase().trim().replace(/\s+/g, '-');
+  const slugify = (str) => str.toLowerCase().trim().replace(/\s+/g, '_');
 
-  // Grab ?name=shri-gowri from the URL
-  const urlParams = new URLSearchParams(window.location.search);
-  const targetSlug = urlParams.get('name');
+  const targetSlug = decodeURIComponent(window.location.search.substring(1));
 
   const container = document.getElementById('profile-container');
 
