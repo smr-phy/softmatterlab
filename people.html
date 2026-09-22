@@ -80,31 +80,29 @@
     }
   }
 
+  // Helper to slugify member names
   const slugify = (str) => encodeURIComponent(str.toLowerCase().trim().replace(/\s+/g, '-'));
 
+  // Clean card generation function
   const generateCards = (data) => data.map(person => {
     const slug = slugify(person.name);
-    // Updated generateCards function
-const generateCards = (data) => data.map(person => {
-  const slug = encodeURIComponent(person.name.toLowerCase().trim().replace(/\s+/g, '-'));
-  
-  // Cleaner URL: profile.html?shri-gowri (or `profile?${slug}` if removing .html)
-  const profileUrl = `profile-${slug}`;
+    const profileUrl = `profile-${slug}`;
 
-  return `
-    <div class="team-card" data-href="${profileUrl}">
-      <img src="${person.image}" alt="${person.name}" class="avatar-img" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
-      <div class="team-name">${person.name}</div>
-      <div class="team-role">${person.role}</div>
-      
-      <div class="team-links">
-        ${person.scholar ? `<a href="${person.scholar}" target="_blank" rel="noopener">Scholar</a>` : ''}
-        ${person.linkedin ? `<a href="${person.linkedin}" target="_blank" rel="noopener">LinkedIn</a>` : ''}
+    return `
+      <div class="team-card" data-href="${profileUrl}">
+        <img src="${person.image}" alt="${person.name}" class="avatar-img" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
+        <div class="team-name">${person.name}</div>
+        <div class="team-role">${person.role}</div>
+        
+        <div class="team-links">
+          ${person.scholar ? `<a href="${person.scholar}" target="_blank" rel="noopener">Scholar</a>` : ''}
+          ${person.linkedin ? `<a href="${person.linkedin}" target="_blank" rel="noopener">LinkedIn</a>` : ''}
+        </div>
       </div>
-    </div>
-  `;
-}).join('');
+    `;
+  }).join('');
 
+  // Fetch Team Data
   const teamPromise = fetch('data/people.json')
     .then(res => res.json())
     .then(data => {
@@ -115,6 +113,7 @@ const generateCards = (data) => data.map(person => {
       document.getElementById('team-container').innerHTML = '<p style="color: var(--slate);">Unable to load team members.</p>';
     });
 
+  // Fetch Alumni Data
   const alumniPromise = fetch('data/alumni.json')
     .then(res => res.json())
     .then(data => {
@@ -124,6 +123,7 @@ const generateCards = (data) => data.map(person => {
       document.getElementById('alumni-container').innerHTML = '<p style="color: var(--slate);">No past members listed yet.</p>';
     });
 
+  // Handle card click redirects
   document.addEventListener('click', function(e) {
     if (e.target.closest('a')) return;
 
@@ -136,6 +136,7 @@ const generateCards = (data) => data.map(person => {
     }
   });
 
+  // Component loading
   const componentsPromise = Promise.all([
     fetch('nav.html').then(r => r.text()),
     fetch('footer.html').then(r => r.text())
