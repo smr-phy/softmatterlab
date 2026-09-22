@@ -80,21 +80,24 @@
       setTimeout(() => preloader.style.display = 'none', 400);
     }
   }
+const generateCards = (data) => data.map(person => {
+    // Converts "John Doe" into "john-doe" for clean URL: profile?id=john-doe
+    const slug = encodeURIComponent(person.name.toLowerCase().replace(/\s+/g, '-'));
+    const profileUrl = person.profileUrl || `profile?id=${slug}`;
 
-  const generateCards = (data) => data.map(person => `
-    <div class="team-card">
-      <img src="${person.image}" alt="${person.name}" class="avatar-img" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
-      <div class="team-name">${person.name}</div>
-      <div class="team-role">${person.role}</div>
-      <div class="team-content">
-        <p>${person.bio}</p>
+    return `
+      <div class="team-card" data-href="${profileUrl}">
+        <img src="${person.image}" alt="${person.name}" class="avatar-img" onerror="this.onerror=null; this.src='images/placeholder.jpg'">
+        <div class="team-name">${person.name}</div>
+        <div class="team-role">${person.role}</div>
+        
         <div class="team-links">
           ${person.scholar ? `<a href="${person.scholar}" target="_blank" rel="noopener">Google Scholar</a>` : ''}
           ${person.linkedin ? `<a href="${person.linkedin}" target="_blank" rel="noopener">LinkedIn</a>` : ''}
         </div>
       </div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 
 
   const teamPromise = fetch('data/people.json')
@@ -114,18 +117,18 @@
     });
 
 
-  document.addEventListener('click', function(e) {
-    if (e.target.closest('.prof-card')) return;
+document.addEventListener('click', function(e) {
+    // Let external links (Google Scholar, LinkedIn, Email) click through normally
     if (e.target.closest('a')) return;
 
+    // Only apply click-to-navigate on team cards (leaves PI .prof-card alone)
     const clickedCard = e.target.closest('.team-card');
     if (!clickedCard) return;
-    
-    document.querySelectorAll('.team-card').forEach(card => {
-      if (card !== clickedCard) card.classList.remove('expanded');
-    });
-    
-    clickedCard.classList.toggle('expanded');
+
+    const targetUrl = clickedCard.dataset.href;
+    if (targetUrl) {
+      window.location.href = targetUrl;
+    }
   });
 
 
