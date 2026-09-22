@@ -25,24 +25,38 @@
 
 <div id="footer-placeholder"></div>
 
-<script>
-  const slugify = (str) => str.toLowerCase().trim().replace(/\s+/g, '_');
 
-  const targetSlug = decodeURIComponent(window.location.search.substring(1));
+</body>
+</html>
+<script>
+  const slugify = (str) => encodeURIComponent(str.toLowerCase().trim().replace(/\s+/g, '-'));
+
+  // Split path segments (handles custom domains or GitHub project pages automatically)
+  const pathSegments = window.location.pathname.split('/').filter(Boolean);
+  
+  // Find "profile" in the path and get whatever comes right after it
+  const profileIndex = pathSegments.indexOf('profile');
+  const targetSlug = profileIndex !== -1 && pathSegments[profileIndex + 1] 
+    ? decodeURIComponent(pathSegments[profileIndex + 1]).toLowerCase() 
+    : '';
 
   const container = document.getElementById('profile-container');
 
   if (!targetSlug) {
-    container.innerHTML = '<h2 style="color: var(--ink);">No member specified.</h2>';
+    container.innerHTML = '<h2 style="color: var(--ink);">Page not found.</h2>';
   } else {
-    // Search both team members and alumni
     Promise.all([
       fetch('data/people.json').then(res => res.json()).catch(() => []),
       fetch('data/alumni.json').then(res => res.json()).catch(() => [])
     ])
     .then(([people, alumni]) => {
       const allMembers = [...people, ...alumni];
-      const person = allMembers.find(p => slugify(p.name) === targetSlug.toLowerCase());
+      
+      const person = allMembers.find(p => {
+        const fullSlug = slugify(p.name).toLowerCase();
+        const firstName = p.name.toLowerCase().trim().split(' ')[0];
+        return fullSlug === targetSlug || firstName === targetSlug;
+      });
 
       if (person) {
         document.title = `${person.name} | Soft Matter Lab`;
@@ -77,7 +91,6 @@
     });
   }
 
-  // Load Nav and Footer dynamically
   Promise.all([
     fetch('nav.html').then(r => r.text()),
     fetch('footer.html').then(r => r.text())
@@ -86,5 +99,3 @@
     document.getElementById('footer-placeholder').outerHTML = footerHtml;
   });
 </script>
-</body>
-</html>
