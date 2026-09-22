@@ -80,7 +80,6 @@
     }
   }
 
-  // Convert member name to clean URL slug (e.g. "Shri Gowri" -> "shri-gowri")
   const slugify = (str) => encodeURIComponent(str.toLowerCase().trim().replace(/\s+/g, '-'));
 
   const generateCards = (data) => data.map(person => {
@@ -101,7 +100,6 @@
     `;
   }).join('');
 
-  // Fetch Team Data
   const teamPromise = fetch('data/people.json')
     .then(res => res.json())
     .then(data => {
@@ -112,7 +110,6 @@
       document.getElementById('team-container').innerHTML = '<p style="color: var(--slate);">Unable to load team members.</p>';
     });
 
-  // Fetch Alumni Data
   const alumniPromise = fetch('data/alumni.json')
     .then(res => res.json())
     .then(data => {
@@ -122,12 +119,9 @@
       document.getElementById('alumni-container').innerHTML = '<p style="color: var(--slate);">No past members listed yet.</p>';
     });
 
-  // Navigation Click Handler for Cards
   document.addEventListener('click', function(e) {
-    // If user clicks a direct link (e.g., Scholar / LinkedIn), let it open normally
     if (e.target.closest('a')) return;
 
-    // Apply redirect only to team cards (PI section is left unaffected)
     const clickedCard = e.target.closest('.team-card');
     if (!clickedCard) return;
 
@@ -137,7 +131,6 @@
     }
   });
 
-  // Load Navigation and Footer components
   const componentsPromise = Promise.all([
     fetch('nav.html').then(r => r.text()),
     fetch('footer.html').then(r => r.text())
