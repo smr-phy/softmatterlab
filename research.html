@@ -23,7 +23,6 @@
 <section id="research" class="page-content">
   <div class="research-header">
     <div>
-      <div class="section-label">Our Science</div>
       <h2 class="section-title">Research Projects</h2>
     </div>
   </div>
@@ -50,7 +49,7 @@
       const container = document.getElementById('research-container');
       container.innerHTML = data.map(res => `
         <div class="research-card ${res.color}">
-          <div class="rc-number">${res.number}</div>
+        
           <div class="rc-title">${res.title}</div>
           <p class="rc-desc">${res.desc}</p>
           <div class="rc-tags">${res.tags.map(t => `<span class="rc-tag">${t}</span>`).join('')}</div>
