@@ -1,7 +1,7 @@
 [
   { 
     "image": "images/facilities/tabletop_hydrodynamics.webp", 
-    "title": "Tabletop Hydrodynamics Study Facility", 
+    "title": "Custom Hydrodynamics Study Facility", 
     "desc": "The Tabletop Hydrodynamics Facility supports experimental studies of fluid dynamics, interfacial phenomena, and pattern formation. It can be used to investigate gravity currents, fluid spreading, interfacial instabilities, and flow behaviour in Newtonian and non-Newtonian fluids. The facility is equipped with programmable syringe pump and peristaltic pump which allow a continuous and simultaneous supply of two distinct fluids. The facility also enables optical visualization and quantitative image-based analysis of evolving flow fronts, interfaces, and spatial patterns, providing a flexible platform for studying a range of complex fluid phenomena." 
   },
   { 
