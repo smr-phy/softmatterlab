@@ -339,12 +339,7 @@ section {
   width: 4px; height: 0;
   transition: height 0.3s ease;
 }
-.research-card.c1::before { background: var(--teal); }
-.research-card.c2::before { background: var(--rose); }
-.research-card.c3::before { background: var(--purple); }
-.research-card.c4::before { background: var(--gold2); }
-.research-card.c5::before { background: var(--teal); }
-.research-card.c6::before { background: var(--rose); }
+
 .research-card:hover { 
   background: var(--mist); 
   transform: translateY(-4px);
