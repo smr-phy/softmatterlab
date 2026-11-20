@@ -1093,9 +1093,34 @@ footer {
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
   footer {
-    flex-direction: column; gap: 1.5rem; text-align: center; padding: 3rem 4vw;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+    padding: 2.5rem 6vw 1.75rem;
   }
-  .footer-links { justify-content: center; }
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  .footer-logo {
+    justify-content: center;
+  }
+  .footer-logo-img {
+    height: 52px;
+    margin: 0 auto;
+  }
+  .footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+  .footer-divider {
+    text-align: center;
+  }
 }
 
 @media (max-width: 600px) {
