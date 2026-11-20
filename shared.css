@@ -981,43 +981,30 @@ footer {
   border-top: 1px solid #1a1a1a;
 }
 
-.footer-logo { 
+.footer-logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 15px; 
-  color: #d5cfc4; 
-  font-weight: 700; 
 }
 
 .footer-brand {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  color: #ffffff;
+  background: var(--mist); /* Keeps dark logo text legible against the dark footer */
+  padding: 6px 12px;
+  border-radius: 10px;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .footer-brand:hover {
-  color: #d5cfc4;
+  transform: translateY(-1px);
+  opacity: 0.95;
 }
 
 .footer-logo-img {
-  height: 28px;
+  height: 36px;
   width: auto;
   display: block;
-}
-
-.footer-logo .ashoka-link, .footer-logo .ashoka-link:visited { 
-  color: var(--gold); 
-  text-decoration: none; 
-  transition: color 0.2s;
-}
-
-.footer-logo .ashoka-link:hover, .footer-logo .ashoka-link:active, .footer-logo .ashoka-link:focus {
-  color: var(--teal2); 
-  text-decoration: underline;
 }
 
 .footer-copy { 
