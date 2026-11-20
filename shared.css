@@ -989,20 +989,17 @@ footer {
 .footer-brand {
   display: inline-flex;
   align-items: center;
-  background: var(--mist); /* Keeps dark logo text legible against the dark footer */
-  padding: 6px 12px;
-  border-radius: 10px;
   text-decoration: none;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .footer-brand:hover {
+  opacity: 0.92;
   transform: translateY(-1px);
-  opacity: 0.95;
 }
 
 .footer-logo-img {
-  height: 36px;
+  height: 52px;
   width: auto;
   display: block;
 }
