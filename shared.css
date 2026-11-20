@@ -975,8 +975,8 @@ a:hover .pub-title { color: var(--teal); }
 footer {
   background: #080808; 
   padding: 2rem 8vw;
-  display: flex; 
-  justify-content: space-between; 
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   border-top: 1px solid #1a1a1a;
 }
@@ -984,6 +984,7 @@ footer {
 .footer-logo {
   display: flex;
   align-items: center;
+  justify-self: start;
 }
 
 .footer-brand {
@@ -999,7 +1000,7 @@ footer {
 }
 
 .footer-logo-img {
-  height: 52px;
+  height: 64px;
   width: auto;
   display: block;
 }
@@ -1007,11 +1008,14 @@ footer {
 .footer-copy { 
   font-size: 12px; 
   color: #b0a89f; 
+  text-align: center;
+  justify-self: center;
 }
 
 .footer-links { 
   display: flex; 
   gap: 1.5rem; 
+  justify-self: end;
 }
 
 .footer-links a, .footer-links a:visited { 
