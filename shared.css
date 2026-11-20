@@ -975,24 +975,72 @@ a:hover .pub-title { color: var(--teal); }
 footer {
   background: #080808; 
   padding: 2rem 8vw;
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
   border-top: 1px solid #1a1a1a;
 }
-.footer-logo { font-size: 15px; color: #d5cfc4; font-weight: 700; }
+
+.footer-logo { 
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 15px; 
+  color: #d5cfc4; 
+  font-weight: 700; 
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-brand:hover {
+  color: #d5cfc4;
+}
+
+.footer-logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
 .footer-logo .ashoka-link, .footer-logo .ashoka-link:visited { 
-  color: var(--gold); text-decoration: none; transition: color 0.2s;
+  color: var(--gold); 
+  text-decoration: none; 
+  transition: color 0.2s;
 }
+
 .footer-logo .ashoka-link:hover, .footer-logo .ashoka-link:active, .footer-logo .ashoka-link:focus {
-  color: var(--teal2); text-decoration: underline;
+  color: var(--teal2); 
+  text-decoration: underline;
 }
-.footer-copy { font-size: 12px; color: #b0a89f; }
-.footer-links { display: flex; gap: 1.5rem; }
+
+.footer-copy { 
+  font-size: 12px; 
+  color: #b0a89f; 
+}
+
+.footer-links { 
+  display: flex; 
+  gap: 1.5rem; 
+}
+
 .footer-links a, .footer-links a:visited { 
-  font-size: 15px; color: #d5cfc4; font-weight: 700; 
-  text-decoration: none; transition: color 0.2s;
+  font-size: 15px; 
+  color: #d5cfc4; 
+  font-weight: 700; 
+  text-decoration: none; 
+  transition: color 0.2s;
 }
+
 .footer-links a:hover, .footer-links a:active, .footer-links a:focus { 
-  color: var(--teal2); text-decoration: underline; 
+  color: var(--teal2); 
+  text-decoration: underline; 
 }
 
 /*RESPONSIVE BREAKPOINTS (MOBILE/TABLET) */
